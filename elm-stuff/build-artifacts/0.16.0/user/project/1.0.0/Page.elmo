@@ -1,0 +1,180 @@
+Elm.Page = Elm.Page || {};
+Elm.Page.make = function (_elm) {
+   "use strict";
+   _elm.Page = _elm.Page || {};
+   if (_elm.Page.values) return _elm.Page.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Char = Elm.Char.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var getLinkName = function (name) {
+      var l = A2($String.dropLeft,1,name);
+      var f = A2($String.left,1,name);
+      var g = A2($String.map,$Char.toUpper,f);
+      return A2($Basics._op["++"],g,l);
+   };
+   var buttons = A2($Html.div,
+   _U.list([$Html$Attributes.$class("page-header")]),
+   _U.list([A2($Html.h1,
+   _U.list([]),
+   _U.list([$Html.text("Buttons")]))]));
+   var jumbotron = A2($Html.div,
+   _U.list([$Html$Attributes.$class("jumbotron")]),
+   _U.list([A2($Html.h1,
+           _U.list([]),
+           _U.list([$Html.text("Theme Example")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.")]))]));
+   var navbarMain = A3($Html.node,
+   "nav",
+   _U.list([$Html$Attributes.$class("navbar navbar-inverse navbar-fixed-top")]),
+   _U.list([A2($Html.div,
+   _U.list([$Html$Attributes.$class("container")]),
+   _U.list([A2($Html.div,
+           _U.list([$Html$Attributes.$class("navbar-header")]),
+           _U.list([A2($Html.button,
+                   _U.list([$Html$Attributes.type$("button")
+                           ,$Html$Attributes.$class("navbar-toggle collapsed")
+                           ,A2($Html$Attributes.attribute,"data-toggle","collapse")
+                           ,A2($Html$Attributes.attribute,"data-target","#navbar")
+                           ,A2($Html$Attributes.attribute,"aria-expanded","false")
+                           ,A2($Html$Attributes.attribute,"aria-controls","navbar")]),
+                   _U.list([A2($Html.span,
+                           _U.list([$Html$Attributes.$class("sr-only")]),
+                           _U.list([$Html.text("Toggle navigation")]))
+                           ,A2($Html.span,
+                           _U.list([$Html$Attributes.$class("icon-bar")]),
+                           _U.list([]))
+                           ,A2($Html.span,
+                           _U.list([$Html$Attributes.$class("icon-bar")]),
+                           _U.list([]))
+                           ,A2($Html.span,
+                           _U.list([$Html$Attributes.$class("icon-bar")]),
+                           _U.list([]))]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.$class("navbar-brand")
+                           ,$Html$Attributes.href("#")]),
+                   _U.list([$Html.text("Bootstrap theme")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.id("navbar")
+                   ,$Html$Attributes.$class("navbar-collapse collapse")]),
+           _U.list([A2($Html.ul,
+           _U.list([$Html$Attributes.$class("nav navbar-nav")]),
+           _U.list([A2($Html.li,
+                   _U.list([$Html$Attributes.$class("active")]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.href("#")]),
+                   _U.list([$Html.text("Home")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.href("#about")]),
+                   _U.list([$Html.text("About")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.href("#contact")]),
+                   _U.list([$Html.text("Contact")]))]))
+                   ,A2($Html.li,
+                   _U.list([$Html$Attributes.$class("dropdown")]),
+                   _U.list([A2($Html.a,
+                           _U.list([$Html$Attributes.$class("dropdown-toggle")
+                                   ,$Html$Attributes.href("#")
+                                   ,A2($Html$Attributes.attribute,"data-toggle","dropdown")
+                                   ,A2($Html$Attributes.attribute,"role","button")
+                                   ,A2($Html$Attributes.attribute,"aria-haspopup","true")
+                                   ,A2($Html$Attributes.attribute,"aria-expanded","false")]),
+                           _U.list([$Html.text("Dropdown ")
+                                   ,A2($Html.span,
+                                   _U.list([$Html$Attributes.$class("caret")]),
+                                   _U.list([]))]))
+                           ,A2($Html.ul,
+                           _U.list([$Html$Attributes.$class("dropdown-menu")]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.a,
+                                   _U.list([$Html$Attributes.href("#")]),
+                                   _U.list([$Html.text("Action")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.a,
+                                   _U.list([$Html$Attributes.href("#")]),
+                                   _U.list([$Html.text("Another action")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.a,
+                                   _U.list([$Html$Attributes.href("#")]),
+                                   _U.list([$Html.text("Something else here")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([$Html$Attributes.$class("divider")
+                                           ,A2($Html$Attributes.attribute,"role","seperator")]),
+                                   _U.list([]))
+                                   ,A2($Html.li,
+                                   _U.list([$Html$Attributes.$class("dropdown-header")]),
+                                   _U.list([$Html.text("Nav header")]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.a,
+                                   _U.list([$Html$Attributes.href("#")]),
+                                   _U.list([$Html.text("Seperated link")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.a,
+                                   _U.list([$Html$Attributes.href("#")]),
+                                   _U.list([$Html.text("One more seperated link")]))]))]))]))]))]))]))]));
+   _op["=>"] = F2(function (v0,v1) {
+      return {ctor: "_Tuple2",_0: v0,_1: v1};
+   });
+   var makeBtns = F2(function (prop,name) {
+      return A2($Html.button,
+      _U.list([$Html$Attributes.type$("button")
+              ,$Html$Attributes.$class(A2($Basics._op["++"],
+              "btn ",
+              A2($Basics._op["++"],prop,A2($Basics._op["++"]," btn-",name))))
+              ,$Html$Attributes.style(_U.list([A2(_op["=>"],
+              "margin-left",
+              "5px")]))]),
+      _U.list([$Html.text(getLinkName(name))]));
+   });
+   var main = function () {
+      var buttonList = _U.list(["default"
+                               ,"primary"
+                               ,"success"
+                               ,"info"
+                               ,"warning"
+                               ,"danger"
+                               ,"link"]);
+      var lg = A2($List.map,makeBtns("btn-lg"),buttonList);
+      var de = A2($List.map,makeBtns(""),buttonList);
+      var sm = A2($List.map,makeBtns("btn-sm"),buttonList);
+      var xs = A2($List.map,makeBtns("btn-xs"),buttonList);
+      return A2($Html.div,
+      _U.list([]),
+      _U.list([navbarMain
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.$class("container theme-showcase")
+                      ,A2($Html$Attributes.attribute,"role","main")]),
+              _U.list([jumbotron
+                      ,buttons
+                      ,A2($Html.p,_U.list([]),lg)
+                      ,A2($Html.p,_U.list([]),de)
+                      ,A2($Html.p,_U.list([]),sm)
+                      ,A2($Html.p,_U.list([]),xs)]))]));
+   }();
+   return _elm.Page.values = {_op: _op
+                             ,main: main
+                             ,navbarMain: navbarMain
+                             ,jumbotron: jumbotron
+                             ,buttons: buttons
+                             ,makeBtns: makeBtns
+                             ,getLinkName: getLinkName};
+};
