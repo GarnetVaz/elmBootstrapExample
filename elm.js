@@ -1441,17 +1441,10 @@ Elm.Basics.make = function (_elm) {
    "use strict";
    _elm.Basics = _elm.Basics || {};
    if (_elm.Basics.values) return _elm.Basics.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Native$Basics = Elm.Native.Basics.make(_elm),
-   $Native$Utils = Elm.Native.Utils.make(_elm);
+   var _U = Elm.Native.Utils.make(_elm),$Native$Basics = Elm.Native.Basics.make(_elm),$Native$Utils = Elm.Native.Utils.make(_elm);
    var _op = {};
-   var uncurry = F2(function (f,_p0) {
-      var _p1 = _p0;
-      return A2(f,_p1._0,_p1._1);
-   });
-   var curry = F3(function (f,a,b) {
-      return f({ctor: "_Tuple2",_0: a,_1: b});
-   });
+   var uncurry = F2(function (f,_p0) {    var _p1 = _p0;return A2(f,_p1._0,_p1._1);});
+   var curry = F3(function (f,a,b) {    return f({ctor: "_Tuple2",_0: a,_1: b});});
    var flip = F3(function (f,b,a) {    return A2(f,a,b);});
    var snd = function (_p2) {    var _p3 = _p2;return _p3._1;};
    var fst = function (_p4) {    var _p5 = _p4;return _p5._0;};
@@ -1565,14 +1558,7 @@ Elm.Maybe.make = function (_elm) {
    if (_elm.Maybe.values) return _elm.Maybe.values;
    var _U = Elm.Native.Utils.make(_elm);
    var _op = {};
-   var withDefault = F2(function ($default,maybe) {
-      var _p0 = maybe;
-      if (_p0.ctor === "Just") {
-            return _p0._0;
-         } else {
-            return $default;
-         }
-   });
+   var withDefault = F2(function ($default,maybe) {    var _p0 = maybe;if (_p0.ctor === "Just") {    return _p0._0;} else {    return $default;}});
    var Nothing = {ctor: "Nothing"};
    var oneOf = function (maybes) {
       oneOf: while (true) {
@@ -1601,18 +1587,10 @@ Elm.Maybe.make = function (_elm) {
          }
    });
    var Just = function (a) {    return {ctor: "Just",_0: a};};
-   var map = F2(function (f,maybe) {
-      var _p5 = maybe;
-      if (_p5.ctor === "Just") {
-            return Just(f(_p5._0));
-         } else {
-            return Nothing;
-         }
-   });
+   var map = F2(function (f,maybe) {    var _p5 = maybe;if (_p5.ctor === "Just") {    return Just(f(_p5._0));} else {    return Nothing;}});
    var map2 = F3(function (func,ma,mb) {
       var _p6 = {ctor: "_Tuple2",_0: ma,_1: mb};
-      if (_p6.ctor === "_Tuple2" && _p6._0.ctor === "Just" && _p6._1.ctor === "Just")
-      {
+      if (_p6.ctor === "_Tuple2" && _p6._0.ctor === "Just" && _p6._1.ctor === "Just") {
             return Just(A2(func,_p6._0._0,_p6._1._0));
          } else {
             return Nothing;
@@ -1620,8 +1598,7 @@ Elm.Maybe.make = function (_elm) {
    });
    var map3 = F4(function (func,ma,mb,mc) {
       var _p7 = {ctor: "_Tuple3",_0: ma,_1: mb,_2: mc};
-      if (_p7.ctor === "_Tuple3" && _p7._0.ctor === "Just" && _p7._1.ctor === "Just" && _p7._2.ctor === "Just")
-      {
+      if (_p7.ctor === "_Tuple3" && _p7._0.ctor === "Just" && _p7._1.ctor === "Just" && _p7._2.ctor === "Just") {
             return Just(A3(func,_p7._0._0,_p7._1._0,_p7._2._0));
          } else {
             return Nothing;
@@ -1629,32 +1606,17 @@ Elm.Maybe.make = function (_elm) {
    });
    var map4 = F5(function (func,ma,mb,mc,md) {
       var _p8 = {ctor: "_Tuple4",_0: ma,_1: mb,_2: mc,_3: md};
-      if (_p8.ctor === "_Tuple4" && _p8._0.ctor === "Just" && _p8._1.ctor === "Just" && _p8._2.ctor === "Just" && _p8._3.ctor === "Just")
-      {
-            return Just(A4(func,
-            _p8._0._0,
-            _p8._1._0,
-            _p8._2._0,
-            _p8._3._0));
+      if (_p8.ctor === "_Tuple4" && _p8._0.ctor === "Just" && _p8._1.ctor === "Just" && _p8._2.ctor === "Just" && _p8._3.ctor === "Just") {
+            return Just(A4(func,_p8._0._0,_p8._1._0,_p8._2._0,_p8._3._0));
          } else {
             return Nothing;
          }
    });
    var map5 = F6(function (func,ma,mb,mc,md,me) {
-      var _p9 = {ctor: "_Tuple5"
-                ,_0: ma
-                ,_1: mb
-                ,_2: mc
-                ,_3: md
-                ,_4: me};
+      var _p9 = {ctor: "_Tuple5",_0: ma,_1: mb,_2: mc,_3: md,_4: me};
       if (_p9.ctor === "_Tuple5" && _p9._0.ctor === "Just" && _p9._1.ctor === "Just" && _p9._2.ctor === "Just" && _p9._3.ctor === "Just" && _p9._4.ctor === "Just")
       {
-            return Just(A5(func,
-            _p9._0._0,
-            _p9._1._0,
-            _p9._2._0,
-            _p9._3._0,
-            _p9._4._0));
+            return Just(A5(func,_p9._0._0,_p9._1._0,_p9._2._0,_p9._3._0,_p9._4._0));
          } else {
             return Nothing;
          }
@@ -1841,16 +1803,11 @@ Elm.List.make = function (_elm) {
    "use strict";
    _elm.List = _elm.List || {};
    if (_elm.List.values) return _elm.List.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Basics = Elm.Basics.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Native$List = Elm.Native.List.make(_elm);
+   var _U = Elm.Native.Utils.make(_elm),$Basics = Elm.Basics.make(_elm),$Maybe = Elm.Maybe.make(_elm),$Native$List = Elm.Native.List.make(_elm);
    var _op = {};
    var sortWith = $Native$List.sortWith;
    var sortBy = $Native$List.sortBy;
-   var sort = function (xs) {
-      return A2(sortBy,$Basics.identity,xs);
-   };
+   var sort = function (xs) {    return A2(sortBy,$Basics.identity,xs);};
    var drop = F2(function (n,list) {
       drop: while (true) if (_U.cmp(n,0) < 1) return list; else {
             var _p0 = list;
@@ -1884,33 +1841,12 @@ Elm.List.make = function (_elm) {
             }
       }
    });
-   var all = F2(function (isOkay,list) {
-      return $Basics.not(A2(any,
-      function (_p2) {
-         return $Basics.not(isOkay(_p2));
-      },
-      list));
-   });
+   var all = F2(function (isOkay,list) {    return $Basics.not(A2(any,function (_p2) {    return $Basics.not(isOkay(_p2));},list));});
    var foldr = $Native$List.foldr;
    var foldl = $Native$List.foldl;
-   var length = function (xs) {
-      return A3(foldl,
-      F2(function (_p3,i) {    return i + 1;}),
-      0,
-      xs);
-   };
-   var sum = function (numbers) {
-      return A3(foldl,
-      F2(function (x,y) {    return x + y;}),
-      0,
-      numbers);
-   };
-   var product = function (numbers) {
-      return A3(foldl,
-      F2(function (x,y) {    return x * y;}),
-      1,
-      numbers);
-   };
+   var length = function (xs) {    return A3(foldl,F2(function (_p3,i) {    return i + 1;}),0,xs);};
+   var sum = function (numbers) {    return A3(foldl,F2(function (x,y) {    return x + y;}),0,numbers);};
+   var product = function (numbers) {    return A3(foldl,F2(function (x,y) {    return x * y;}),1,numbers);};
    var maximum = function (list) {
       var _p4 = list;
       if (_p4.ctor === "::") {
@@ -1927,66 +1863,20 @@ Elm.List.make = function (_elm) {
             return $Maybe.Nothing;
          }
    };
-   var indexedMap = F2(function (f,xs) {
-      return A3(map2,f,_U.range(0,length(xs) - 1),xs);
-   });
-   var member = F2(function (x,xs) {
-      return A2(any,function (a) {    return _U.eq(a,x);},xs);
-   });
-   var isEmpty = function (xs) {
-      var _p6 = xs;
-      if (_p6.ctor === "[]") {
-            return true;
-         } else {
-            return false;
-         }
-   };
-   var tail = function (list) {
-      var _p7 = list;
-      if (_p7.ctor === "::") {
-            return $Maybe.Just(_p7._1);
-         } else {
-            return $Maybe.Nothing;
-         }
-   };
-   var head = function (list) {
-      var _p8 = list;
-      if (_p8.ctor === "::") {
-            return $Maybe.Just(_p8._0);
-         } else {
-            return $Maybe.Nothing;
-         }
-   };
+   var indexedMap = F2(function (f,xs) {    return A3(map2,f,_U.range(0,length(xs) - 1),xs);});
+   var member = F2(function (x,xs) {    return A2(any,function (a) {    return _U.eq(a,x);},xs);});
+   var isEmpty = function (xs) {    var _p6 = xs;if (_p6.ctor === "[]") {    return true;} else {    return false;}};
+   var tail = function (list) {    var _p7 = list;if (_p7.ctor === "::") {    return $Maybe.Just(_p7._1);} else {    return $Maybe.Nothing;}};
+   var head = function (list) {    var _p8 = list;if (_p8.ctor === "::") {    return $Maybe.Just(_p8._0);} else {    return $Maybe.Nothing;}};
    _op["::"] = $Native$List.cons;
-   var map = F2(function (f,xs) {
-      return A3(foldr,
-      F2(function (x,acc) {    return A2(_op["::"],f(x),acc);}),
-      _U.list([]),
-      xs);
-   });
+   var map = F2(function (f,xs) {    return A3(foldr,F2(function (x,acc) {    return A2(_op["::"],f(x),acc);}),_U.list([]),xs);});
    var filter = F2(function (pred,xs) {
-      var conditionalCons = F2(function (x,xs$) {
-         return pred(x) ? A2(_op["::"],x,xs$) : xs$;
-      });
+      var conditionalCons = F2(function (x,xs$) {    return pred(x) ? A2(_op["::"],x,xs$) : xs$;});
       return A3(foldr,conditionalCons,_U.list([]),xs);
    });
-   var maybeCons = F3(function (f,mx,xs) {
-      var _p9 = f(mx);
-      if (_p9.ctor === "Just") {
-            return A2(_op["::"],_p9._0,xs);
-         } else {
-            return xs;
-         }
-   });
-   var filterMap = F2(function (f,xs) {
-      return A3(foldr,maybeCons(f),_U.list([]),xs);
-   });
-   var reverse = function (list) {
-      return A3(foldl,
-      F2(function (x,y) {    return A2(_op["::"],x,y);}),
-      _U.list([]),
-      list);
-   };
+   var maybeCons = F3(function (f,mx,xs) {    var _p9 = f(mx);if (_p9.ctor === "Just") {    return A2(_op["::"],_p9._0,xs);} else {    return xs;}});
+   var filterMap = F2(function (f,xs) {    return A3(foldr,maybeCons(f),_U.list([]),xs);});
+   var reverse = function (list) {    return A3(foldl,F2(function (x,y) {    return A2(_op["::"],x,y);}),_U.list([]),list);};
    var scanl = F3(function (f,b,xs) {
       var scan1 = F2(function (x,accAcc) {
          var _p10 = accAcc;
@@ -2003,74 +1893,48 @@ Elm.List.make = function (_elm) {
       if (_p11.ctor === "[]") {
             return xs;
          } else {
-            return A3(foldr,
-            F2(function (x,y) {    return A2(_op["::"],x,y);}),
-            ys,
-            xs);
+            return A3(foldr,F2(function (x,y) {    return A2(_op["::"],x,y);}),ys,xs);
          }
    });
-   var concat = function (lists) {
-      return A3(foldr,append,_U.list([]),lists);
-   };
-   var concatMap = F2(function (f,list) {
-      return concat(A2(map,f,list));
-   });
+   var concat = function (lists) {    return A3(foldr,append,_U.list([]),lists);};
+   var concatMap = F2(function (f,list) {    return concat(A2(map,f,list));});
    var partition = F2(function (pred,list) {
       var step = F2(function (x,_p12) {
          var _p13 = _p12;
          var _p15 = _p13._0;
          var _p14 = _p13._1;
-         return pred(x) ? {ctor: "_Tuple2"
-                          ,_0: A2(_op["::"],x,_p15)
-                          ,_1: _p14} : {ctor: "_Tuple2"
-                                       ,_0: _p15
-                                       ,_1: A2(_op["::"],x,_p14)};
+         return pred(x) ? {ctor: "_Tuple2",_0: A2(_op["::"],x,_p15),_1: _p14} : {ctor: "_Tuple2",_0: _p15,_1: A2(_op["::"],x,_p14)};
       });
-      return A3(foldr,
-      step,
-      {ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},
-      list);
+      return A3(foldr,step,{ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},list);
    });
    var unzip = function (pairs) {
       var step = F2(function (_p17,_p16) {
          var _p18 = _p17;
          var _p19 = _p16;
-         return {ctor: "_Tuple2"
-                ,_0: A2(_op["::"],_p18._0,_p19._0)
-                ,_1: A2(_op["::"],_p18._1,_p19._1)};
+         return {ctor: "_Tuple2",_0: A2(_op["::"],_p18._0,_p19._0),_1: A2(_op["::"],_p18._1,_p19._1)};
       });
-      return A3(foldr,
-      step,
-      {ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},
-      pairs);
+      return A3(foldr,step,{ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},pairs);
    };
    var intersperse = F2(function (sep,xs) {
       var _p20 = xs;
       if (_p20.ctor === "[]") {
             return _U.list([]);
          } else {
-            var step = F2(function (x,rest) {
-               return A2(_op["::"],sep,A2(_op["::"],x,rest));
-            });
+            var step = F2(function (x,rest) {    return A2(_op["::"],sep,A2(_op["::"],x,rest));});
             var spersed = A3(foldr,step,_U.list([]),_p20._1);
             return A2(_op["::"],_p20._0,spersed);
          }
    });
    var repeatHelp = F3(function (result,n,value) {
-      repeatHelp: while (true) if (_U.cmp(n,0) < 1) return result;
-      else {
-            var _v18 = A2(_op["::"],value,result),
-            _v19 = n - 1,
-            _v20 = value;
+      repeatHelp: while (true) if (_U.cmp(n,0) < 1) return result; else {
+            var _v18 = A2(_op["::"],value,result),_v19 = n - 1,_v20 = value;
             result = _v18;
             n = _v19;
             value = _v20;
             continue repeatHelp;
          }
    });
-   var repeat = F2(function (n,value) {
-      return A3(repeatHelp,_U.list([]),n,value);
-   });
+   var repeat = F2(function (n,value) {    return A3(repeatHelp,_U.list([]),n,value);});
    return _elm.List.values = {_op: _op
                              ,isEmpty: isEmpty
                              ,length: length
@@ -2224,15 +2088,12 @@ Elm.Transform2D.make = function (_elm) {
    "use strict";
    _elm.Transform2D = _elm.Transform2D || {};
    if (_elm.Transform2D.values) return _elm.Transform2D.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Native$Transform2D = Elm.Native.Transform2D.make(_elm);
+   var _U = Elm.Native.Utils.make(_elm),$Native$Transform2D = Elm.Native.Transform2D.make(_elm);
    var _op = {};
    var multiply = $Native$Transform2D.multiply;
    var rotation = $Native$Transform2D.rotation;
    var matrix = $Native$Transform2D.matrix;
-   var translation = F2(function (x,y) {
-      return A6(matrix,1,0,0,1,x,y);
-   });
+   var translation = F2(function (x,y) {    return A6(matrix,1,0,0,1,x,y);});
    var scale = function (s) {    return A6(matrix,s,0,0,s,0,0);};
    var scaleX = function (x) {    return A6(matrix,x,0,0,1,0,0);};
    var scaleY = function (y) {    return A6(matrix,1,0,0,y,0,0);};
@@ -2958,23 +2819,13 @@ Elm.Color.make = function (_elm) {
    "use strict";
    _elm.Color = _elm.Color || {};
    if (_elm.Color.values) return _elm.Color.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Basics = Elm.Basics.make(_elm);
+   var _U = Elm.Native.Utils.make(_elm),$Basics = Elm.Basics.make(_elm);
    var _op = {};
-   var Radial = F5(function (a,b,c,d,e) {
-      return {ctor: "Radial",_0: a,_1: b,_2: c,_3: d,_4: e};
-   });
+   var Radial = F5(function (a,b,c,d,e) {    return {ctor: "Radial",_0: a,_1: b,_2: c,_3: d,_4: e};});
    var radial = Radial;
-   var Linear = F3(function (a,b,c) {
-      return {ctor: "Linear",_0: a,_1: b,_2: c};
-   });
+   var Linear = F3(function (a,b,c) {    return {ctor: "Linear",_0: a,_1: b,_2: c};});
    var linear = Linear;
-   var fmod = F2(function (f,n) {
-      var integer = $Basics.floor(f);
-      return $Basics.toFloat(A2($Basics._op["%"],
-      integer,
-      n)) + f - $Basics.toFloat(integer);
-   });
+   var fmod = F2(function (f,n) {    var integer = $Basics.floor(f);return $Basics.toFloat(A2($Basics._op["%"],integer,n)) + f - $Basics.toFloat(integer);});
    var rgbToHsl = F3(function (red,green,blue) {
       var b = $Basics.toFloat(blue) / 255;
       var g = $Basics.toFloat(green) / 255;
@@ -2983,36 +2834,20 @@ Elm.Color.make = function (_elm) {
       var cMin = A2($Basics.min,A2($Basics.min,r,g),b);
       var c = cMax - cMin;
       var lightness = (cMax + cMin) / 2;
-      var saturation = _U.eq(lightness,
-      0) ? 0 : c / (1 - $Basics.abs(2 * lightness - 1));
-      var hue = $Basics.degrees(60) * (_U.eq(cMax,r) ? A2(fmod,
-      (g - b) / c,
-      6) : _U.eq(cMax,g) ? (b - r) / c + 2 : (r - g) / c + 4);
+      var saturation = _U.eq(lightness,0) ? 0 : c / (1 - $Basics.abs(2 * lightness - 1));
+      var hue = $Basics.degrees(60) * (_U.eq(cMax,r) ? A2(fmod,(g - b) / c,6) : _U.eq(cMax,g) ? (b - r) / c + 2 : (r - g) / c + 4);
       return {ctor: "_Tuple3",_0: hue,_1: saturation,_2: lightness};
    });
    var hslToRgb = F3(function (hue,saturation,lightness) {
       var hue$ = hue / $Basics.degrees(60);
       var chroma = (1 - $Basics.abs(2 * lightness - 1)) * saturation;
       var x = chroma * (1 - $Basics.abs(A2(fmod,hue$,2) - 1));
-      var _p0 = _U.cmp(hue$,0) < 0 ? {ctor: "_Tuple3"
-                                     ,_0: 0
-                                     ,_1: 0
-                                     ,_2: 0} : _U.cmp(hue$,1) < 0 ? {ctor: "_Tuple3"
-                                                                    ,_0: chroma
-                                                                    ,_1: x
-                                                                    ,_2: 0} : _U.cmp(hue$,2) < 0 ? {ctor: "_Tuple3"
-                                                                                                   ,_0: x
-                                                                                                   ,_1: chroma
-                                                                                                   ,_2: 0} : _U.cmp(hue$,3) < 0 ? {ctor: "_Tuple3"
-                                                                                                                                  ,_0: 0
-                                                                                                                                  ,_1: chroma
-                                                                                                                                  ,_2: x} : _U.cmp(hue$,
-      4) < 0 ? {ctor: "_Tuple3",_0: 0,_1: x,_2: chroma} : _U.cmp(hue$,
-      5) < 0 ? {ctor: "_Tuple3",_0: x,_1: 0,_2: chroma} : _U.cmp(hue$,
-      6) < 0 ? {ctor: "_Tuple3"
-               ,_0: chroma
-               ,_1: 0
-               ,_2: x} : {ctor: "_Tuple3",_0: 0,_1: 0,_2: 0};
+      var _p0 = _U.cmp(hue$,0) < 0 ? {ctor: "_Tuple3",_0: 0,_1: 0,_2: 0} : _U.cmp(hue$,1) < 0 ? {ctor: "_Tuple3",_0: chroma,_1: x,_2: 0} : _U.cmp(hue$,
+      2) < 0 ? {ctor: "_Tuple3",_0: x,_1: chroma,_2: 0} : _U.cmp(hue$,3) < 0 ? {ctor: "_Tuple3",_0: 0,_1: chroma,_2: x} : _U.cmp(hue$,4) < 0 ? {ctor: "_Tuple3"
+                                                                                                                                               ,_0: 0
+                                                                                                                                               ,_1: x
+                                                                                                                                               ,_2: chroma} : _U.cmp(hue$,
+      5) < 0 ? {ctor: "_Tuple3",_0: x,_1: 0,_2: chroma} : _U.cmp(hue$,6) < 0 ? {ctor: "_Tuple3",_0: chroma,_1: 0,_2: x} : {ctor: "_Tuple3",_0: 0,_1: 0,_2: 0};
       var r = _p0._0;
       var g = _p0._1;
       var b = _p0._2;
@@ -3022,28 +2857,19 @@ Elm.Color.make = function (_elm) {
    var toRgb = function (color) {
       var _p1 = color;
       if (_p1.ctor === "RGBA") {
-            return {red: _p1._0
-                   ,green: _p1._1
-                   ,blue: _p1._2
-                   ,alpha: _p1._3};
+            return {red: _p1._0,green: _p1._1,blue: _p1._2,alpha: _p1._3};
          } else {
             var _p2 = A3(hslToRgb,_p1._0,_p1._1,_p1._2);
             var r = _p2._0;
             var g = _p2._1;
             var b = _p2._2;
-            return {red: $Basics.round(255 * r)
-                   ,green: $Basics.round(255 * g)
-                   ,blue: $Basics.round(255 * b)
-                   ,alpha: _p1._3};
+            return {red: $Basics.round(255 * r),green: $Basics.round(255 * g),blue: $Basics.round(255 * b),alpha: _p1._3};
          }
    };
    var toHsl = function (color) {
       var _p3 = color;
       if (_p3.ctor === "HSLA") {
-            return {hue: _p3._0
-                   ,saturation: _p3._1
-                   ,lightness: _p3._2
-                   ,alpha: _p3._3};
+            return {hue: _p3._0,saturation: _p3._1,lightness: _p3._2,alpha: _p3._3};
          } else {
             var _p4 = A3(rgbToHsl,_p3._0,_p3._1,_p3._2);
             var h = _p4._0;
@@ -3052,27 +2878,15 @@ Elm.Color.make = function (_elm) {
             return {hue: h,saturation: s,lightness: l,alpha: _p3._3};
          }
    };
-   var HSLA = F4(function (a,b,c,d) {
-      return {ctor: "HSLA",_0: a,_1: b,_2: c,_3: d};
-   });
+   var HSLA = F4(function (a,b,c,d) {    return {ctor: "HSLA",_0: a,_1: b,_2: c,_3: d};});
    var hsla = F4(function (hue,saturation,lightness,alpha) {
-      return A4(HSLA,
-      hue - $Basics.turns($Basics.toFloat($Basics.floor(hue / (2 * $Basics.pi)))),
-      saturation,
-      lightness,
-      alpha);
+      return A4(HSLA,hue - $Basics.turns($Basics.toFloat($Basics.floor(hue / (2 * $Basics.pi)))),saturation,lightness,alpha);
    });
-   var hsl = F3(function (hue,saturation,lightness) {
-      return A4(hsla,hue,saturation,lightness,1);
-   });
+   var hsl = F3(function (hue,saturation,lightness) {    return A4(hsla,hue,saturation,lightness,1);});
    var complement = function (color) {
       var _p5 = color;
       if (_p5.ctor === "HSLA") {
-            return A4(hsla,
-            _p5._0 + $Basics.degrees(180),
-            _p5._1,
-            _p5._2,
-            _p5._3);
+            return A4(hsla,_p5._0 + $Basics.degrees(180),_p5._1,_p5._2,_p5._3);
          } else {
             var _p6 = A3(rgbToHsl,_p5._0,_p5._1,_p5._2);
             var h = _p6._0;
@@ -3083,9 +2897,7 @@ Elm.Color.make = function (_elm) {
    };
    var grayscale = function (p) {    return A4(HSLA,0,0,1 - p,1);};
    var greyscale = function (p) {    return A4(HSLA,0,0,1 - p,1);};
-   var RGBA = F4(function (a,b,c,d) {
-      return {ctor: "RGBA",_0: a,_1: b,_2: c,_3: d};
-   });
+   var RGBA = F4(function (a,b,c,d) {    return {ctor: "RGBA",_0: a,_1: b,_2: c,_3: d};});
    var rgba = RGBA;
    var rgb = F3(function (r,g,b) {    return A4(RGBA,r,g,b,1);});
    var lightRed = A4(RGBA,239,41,41,1);
@@ -4213,26 +4025,10 @@ Elm.Text.make = function (_elm) {
    var append = $Native$Text.append;
    var fromString = $Native$Text.fromString;
    var empty = fromString("");
-   var concat = function (texts) {
-      return A3($List.foldr,append,empty,texts);
-   };
-   var join = F2(function (seperator,texts) {
-      return concat(A2($List.intersperse,seperator,texts));
-   });
-   var defaultStyle = {typeface: _U.list([])
-                      ,height: $Maybe.Nothing
-                      ,color: $Color.black
-                      ,bold: false
-                      ,italic: false
-                      ,line: $Maybe.Nothing};
-   var Style = F6(function (a,b,c,d,e,f) {
-      return {typeface: a
-             ,height: b
-             ,color: c
-             ,bold: d
-             ,italic: e
-             ,line: f};
-   });
+   var concat = function (texts) {    return A3($List.foldr,append,empty,texts);};
+   var join = F2(function (seperator,texts) {    return concat(A2($List.intersperse,seperator,texts));});
+   var defaultStyle = {typeface: _U.list([]),height: $Maybe.Nothing,color: $Color.black,bold: false,italic: false,line: $Maybe.Nothing};
+   var Style = F6(function (a,b,c,d,e,f) {    return {typeface: a,height: b,color: c,bold: d,italic: e,line: f};});
    var Through = {ctor: "Through"};
    var Over = {ctor: "Over"};
    var Under = {ctor: "Under"};
@@ -4264,8 +4060,7 @@ Elm.Graphics.Element.make = function (_elm) {
    "use strict";
    _elm.Graphics = _elm.Graphics || {};
    _elm.Graphics.Element = _elm.Graphics.Element || {};
-   if (_elm.Graphics.Element.values)
-   return _elm.Graphics.Element.values;
+   if (_elm.Graphics.Element.values) return _elm.Graphics.Element.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Color = Elm.Color.make(_elm),
@@ -4286,180 +4081,76 @@ Elm.Graphics.Element.make = function (_elm) {
    var down = DDown;
    var DUp = {ctor: "DUp"};
    var up = DUp;
-   var RawPosition = F4(function (a,b,c,d) {
-      return {horizontal: a,vertical: b,x: c,y: d};
-   });
-   var Position = function (a) {
-      return {ctor: "Position",_0: a};
-   };
-   var Relative = function (a) {
-      return {ctor: "Relative",_0: a};
-   };
+   var RawPosition = F4(function (a,b,c,d) {    return {horizontal: a,vertical: b,x: c,y: d};});
+   var Position = function (a) {    return {ctor: "Position",_0: a};};
+   var Relative = function (a) {    return {ctor: "Relative",_0: a};};
    var relative = Relative;
-   var Absolute = function (a) {
-      return {ctor: "Absolute",_0: a};
-   };
+   var Absolute = function (a) {    return {ctor: "Absolute",_0: a};};
    var absolute = Absolute;
    var N = {ctor: "N"};
-   var bottomLeft = Position({horizontal: N
-                             ,vertical: N
-                             ,x: Absolute(0)
-                             ,y: Absolute(0)});
-   var bottomLeftAt = F2(function (x,y) {
-      return Position({horizontal: N,vertical: N,x: x,y: y});
-   });
+   var bottomLeft = Position({horizontal: N,vertical: N,x: Absolute(0),y: Absolute(0)});
+   var bottomLeftAt = F2(function (x,y) {    return Position({horizontal: N,vertical: N,x: x,y: y});});
    var Z = {ctor: "Z"};
-   var middle = Position({horizontal: Z
-                         ,vertical: Z
-                         ,x: Relative(0.5)
-                         ,y: Relative(0.5)});
-   var midLeft = Position({horizontal: N
-                          ,vertical: Z
-                          ,x: Absolute(0)
-                          ,y: Relative(0.5)});
-   var midBottom = Position({horizontal: Z
-                            ,vertical: N
-                            ,x: Relative(0.5)
-                            ,y: Absolute(0)});
-   var middleAt = F2(function (x,y) {
-      return Position({horizontal: Z,vertical: Z,x: x,y: y});
-   });
-   var midLeftAt = F2(function (x,y) {
-      return Position({horizontal: N,vertical: Z,x: x,y: y});
-   });
-   var midBottomAt = F2(function (x,y) {
-      return Position({horizontal: Z,vertical: N,x: x,y: y});
-   });
+   var middle = Position({horizontal: Z,vertical: Z,x: Relative(0.5),y: Relative(0.5)});
+   var midLeft = Position({horizontal: N,vertical: Z,x: Absolute(0),y: Relative(0.5)});
+   var midBottom = Position({horizontal: Z,vertical: N,x: Relative(0.5),y: Absolute(0)});
+   var middleAt = F2(function (x,y) {    return Position({horizontal: Z,vertical: Z,x: x,y: y});});
+   var midLeftAt = F2(function (x,y) {    return Position({horizontal: N,vertical: Z,x: x,y: y});});
+   var midBottomAt = F2(function (x,y) {    return Position({horizontal: Z,vertical: N,x: x,y: y});});
    var P = {ctor: "P"};
-   var topLeft = Position({horizontal: N
-                          ,vertical: P
-                          ,x: Absolute(0)
-                          ,y: Absolute(0)});
-   var topRight = Position({horizontal: P
-                           ,vertical: P
-                           ,x: Absolute(0)
-                           ,y: Absolute(0)});
-   var bottomRight = Position({horizontal: P
-                              ,vertical: N
-                              ,x: Absolute(0)
-                              ,y: Absolute(0)});
-   var midRight = Position({horizontal: P
-                           ,vertical: Z
-                           ,x: Absolute(0)
-                           ,y: Relative(0.5)});
-   var midTop = Position({horizontal: Z
-                         ,vertical: P
-                         ,x: Relative(0.5)
-                         ,y: Absolute(0)});
-   var topLeftAt = F2(function (x,y) {
-      return Position({horizontal: N,vertical: P,x: x,y: y});
-   });
-   var topRightAt = F2(function (x,y) {
-      return Position({horizontal: P,vertical: P,x: x,y: y});
-   });
-   var bottomRightAt = F2(function (x,y) {
-      return Position({horizontal: P,vertical: N,x: x,y: y});
-   });
-   var midRightAt = F2(function (x,y) {
-      return Position({horizontal: P,vertical: Z,x: x,y: y});
-   });
-   var midTopAt = F2(function (x,y) {
-      return Position({horizontal: Z,vertical: P,x: x,y: y});
-   });
+   var topLeft = Position({horizontal: N,vertical: P,x: Absolute(0),y: Absolute(0)});
+   var topRight = Position({horizontal: P,vertical: P,x: Absolute(0),y: Absolute(0)});
+   var bottomRight = Position({horizontal: P,vertical: N,x: Absolute(0),y: Absolute(0)});
+   var midRight = Position({horizontal: P,vertical: Z,x: Absolute(0),y: Relative(0.5)});
+   var midTop = Position({horizontal: Z,vertical: P,x: Relative(0.5),y: Absolute(0)});
+   var topLeftAt = F2(function (x,y) {    return Position({horizontal: N,vertical: P,x: x,y: y});});
+   var topRightAt = F2(function (x,y) {    return Position({horizontal: P,vertical: P,x: x,y: y});});
+   var bottomRightAt = F2(function (x,y) {    return Position({horizontal: P,vertical: N,x: x,y: y});});
+   var midRightAt = F2(function (x,y) {    return Position({horizontal: P,vertical: Z,x: x,y: y});});
+   var midTopAt = F2(function (x,y) {    return Position({horizontal: Z,vertical: P,x: x,y: y});});
    var justified = $Native$Graphics$Element.block("justify");
    var centered = $Native$Graphics$Element.block("center");
    var rightAligned = $Native$Graphics$Element.block("right");
    var leftAligned = $Native$Graphics$Element.block("left");
-   var show = function (value) {
-      return leftAligned($Text.monospace($Text.fromString($Basics.toString(value))));
-   };
+   var show = function (value) {    return leftAligned($Text.monospace($Text.fromString($Basics.toString(value))));};
    var Tiled = {ctor: "Tiled"};
-   var Cropped = function (a) {
-      return {ctor: "Cropped",_0: a};
-   };
+   var Cropped = function (a) {    return {ctor: "Cropped",_0: a};};
    var Fitted = {ctor: "Fitted"};
    var Plain = {ctor: "Plain"};
    var Custom = {ctor: "Custom"};
    var RawHtml = {ctor: "RawHtml"};
    var Spacer = {ctor: "Spacer"};
-   var Flow = F2(function (a,b) {
-      return {ctor: "Flow",_0: a,_1: b};
-   });
-   var Container = F2(function (a,b) {
-      return {ctor: "Container",_0: a,_1: b};
-   });
-   var Image = F4(function (a,b,c,d) {
-      return {ctor: "Image",_0: a,_1: b,_2: c,_3: d};
-   });
+   var Flow = F2(function (a,b) {    return {ctor: "Flow",_0: a,_1: b};});
+   var Container = F2(function (a,b) {    return {ctor: "Container",_0: a,_1: b};});
+   var Image = F4(function (a,b,c,d) {    return {ctor: "Image",_0: a,_1: b,_2: c,_3: d};});
    var newElement = $Native$Graphics$Element.newElement;
-   var image = F3(function (w,h,src) {
-      return A3(newElement,w,h,A4(Image,Plain,w,h,src));
-   });
-   var fittedImage = F3(function (w,h,src) {
-      return A3(newElement,w,h,A4(Image,Fitted,w,h,src));
-   });
-   var croppedImage = F4(function (pos,w,h,src) {
-      return A3(newElement,w,h,A4(Image,Cropped(pos),w,h,src));
-   });
-   var tiledImage = F3(function (w,h,src) {
-      return A3(newElement,w,h,A4(Image,Tiled,w,h,src));
-   });
-   var container = F4(function (w,h,_p0,e) {
-      var _p1 = _p0;
-      return A3(newElement,w,h,A2(Container,_p1._0,e));
-   });
-   var spacer = F2(function (w,h) {
-      return A3(newElement,w,h,Spacer);
-   });
-   var sizeOf = function (_p2) {
-      var _p3 = _p2;
-      var _p4 = _p3._0;
-      return {ctor: "_Tuple2"
-             ,_0: _p4.props.width
-             ,_1: _p4.props.height};
-   };
-   var heightOf = function (_p5) {
-      var _p6 = _p5;
-      return _p6._0.props.height;
-   };
-   var widthOf = function (_p7) {
-      var _p8 = _p7;
-      return _p8._0.props.width;
-   };
+   var image = F3(function (w,h,src) {    return A3(newElement,w,h,A4(Image,Plain,w,h,src));});
+   var fittedImage = F3(function (w,h,src) {    return A3(newElement,w,h,A4(Image,Fitted,w,h,src));});
+   var croppedImage = F4(function (pos,w,h,src) {    return A3(newElement,w,h,A4(Image,Cropped(pos),w,h,src));});
+   var tiledImage = F3(function (w,h,src) {    return A3(newElement,w,h,A4(Image,Tiled,w,h,src));});
+   var container = F4(function (w,h,_p0,e) {    var _p1 = _p0;return A3(newElement,w,h,A2(Container,_p1._0,e));});
+   var spacer = F2(function (w,h) {    return A3(newElement,w,h,Spacer);});
+   var sizeOf = function (_p2) {    var _p3 = _p2;var _p4 = _p3._0;return {ctor: "_Tuple2",_0: _p4.props.width,_1: _p4.props.height};};
+   var heightOf = function (_p5) {    var _p6 = _p5;return _p6._0.props.height;};
+   var widthOf = function (_p7) {    var _p8 = _p7;return _p8._0.props.width;};
    var above = F2(function (hi,lo) {
-      return A3(newElement,
-      A2($Basics.max,widthOf(hi),widthOf(lo)),
-      heightOf(hi) + heightOf(lo),
-      A2(Flow,DDown,_U.list([hi,lo])));
+      return A3(newElement,A2($Basics.max,widthOf(hi),widthOf(lo)),heightOf(hi) + heightOf(lo),A2(Flow,DDown,_U.list([hi,lo])));
    });
    var below = F2(function (lo,hi) {
-      return A3(newElement,
-      A2($Basics.max,widthOf(hi),widthOf(lo)),
-      heightOf(hi) + heightOf(lo),
-      A2(Flow,DDown,_U.list([hi,lo])));
+      return A3(newElement,A2($Basics.max,widthOf(hi),widthOf(lo)),heightOf(hi) + heightOf(lo),A2(Flow,DDown,_U.list([hi,lo])));
    });
    var beside = F2(function (lft,rht) {
-      return A3(newElement,
-      widthOf(lft) + widthOf(rht),
-      A2($Basics.max,heightOf(lft),heightOf(rht)),
-      A2(Flow,right,_U.list([lft,rht])));
+      return A3(newElement,widthOf(lft) + widthOf(rht),A2($Basics.max,heightOf(lft),heightOf(rht)),A2(Flow,right,_U.list([lft,rht])));
    });
    var layers = function (es) {
       var hs = A2($List.map,heightOf,es);
       var ws = A2($List.map,widthOf,es);
-      return A3(newElement,
-      A2($Maybe.withDefault,0,$List.maximum(ws)),
-      A2($Maybe.withDefault,0,$List.maximum(hs)),
-      A2(Flow,DOut,es));
+      return A3(newElement,A2($Maybe.withDefault,0,$List.maximum(ws)),A2($Maybe.withDefault,0,$List.maximum(hs)),A2(Flow,DOut,es));
    };
    var empty = A2(spacer,0,0);
    var flow = F2(function (dir,es) {
-      var newFlow = F2(function (w,h) {
-         return A3(newElement,w,h,A2(Flow,dir,es));
-      });
-      var maxOrZero = function (list) {
-         return A2($Maybe.withDefault,0,$List.maximum(list));
-      };
+      var newFlow = F2(function (w,h) {    return A3(newElement,w,h,A2(Flow,dir,es));});
+      var maxOrZero = function (list) {    return A2($Maybe.withDefault,0,$List.maximum(list));};
       var hs = A2($List.map,heightOf,es);
       var ws = A2($List.map,widthOf,es);
       if (_U.eq(es,_U.list([]))) return empty; else {
@@ -4473,20 +4164,8 @@ Elm.Graphics.Element.make = function (_elm) {
                default: return A2(newFlow,maxOrZero(ws),maxOrZero(hs));}
          }
    });
-   var Properties = F9(function (a,b,c,d,e,f,g,h,i) {
-      return {id: a
-             ,width: b
-             ,height: c
-             ,opacity: d
-             ,color: e
-             ,href: f
-             ,tag: g
-             ,hover: h
-             ,click: i};
-   });
-   var Element_elm_builtin = function (a) {
-      return {ctor: "Element_elm_builtin",_0: a};
-   };
+   var Properties = F9(function (a,b,c,d,e,f,g,h,i) {    return {id: a,width: b,height: c,opacity: d,color: e,href: f,tag: g,hover: h,click: i};});
+   var Element_elm_builtin = function (a) {    return {ctor: "Element_elm_builtin",_0: a};};
    var width = F2(function (newWidth,_p10) {
       var _p11 = _p10;
       var _p14 = _p11._0.props;
@@ -4494,44 +4173,29 @@ Elm.Graphics.Element.make = function (_elm) {
       var newHeight = function () {
          var _p12 = _p13;
          switch (_p12.ctor)
-         {case "Image":
-            return $Basics.round($Basics.toFloat(_p12._2) / $Basics.toFloat(_p12._1) * $Basics.toFloat(newWidth));
-            case "RawHtml":
-            return $Basics.snd(A2($Native$Graphics$Element.htmlHeight,
-              newWidth,
-              _p13));
+         {case "Image": return $Basics.round($Basics.toFloat(_p12._2) / $Basics.toFloat(_p12._1) * $Basics.toFloat(newWidth));
+            case "RawHtml": return $Basics.snd(A2($Native$Graphics$Element.htmlHeight,newWidth,_p13));
             default: return _p14.height;}
       }();
-      return Element_elm_builtin({element: _p13
-                                 ,props: _U.update(_p14,{width: newWidth,height: newHeight})});
+      return Element_elm_builtin({element: _p13,props: _U.update(_p14,{width: newWidth,height: newHeight})});
    });
    var height = F2(function (newHeight,_p15) {
       var _p16 = _p15;
-      return Element_elm_builtin({element: _p16._0.element
-                                 ,props: _U.update(_p16._0.props,{height: newHeight})});
+      return Element_elm_builtin({element: _p16._0.element,props: _U.update(_p16._0.props,{height: newHeight})});
    });
-   var size = F3(function (w,h,e) {
-      return A2(height,h,A2(width,w,e));
-   });
+   var size = F3(function (w,h,e) {    return A2(height,h,A2(width,w,e));});
    var opacity = F2(function (givenOpacity,_p17) {
       var _p18 = _p17;
-      return Element_elm_builtin({element: _p18._0.element
-                                 ,props: _U.update(_p18._0.props,{opacity: givenOpacity})});
+      return Element_elm_builtin({element: _p18._0.element,props: _U.update(_p18._0.props,{opacity: givenOpacity})});
    });
    var color = F2(function (clr,_p19) {
       var _p20 = _p19;
-      return Element_elm_builtin({element: _p20._0.element
-                                 ,props: _U.update(_p20._0.props,{color: $Maybe.Just(clr)})});
+      return Element_elm_builtin({element: _p20._0.element,props: _U.update(_p20._0.props,{color: $Maybe.Just(clr)})});
    });
-   var tag = F2(function (name,_p21) {
-      var _p22 = _p21;
-      return Element_elm_builtin({element: _p22._0.element
-                                 ,props: _U.update(_p22._0.props,{tag: name})});
-   });
+   var tag = F2(function (name,_p21) {    var _p22 = _p21;return Element_elm_builtin({element: _p22._0.element,props: _U.update(_p22._0.props,{tag: name})});});
    var link = F2(function (href,_p23) {
       var _p24 = _p23;
-      return Element_elm_builtin({element: _p24._0.element
-                                 ,props: _U.update(_p24._0.props,{href: href})});
+      return Element_elm_builtin({element: _p24._0.element,props: _U.update(_p24._0.props,{href: href})});
    });
    return _elm.Graphics.Element.values = {_op: _op
                                          ,image: image
@@ -4594,8 +4258,7 @@ Elm.Graphics.Collage.make = function (_elm) {
    "use strict";
    _elm.Graphics = _elm.Graphics || {};
    _elm.Graphics.Collage = _elm.Graphics.Collage || {};
-   if (_elm.Graphics.Collage.values)
-   return _elm.Graphics.Collage.values;
+   if (_elm.Graphics.Collage.values) return _elm.Graphics.Collage.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Color = Elm.Color.make(_elm),
@@ -4621,166 +4284,68 @@ Elm.Graphics.Collage.make = function (_elm) {
       var hw = w / 2;
       var n = 50;
       var t = 2 * $Basics.pi / n;
-      var f = function (i) {
-         return {ctor: "_Tuple2"
-                ,_0: hw * $Basics.cos(t * i)
-                ,_1: hh * $Basics.sin(t * i)};
-      };
+      var f = function (i) {    return {ctor: "_Tuple2",_0: hw * $Basics.cos(t * i),_1: hh * $Basics.sin(t * i)};};
       return Shape(A2($List.map,f,_U.range(0,n - 1)));
    });
    var circle = function (r) {    return A2(oval,2 * r,2 * r);};
    var ngon = F2(function (n,r) {
       var m = $Basics.toFloat(n);
       var t = 2 * $Basics.pi / m;
-      var f = function (i) {
-         return {ctor: "_Tuple2"
-                ,_0: r * $Basics.cos(t * i)
-                ,_1: r * $Basics.sin(t * i)};
-      };
+      var f = function (i) {    return {ctor: "_Tuple2",_0: r * $Basics.cos(t * i),_1: r * $Basics.sin(t * i)};};
       return Shape(A2($List.map,f,_U.range(0,m - 1)));
    });
    var Path = function (a) {    return {ctor: "Path",_0: a};};
    var path = function (ps) {    return Path(ps);};
-   var segment = F2(function (p1,p2) {
-      return Path(_U.list([p1,p2]));
-   });
+   var segment = F2(function (p1,p2) {    return Path(_U.list([p1,p2]));});
    var collage = $Native$Graphics$Collage.collage;
    var Fill = function (a) {    return {ctor: "Fill",_0: a};};
    var Line = function (a) {    return {ctor: "Line",_0: a};};
-   var FGroup = F2(function (a,b) {
-      return {ctor: "FGroup",_0: a,_1: b};
-   });
-   var FElement = function (a) {
-      return {ctor: "FElement",_0: a};
-   };
-   var FImage = F4(function (a,b,c,d) {
-      return {ctor: "FImage",_0: a,_1: b,_2: c,_3: d};
-   });
+   var FGroup = F2(function (a,b) {    return {ctor: "FGroup",_0: a,_1: b};});
+   var FElement = function (a) {    return {ctor: "FElement",_0: a};};
+   var FImage = F4(function (a,b,c,d) {    return {ctor: "FImage",_0: a,_1: b,_2: c,_3: d};});
    var FText = function (a) {    return {ctor: "FText",_0: a};};
-   var FOutlinedText = F2(function (a,b) {
-      return {ctor: "FOutlinedText",_0: a,_1: b};
-   });
-   var FShape = F2(function (a,b) {
-      return {ctor: "FShape",_0: a,_1: b};
-   });
-   var FPath = F2(function (a,b) {
-      return {ctor: "FPath",_0: a,_1: b};
-   });
-   var LineStyle = F6(function (a,b,c,d,e,f) {
-      return {color: a
-             ,width: b
-             ,cap: c
-             ,join: d
-             ,dashing: e
-             ,dashOffset: f};
-   });
+   var FOutlinedText = F2(function (a,b) {    return {ctor: "FOutlinedText",_0: a,_1: b};});
+   var FShape = F2(function (a,b) {    return {ctor: "FShape",_0: a,_1: b};});
+   var FPath = F2(function (a,b) {    return {ctor: "FPath",_0: a,_1: b};});
+   var LineStyle = F6(function (a,b,c,d,e,f) {    return {color: a,width: b,cap: c,join: d,dashing: e,dashOffset: f};});
    var Clipped = {ctor: "Clipped"};
    var Sharp = function (a) {    return {ctor: "Sharp",_0: a};};
    var Smooth = {ctor: "Smooth"};
    var Padded = {ctor: "Padded"};
    var Round = {ctor: "Round"};
    var Flat = {ctor: "Flat"};
-   var defaultLine = {color: $Color.black
-                     ,width: 1
-                     ,cap: Flat
-                     ,join: Sharp(10)
-                     ,dashing: _U.list([])
-                     ,dashOffset: 0};
-   var solid = function (clr) {
-      return _U.update(defaultLine,{color: clr});
-   };
-   var dashed = function (clr) {
-      return _U.update(defaultLine,
-      {color: clr,dashing: _U.list([8,4])});
-   };
-   var dotted = function (clr) {
-      return _U.update(defaultLine,
-      {color: clr,dashing: _U.list([3,3])});
-   };
+   var defaultLine = {color: $Color.black,width: 1,cap: Flat,join: Sharp(10),dashing: _U.list([]),dashOffset: 0};
+   var solid = function (clr) {    return _U.update(defaultLine,{color: clr});};
+   var dashed = function (clr) {    return _U.update(defaultLine,{color: clr,dashing: _U.list([8,4])});};
+   var dotted = function (clr) {    return _U.update(defaultLine,{color: clr,dashing: _U.list([3,3])});};
    var Grad = function (a) {    return {ctor: "Grad",_0: a};};
-   var Texture = function (a) {
-      return {ctor: "Texture",_0: a};
-   };
+   var Texture = function (a) {    return {ctor: "Texture",_0: a};};
    var Solid = function (a) {    return {ctor: "Solid",_0: a};};
-   var Form_elm_builtin = function (a) {
-      return {ctor: "Form_elm_builtin",_0: a};
-   };
-   var form = function (f) {
-      return Form_elm_builtin({theta: 0
-                              ,scale: 1
-                              ,x: 0
-                              ,y: 0
-                              ,alpha: 1
-                              ,form: f});
-   };
-   var fill = F2(function (style,_p0) {
-      var _p1 = _p0;
-      return form(A2(FShape,Fill(style),_p1._0));
-   });
-   var filled = F2(function (color,shape) {
-      return A2(fill,Solid(color),shape);
-   });
-   var textured = F2(function (src,shape) {
-      return A2(fill,Texture(src),shape);
-   });
-   var gradient = F2(function (grad,shape) {
-      return A2(fill,Grad(grad),shape);
-   });
-   var outlined = F2(function (style,_p2) {
-      var _p3 = _p2;
-      return form(A2(FShape,Line(style),_p3._0));
-   });
-   var traced = F2(function (style,_p4) {
-      var _p5 = _p4;
-      return form(A2(FPath,style,_p5._0));
-   });
-   var sprite = F4(function (w,h,pos,src) {
-      return form(A4(FImage,w,h,pos,src));
-   });
+   var Form_elm_builtin = function (a) {    return {ctor: "Form_elm_builtin",_0: a};};
+   var form = function (f) {    return Form_elm_builtin({theta: 0,scale: 1,x: 0,y: 0,alpha: 1,form: f});};
+   var fill = F2(function (style,_p0) {    var _p1 = _p0;return form(A2(FShape,Fill(style),_p1._0));});
+   var filled = F2(function (color,shape) {    return A2(fill,Solid(color),shape);});
+   var textured = F2(function (src,shape) {    return A2(fill,Texture(src),shape);});
+   var gradient = F2(function (grad,shape) {    return A2(fill,Grad(grad),shape);});
+   var outlined = F2(function (style,_p2) {    var _p3 = _p2;return form(A2(FShape,Line(style),_p3._0));});
+   var traced = F2(function (style,_p4) {    var _p5 = _p4;return form(A2(FPath,style,_p5._0));});
+   var sprite = F4(function (w,h,pos,src) {    return form(A4(FImage,w,h,pos,src));});
    var toForm = function (e) {    return form(FElement(e));};
-   var group = function (fs) {
-      return form(A2(FGroup,$Transform2D.identity,fs));
-   };
-   var groupTransform = F2(function (matrix,fs) {
-      return form(A2(FGroup,matrix,fs));
-   });
+   var group = function (fs) {    return form(A2(FGroup,$Transform2D.identity,fs));};
+   var groupTransform = F2(function (matrix,fs) {    return form(A2(FGroup,matrix,fs));});
    var text = function (t) {    return form(FText(t));};
-   var outlinedText = F2(function (ls,t) {
-      return form(A2(FOutlinedText,ls,t));
-   });
+   var outlinedText = F2(function (ls,t) {    return form(A2(FOutlinedText,ls,t));});
    var move = F2(function (_p7,_p6) {
       var _p8 = _p7;
       var _p9 = _p6;
       var _p10 = _p9._0;
-      return Form_elm_builtin(_U.update(_p10,
-      {x: _p10.x + _p8._0,y: _p10.y + _p8._1}));
+      return Form_elm_builtin(_U.update(_p10,{x: _p10.x + _p8._0,y: _p10.y + _p8._1}));
    });
-   var moveX = F2(function (x,_p11) {
-      var _p12 = _p11;
-      var _p13 = _p12._0;
-      return Form_elm_builtin(_U.update(_p13,{x: _p13.x + x}));
-   });
-   var moveY = F2(function (y,_p14) {
-      var _p15 = _p14;
-      var _p16 = _p15._0;
-      return Form_elm_builtin(_U.update(_p16,{y: _p16.y + y}));
-   });
-   var scale = F2(function (s,_p17) {
-      var _p18 = _p17;
-      var _p19 = _p18._0;
-      return Form_elm_builtin(_U.update(_p19,
-      {scale: _p19.scale * s}));
-   });
-   var rotate = F2(function (t,_p20) {
-      var _p21 = _p20;
-      var _p22 = _p21._0;
-      return Form_elm_builtin(_U.update(_p22,
-      {theta: _p22.theta + t}));
-   });
-   var alpha = F2(function (a,_p23) {
-      var _p24 = _p23;
-      return Form_elm_builtin(_U.update(_p24._0,{alpha: a}));
-   });
+   var moveX = F2(function (x,_p11) {    var _p12 = _p11;var _p13 = _p12._0;return Form_elm_builtin(_U.update(_p13,{x: _p13.x + x}));});
+   var moveY = F2(function (y,_p14) {    var _p15 = _p14;var _p16 = _p15._0;return Form_elm_builtin(_U.update(_p16,{y: _p16.y + y}));});
+   var scale = F2(function (s,_p17) {    var _p18 = _p17;var _p19 = _p18._0;return Form_elm_builtin(_U.update(_p19,{scale: _p19.scale * s}));});
+   var rotate = F2(function (t,_p20) {    var _p21 = _p20;var _p22 = _p21._0;return Form_elm_builtin(_U.update(_p22,{theta: _p22.theta + t}));});
+   var alpha = F2(function (a,_p23) {    var _p24 = _p23;return Form_elm_builtin(_U.update(_p24._0,{alpha: a}));});
    return _elm.Graphics.Collage.values = {_op: _op
                                          ,collage: collage
                                          ,toForm: toForm
@@ -4891,64 +4456,28 @@ Elm.Debug.make = function (_elm) {
    "use strict";
    _elm.Debug = _elm.Debug || {};
    if (_elm.Debug.values) return _elm.Debug.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Graphics$Collage = Elm.Graphics.Collage.make(_elm),
-   $Native$Debug = Elm.Native.Debug.make(_elm);
+   var _U = Elm.Native.Utils.make(_elm),$Graphics$Collage = Elm.Graphics.Collage.make(_elm),$Native$Debug = Elm.Native.Debug.make(_elm);
    var _op = {};
    var trace = $Native$Debug.tracePath;
    var watchSummary = $Native$Debug.watchSummary;
    var watch = $Native$Debug.watch;
    var crash = $Native$Debug.crash;
    var log = $Native$Debug.log;
-   return _elm.Debug.values = {_op: _op
-                              ,log: log
-                              ,crash: crash
-                              ,watch: watch
-                              ,watchSummary: watchSummary
-                              ,trace: trace};
+   return _elm.Debug.values = {_op: _op,log: log,crash: crash,watch: watch,watchSummary: watchSummary,trace: trace};
 };
 Elm.Result = Elm.Result || {};
 Elm.Result.make = function (_elm) {
    "use strict";
    _elm.Result = _elm.Result || {};
    if (_elm.Result.values) return _elm.Result.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm);
+   var _U = Elm.Native.Utils.make(_elm),$Maybe = Elm.Maybe.make(_elm);
    var _op = {};
-   var toMaybe = function (result) {
-      var _p0 = result;
-      if (_p0.ctor === "Ok") {
-            return $Maybe.Just(_p0._0);
-         } else {
-            return $Maybe.Nothing;
-         }
-   };
-   var withDefault = F2(function (def,result) {
-      var _p1 = result;
-      if (_p1.ctor === "Ok") {
-            return _p1._0;
-         } else {
-            return def;
-         }
-   });
+   var toMaybe = function (result) {    var _p0 = result;if (_p0.ctor === "Ok") {    return $Maybe.Just(_p0._0);} else {    return $Maybe.Nothing;}};
+   var withDefault = F2(function (def,result) {    var _p1 = result;if (_p1.ctor === "Ok") {    return _p1._0;} else {    return def;}});
    var Err = function (a) {    return {ctor: "Err",_0: a};};
-   var andThen = F2(function (result,callback) {
-      var _p2 = result;
-      if (_p2.ctor === "Ok") {
-            return callback(_p2._0);
-         } else {
-            return Err(_p2._0);
-         }
-   });
+   var andThen = F2(function (result,callback) {    var _p2 = result;if (_p2.ctor === "Ok") {    return callback(_p2._0);} else {    return Err(_p2._0);}});
    var Ok = function (a) {    return {ctor: "Ok",_0: a};};
-   var map = F2(function (func,ra) {
-      var _p3 = ra;
-      if (_p3.ctor === "Ok") {
-            return Ok(func(_p3._0));
-         } else {
-            return Err(_p3._0);
-         }
-   });
+   var map = F2(function (func,ra) {    var _p3 = ra;if (_p3.ctor === "Ok") {    return Ok(func(_p3._0));} else {    return Err(_p3._0);}});
    var map2 = F3(function (func,ra,rb) {
       var _p4 = {ctor: "_Tuple2",_0: ra,_1: rb};
       if (_p4._0.ctor === "Ok") {
@@ -4998,23 +4527,13 @@ Elm.Result.make = function (_elm) {
          }
    });
    var map5 = F6(function (func,ra,rb,rc,rd,re) {
-      var _p7 = {ctor: "_Tuple5"
-                ,_0: ra
-                ,_1: rb
-                ,_2: rc
-                ,_3: rd
-                ,_4: re};
+      var _p7 = {ctor: "_Tuple5",_0: ra,_1: rb,_2: rc,_3: rd,_4: re};
       if (_p7._0.ctor === "Ok") {
             if (_p7._1.ctor === "Ok") {
                   if (_p7._2.ctor === "Ok") {
                         if (_p7._3.ctor === "Ok") {
                               if (_p7._4.ctor === "Ok") {
-                                    return Ok(A5(func,
-                                    _p7._0._0,
-                                    _p7._1._0,
-                                    _p7._2._0,
-                                    _p7._3._0,
-                                    _p7._4._0));
+                                    return Ok(A5(func,_p7._0._0,_p7._1._0,_p7._2._0,_p7._3._0,_p7._4._0));
                                  } else {
                                     return Err(_p7._4._0);
                                  }
@@ -5031,22 +4550,8 @@ Elm.Result.make = function (_elm) {
             return Err(_p7._0._0);
          }
    });
-   var formatError = F2(function (f,result) {
-      var _p8 = result;
-      if (_p8.ctor === "Ok") {
-            return Ok(_p8._0);
-         } else {
-            return Err(f(_p8._0));
-         }
-   });
-   var fromMaybe = F2(function (err,maybe) {
-      var _p9 = maybe;
-      if (_p9.ctor === "Just") {
-            return Ok(_p9._0);
-         } else {
-            return Err(err);
-         }
-   });
+   var formatError = F2(function (f,result) {    var _p8 = result;if (_p8.ctor === "Ok") {    return Ok(_p8._0);} else {    return Err(f(_p8._0));}});
+   var fromMaybe = F2(function (err,maybe) {    var _p9 = maybe;if (_p9.ctor === "Just") {    return Ok(_p9._0);} else {    return Err(err);}});
    return _elm.Result.values = {_op: _op
                                ,withDefault: withDefault
                                ,map: map
@@ -5771,51 +5276,21 @@ Elm.Task.make = function (_elm) {
    var _op = {};
    var sleep = $Native$Task.sleep;
    var spawn = $Native$Task.spawn;
-   var ThreadID = function (a) {
-      return {ctor: "ThreadID",_0: a};
-   };
+   var ThreadID = function (a) {    return {ctor: "ThreadID",_0: a};};
    var onError = $Native$Task.catch_;
    var andThen = $Native$Task.andThen;
    var fail = $Native$Task.fail;
-   var mapError = F2(function (f,task) {
-      return A2(onError,
-      task,
-      function (err) {
-         return fail(f(err));
-      });
-   });
+   var mapError = F2(function (f,task) {    return A2(onError,task,function (err) {    return fail(f(err));});});
    var succeed = $Native$Task.succeed;
-   var map = F2(function (func,taskA) {
-      return A2(andThen,
-      taskA,
-      function (a) {
-         return succeed(func(a));
-      });
-   });
+   var map = F2(function (func,taskA) {    return A2(andThen,taskA,function (a) {    return succeed(func(a));});});
    var map2 = F3(function (func,taskA,taskB) {
-      return A2(andThen,
-      taskA,
-      function (a) {
-         return A2(andThen,
-         taskB,
-         function (b) {
-            return succeed(A2(func,a,b));
-         });
-      });
+      return A2(andThen,taskA,function (a) {    return A2(andThen,taskB,function (b) {    return succeed(A2(func,a,b));});});
    });
    var map3 = F4(function (func,taskA,taskB,taskC) {
       return A2(andThen,
       taskA,
       function (a) {
-         return A2(andThen,
-         taskB,
-         function (b) {
-            return A2(andThen,
-            taskC,
-            function (c) {
-               return succeed(A3(func,a,b,c));
-            });
-         });
+         return A2(andThen,taskB,function (b) {    return A2(andThen,taskC,function (c) {    return succeed(A3(func,a,b,c));});});
       });
    });
    var map4 = F5(function (func,taskA,taskB,taskC,taskD) {
@@ -5825,15 +5300,7 @@ Elm.Task.make = function (_elm) {
          return A2(andThen,
          taskB,
          function (b) {
-            return A2(andThen,
-            taskC,
-            function (c) {
-               return A2(andThen,
-               taskD,
-               function (d) {
-                  return succeed(A4(func,a,b,c,d));
-               });
-            });
+            return A2(andThen,taskC,function (c) {    return A2(andThen,taskD,function (d) {    return succeed(A4(func,a,b,c,d));});});
          });
       });
    });
@@ -5847,71 +5314,26 @@ Elm.Task.make = function (_elm) {
             return A2(andThen,
             taskC,
             function (c) {
-               return A2(andThen,
-               taskD,
-               function (d) {
-                  return A2(andThen,
-                  taskE,
-                  function (e) {
-                     return succeed(A5(func,a,b,c,d,e));
-                  });
-               });
+               return A2(andThen,taskD,function (d) {    return A2(andThen,taskE,function (e) {    return succeed(A5(func,a,b,c,d,e));});});
             });
          });
       });
    });
    var andMap = F2(function (taskFunc,taskValue) {
-      return A2(andThen,
-      taskFunc,
-      function (func) {
-         return A2(andThen,
-         taskValue,
-         function (value) {
-            return succeed(func(value));
-         });
-      });
+      return A2(andThen,taskFunc,function (func) {    return A2(andThen,taskValue,function (value) {    return succeed(func(value));});});
    });
    var sequence = function (tasks) {
       var _p0 = tasks;
       if (_p0.ctor === "[]") {
             return succeed(_U.list([]));
          } else {
-            return A3(map2,
-            F2(function (x,y) {    return A2($List._op["::"],x,y);}),
-            _p0._0,
-            sequence(_p0._1));
+            return A3(map2,F2(function (x,y) {    return A2($List._op["::"],x,y);}),_p0._0,sequence(_p0._1));
          }
    };
-   var toMaybe = function (task) {
-      return A2(onError,
-      A2(map,$Maybe.Just,task),
-      function (_p1) {
-         return succeed($Maybe.Nothing);
-      });
-   };
-   var fromMaybe = F2(function ($default,maybe) {
-      var _p2 = maybe;
-      if (_p2.ctor === "Just") {
-            return succeed(_p2._0);
-         } else {
-            return fail($default);
-         }
-   });
-   var toResult = function (task) {
-      return A2(onError,
-      A2(map,$Result.Ok,task),
-      function (msg) {
-         return succeed($Result.Err(msg));
-      });
-   };
-   var fromResult = function (result) {
-      var _p3 = result;
-      if (_p3.ctor === "Ok") {
-            return succeed(_p3._0);
-         } else {
-            return fail(_p3._0);
-         }
-   };
+   var toMaybe = function (task) {    return A2(onError,A2(map,$Maybe.Just,task),function (_p1) {    return succeed($Maybe.Nothing);});};
+   var fromMaybe = F2(function ($default,maybe) {    var _p2 = maybe;if (_p2.ctor === "Just") {    return succeed(_p2._0);} else {    return fail($default);}});
+   var toResult = function (task) {    return A2(onError,A2(map,$Result.Ok,task),function (msg) {    return succeed($Result.Err(msg));});};
+   var fromResult = function (result) {    var _p3 = result;if (_p3.ctor === "Ok") {    return succeed(_p3._0);} else {    return fail(_p3._0);}};
    var Task = {ctor: "Task"};
    return _elm.Task.values = {_op: _op
                              ,succeed: succeed
@@ -5948,53 +5370,25 @@ Elm.Signal.make = function (_elm) {
    var _op = {};
    var send = F2(function (_p0,value) {
       var _p1 = _p0;
-      return A2($Task.onError,
-      _p1._0(value),
-      function (_p2) {
-         return $Task.succeed({ctor: "_Tuple0"});
-      });
+      return A2($Task.onError,_p1._0(value),function (_p2) {    return $Task.succeed({ctor: "_Tuple0"});});
    });
-   var Message = function (a) {
-      return {ctor: "Message",_0: a};
-   };
-   var message = F2(function (_p3,value) {
-      var _p4 = _p3;
-      return Message(_p4._0(value));
-   });
+   var Message = function (a) {    return {ctor: "Message",_0: a};};
+   var message = F2(function (_p3,value) {    var _p4 = _p3;return Message(_p4._0(value));});
    var mailbox = $Native$Signal.mailbox;
-   var Address = function (a) {
-      return {ctor: "Address",_0: a};
-   };
-   var forwardTo = F2(function (_p5,f) {
-      var _p6 = _p5;
-      return Address(function (x) {    return _p6._0(f(x));});
-   });
-   var Mailbox = F2(function (a,b) {
-      return {address: a,signal: b};
-   });
+   var Address = function (a) {    return {ctor: "Address",_0: a};};
+   var forwardTo = F2(function (_p5,f) {    var _p6 = _p5;return Address(function (x) {    return _p6._0(f(x));});});
+   var Mailbox = F2(function (a,b) {    return {address: a,signal: b};});
    var sampleOn = $Native$Signal.sampleOn;
    var dropRepeats = $Native$Signal.dropRepeats;
    var filterMap = $Native$Signal.filterMap;
    var filter = F3(function (isOk,base,signal) {
-      return A3(filterMap,
-      function (value) {
-         return isOk(value) ? $Maybe.Just(value) : $Maybe.Nothing;
-      },
-      base,
-      signal);
+      return A3(filterMap,function (value) {    return isOk(value) ? $Maybe.Just(value) : $Maybe.Nothing;},base,signal);
    });
-   var merge = F2(function (left,right) {
-      return A3($Native$Signal.genericMerge,
-      $Basics.always,
-      left,
-      right);
-   });
+   var merge = F2(function (left,right) {    return A3($Native$Signal.genericMerge,$Basics.always,left,right);});
    var mergeMany = function (signalList) {
       var _p7 = $List.reverse(signalList);
       if (_p7.ctor === "[]") {
-            return _U.crashCase("Signal",
-            {start: {line: 184,column: 3},end: {line: 189,column: 40}},
-            _p7)("mergeMany was given an empty list!");
+            return _U.crashCase("Signal",{start: {line: 184,column: 3},end: {line: 189,column: 40}},_p7)("mergeMany was given an empty list!");
          } else {
             return A3($List.foldl,merge,_p7._0,_p7._1);
          }
@@ -7517,23 +6911,16 @@ Elm.Array.make = function (_elm) {
    var _op = {};
    var append = $Native$Array.append;
    var length = $Native$Array.length;
-   var isEmpty = function (array) {
-      return _U.eq(length(array),0);
-   };
+   var isEmpty = function (array) {    return _U.eq(length(array),0);};
    var slice = $Native$Array.slice;
    var set = $Native$Array.set;
    var get = F2(function (i,array) {
-      return _U.cmp(0,i) < 1 && _U.cmp(i,
-      $Native$Array.length(array)) < 0 ? $Maybe.Just(A2($Native$Array.get,
-      i,
-      array)) : $Maybe.Nothing;
+      return _U.cmp(0,i) < 1 && _U.cmp(i,$Native$Array.length(array)) < 0 ? $Maybe.Just(A2($Native$Array.get,i,array)) : $Maybe.Nothing;
    });
    var push = $Native$Array.push;
    var empty = $Native$Array.empty;
    var filter = F2(function (isOkay,arr) {
-      var update = F2(function (x,xs) {
-         return isOkay(x) ? A2($Native$Array.push,x,xs) : xs;
-      });
+      var update = F2(function (x,xs) {    return isOkay(x) ? A2($Native$Array.push,x,xs) : xs;});
       return A3($Native$Array.foldl,update,$Native$Array.empty,arr);
    });
    var foldr = $Native$Array.foldr;
@@ -7542,18 +6929,14 @@ Elm.Array.make = function (_elm) {
    var map = $Native$Array.map;
    var toIndexedList = function (array) {
       return A3($List.map2,
-      F2(function (v0,v1) {
-         return {ctor: "_Tuple2",_0: v0,_1: v1};
-      }),
+      F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}),
       _U.range(0,$Native$Array.length(array) - 1),
       $Native$Array.toList(array));
    };
    var toList = $Native$Array.toList;
    var fromList = $Native$Array.fromList;
    var initialize = $Native$Array.initialize;
-   var repeat = F2(function (n,e) {
-      return A2(initialize,n,$Basics.always(e));
-   });
+   var repeat = F2(function (n,e) {    return A2(initialize,n,$Basics.always(e));});
    var Array = {ctor: "Array"};
    return _elm.Array.values = {_op: _op
                               ,empty: empty
@@ -7943,9 +7326,7 @@ Elm.Char.make = function (_elm) {
    "use strict";
    _elm.Char = _elm.Char || {};
    if (_elm.Char.values) return _elm.Char.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Basics = Elm.Basics.make(_elm),
-   $Native$Char = Elm.Native.Char.make(_elm);
+   var _U = Elm.Native.Utils.make(_elm),$Basics = Elm.Basics.make(_elm),$Native$Char = Elm.Native.Char.make(_elm);
    var _op = {};
    var fromCode = $Native$Char.fromCode;
    var toCode = $Native$Char.toCode;
@@ -7953,20 +7334,13 @@ Elm.Char.make = function (_elm) {
    var toLocaleUpper = $Native$Char.toLocaleUpper;
    var toLower = $Native$Char.toLower;
    var toUpper = $Native$Char.toUpper;
-   var isBetween = F3(function (low,high,$char) {
-      var code = toCode($char);
-      return _U.cmp(code,toCode(low)) > -1 && _U.cmp(code,
-      toCode(high)) < 1;
-   });
+   var isBetween = F3(function (low,high,$char) {    var code = toCode($char);return _U.cmp(code,toCode(low)) > -1 && _U.cmp(code,toCode(high)) < 1;});
    var isUpper = A2(isBetween,_U.chr("A"),_U.chr("Z"));
    var isLower = A2(isBetween,_U.chr("a"),_U.chr("z"));
    var isDigit = A2(isBetween,_U.chr("0"),_U.chr("9"));
    var isOctDigit = A2(isBetween,_U.chr("0"),_U.chr("7"));
    var isHexDigit = function ($char) {
-      return isDigit($char) || (A3(isBetween,
-      _U.chr("a"),
-      _U.chr("f"),
-      $char) || A3(isBetween,_U.chr("A"),_U.chr("F"),$char));
+      return isDigit($char) || (A3(isBetween,_U.chr("a"),_U.chr("f"),$char) || A3(isBetween,_U.chr("A"),_U.chr("F"),$char));
    };
    return _elm.Char.values = {_op: _op
                              ,isUpper: isUpper
@@ -7986,10 +7360,7 @@ Elm.String.make = function (_elm) {
    "use strict";
    _elm.String = _elm.String || {};
    if (_elm.String.values) return _elm.String.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Native$String = Elm.Native.String.make(_elm),
-   $Result = Elm.Result.make(_elm);
+   var _U = Elm.Native.Utils.make(_elm),$Maybe = Elm.Maybe.make(_elm),$Native$String = Elm.Native.String.make(_elm),$Result = Elm.Result.make(_elm);
    var _op = {};
    var fromList = $Native$String.fromList;
    var toList = $Native$String.toList;
@@ -8093,9 +7464,7 @@ Elm.Dict.make = function (_elm) {
          if (_p0.ctor === "RBEmpty_elm_builtin") {
                return acc;
             } else {
-               var _v1 = f,
-               _v2 = A3(f,_p0._1,_p0._2,A3(foldr,f,acc,_p0._4)),
-               _v3 = _p0._3;
+               var _v1 = f,_v2 = A3(f,_p0._1,_p0._2,A3(foldr,f,acc,_p0._4)),_v3 = _p0._3;
                f = _v1;
                acc = _v2;
                t = _v3;
@@ -8103,31 +7472,10 @@ Elm.Dict.make = function (_elm) {
             }
       }
    });
-   var keys = function (dict) {
-      return A3(foldr,
-      F3(function (key,value,keyList) {
-         return A2($List._op["::"],key,keyList);
-      }),
-      _U.list([]),
-      dict);
-   };
-   var values = function (dict) {
-      return A3(foldr,
-      F3(function (key,value,valueList) {
-         return A2($List._op["::"],value,valueList);
-      }),
-      _U.list([]),
-      dict);
-   };
+   var keys = function (dict) {    return A3(foldr,F3(function (key,value,keyList) {    return A2($List._op["::"],key,keyList);}),_U.list([]),dict);};
+   var values = function (dict) {    return A3(foldr,F3(function (key,value,valueList) {    return A2($List._op["::"],value,valueList);}),_U.list([]),dict);};
    var toList = function (dict) {
-      return A3(foldr,
-      F3(function (key,value,list) {
-         return A2($List._op["::"],
-         {ctor: "_Tuple2",_0: key,_1: value},
-         list);
-      }),
-      _U.list([]),
-      dict);
+      return A3(foldr,F3(function (key,value,list) {    return A2($List._op["::"],{ctor: "_Tuple2",_0: key,_1: value},list);}),_U.list([]),dict);
    };
    var foldl = F3(function (f,acc,dict) {
       foldl: while (true) {
@@ -8135,9 +7483,7 @@ Elm.Dict.make = function (_elm) {
          if (_p1.ctor === "RBEmpty_elm_builtin") {
                return acc;
             } else {
-               var _v5 = f,
-               _v6 = A3(f,_p1._1,_p1._2,A3(foldl,f,acc,_p1._3)),
-               _v7 = _p1._4;
+               var _v5 = f,_v6 = A3(f,_p1._1,_p1._2,A3(foldl,f,acc,_p1._3)),_v7 = _p1._4;
                f = _v5;
                acc = _v6;
                dict = _v7;
@@ -8212,14 +7558,7 @@ Elm.Dict.make = function (_elm) {
             }
       }
    });
-   var member = F2(function (key,dict) {
-      var _p6 = A2(get,key,dict);
-      if (_p6.ctor === "Just") {
-            return true;
-         } else {
-            return false;
-         }
-   });
+   var member = F2(function (key,dict) {    var _p6 = A2(get,key,dict);if (_p6.ctor === "Just") {    return true;} else {    return false;}});
    var maxWithDefault = F3(function (k,v,r) {
       maxWithDefault: while (true) {
          var _p7 = r;
@@ -8234,17 +7573,8 @@ Elm.Dict.make = function (_elm) {
             }
       }
    });
-   var RBEmpty_elm_builtin = function (a) {
-      return {ctor: "RBEmpty_elm_builtin",_0: a};
-   };
-   var RBNode_elm_builtin = F5(function (a,b,c,d,e) {
-      return {ctor: "RBNode_elm_builtin"
-             ,_0: a
-             ,_1: b
-             ,_2: c
-             ,_3: d
-             ,_4: e};
-   });
+   var RBEmpty_elm_builtin = function (a) {    return {ctor: "RBEmpty_elm_builtin",_0: a};};
+   var RBNode_elm_builtin = F5(function (a,b,c,d,e) {    return {ctor: "RBNode_elm_builtin",_0: a,_1: b,_2: c,_3: d,_4: e};});
    var LBBlack = {ctor: "LBBlack"};
    var LBlack = {ctor: "LBlack"};
    var empty = RBEmpty_elm_builtin(LBlack);
@@ -8255,12 +7585,7 @@ Elm.Dict.make = function (_elm) {
             return RBEmpty_elm_builtin(LBlack);
          } else {
             var _p9 = _p8._1;
-            return A5(RBNode_elm_builtin,
-            _p8._0,
-            _p9,
-            A2(f,_p9,_p8._2),
-            A2(map,f,_p8._3),
-            A2(map,f,_p8._4));
+            return A5(RBNode_elm_builtin,_p8._0,_p9,A2(f,_p9,_p8._2),A2(map,f,_p8._3),A2(map,f,_p8._4));
          }
    });
    var NBlack = {ctor: "NBlack"};
@@ -8268,14 +7593,8 @@ Elm.Dict.make = function (_elm) {
    var Black = {ctor: "Black"};
    var ensureBlackRoot = function (dict) {
       var _p10 = dict;
-      if (_p10.ctor === "RBNode_elm_builtin" && _p10._0.ctor === "Red")
-      {
-            return A5(RBNode_elm_builtin,
-            Black,
-            _p10._1,
-            _p10._2,
-            _p10._3,
-            _p10._4);
+      if (_p10.ctor === "RBNode_elm_builtin" && _p10._0.ctor === "Red") {
+            return A5(RBNode_elm_builtin,Black,_p10._1,_p10._2,_p10._3,_p10._4);
          } else {
             return dict;
          }
@@ -8294,12 +7613,7 @@ Elm.Dict.make = function (_elm) {
       if (_p13.ctor === "RBEmpty_elm_builtin") {
             return RBEmpty_elm_builtin(LBlack);
          } else {
-            return A5(RBNode_elm_builtin,
-            Black,
-            _p13._1,
-            _p13._2,
-            _p13._3,
-            _p13._4);
+            return A5(RBNode_elm_builtin,Black,_p13._1,_p13._2,_p13._3,_p13._4);
          }
    };
    var Red = {ctor: "Red"};
@@ -8309,8 +7623,7 @@ Elm.Dict.make = function (_elm) {
       {case "Black": return BBlack;
          case "Red": return Black;
          case "NBlack": return Red;
-         default:
-         return $Native$Debug.crash("Can\'t make a double black node more black!");}
+         default: return $Native$Debug.crash("Can\'t make a double black node more black!");}
    };
    var lessBlack = function (color) {
       var _p15 = color;
@@ -8318,18 +7631,12 @@ Elm.Dict.make = function (_elm) {
       {case "BBlack": return Black;
          case "Black": return Red;
          case "Red": return NBlack;
-         default:
-         return $Native$Debug.crash("Can\'t make a negative black node less black!");}
+         default: return $Native$Debug.crash("Can\'t make a negative black node less black!");}
    };
    var lessBlackTree = function (dict) {
       var _p16 = dict;
       if (_p16.ctor === "RBNode_elm_builtin") {
-            return A5(RBNode_elm_builtin,
-            lessBlack(_p16._0),
-            _p16._1,
-            _p16._2,
-            _p16._3,
-            _p16._4);
+            return A5(RBNode_elm_builtin,lessBlack(_p16._0),_p16._1,_p16._2,_p16._3,_p16._4);
          } else {
             return RBEmpty_elm_builtin(LBlack);
          }
@@ -8367,12 +7674,7 @@ Elm.Dict.make = function (_elm) {
       if (_p17.ctor === "RBEmpty_elm_builtin") {
             return $Native$Debug.crash("can\'t make a Leaf red");
          } else {
-            return A5(RBNode_elm_builtin,
-            Red,
-            _p17._1,
-            _p17._2,
-            _p17._3,
-            _p17._4);
+            return A5(RBNode_elm_builtin,Red,_p17._1,_p17._2,_p17._3,_p17._4);
          }
    };
    var balanceHelp = function (tree) {
@@ -8389,21 +7691,16 @@ Elm.Dict.make = function (_elm) {
                                        if (_p18._4.ctor === "RBNode_elm_builtin") {
                                              switch (_p18._3._0.ctor)
                                              {case "Red": switch (_p18._4._0.ctor)
-                                                  {case "Red":
-                                                     if (_p18._3._3.ctor === "RBNode_elm_builtin" && _p18._3._3._0.ctor === "Red")
-                                                       {
+                                                  {case "Red": if (_p18._3._3.ctor === "RBNode_elm_builtin" && _p18._3._3._0.ctor === "Red") {
                                                              break _v31_0;
                                                           } else {
-                                                             if (_p18._3._4.ctor === "RBNode_elm_builtin" && _p18._3._4._0.ctor === "Red")
-                                                             {
+                                                             if (_p18._3._4.ctor === "RBNode_elm_builtin" && _p18._3._4._0.ctor === "Red") {
                                                                    break _v31_1;
                                                                 } else {
-                                                                   if (_p18._4._3.ctor === "RBNode_elm_builtin" && _p18._4._3._0.ctor === "Red")
-                                                                   {
+                                                                   if (_p18._4._3.ctor === "RBNode_elm_builtin" && _p18._4._3._0.ctor === "Red") {
                                                                          break _v31_2;
                                                                       } else {
-                                                                         if (_p18._4._4.ctor === "RBNode_elm_builtin" && _p18._4._4._0.ctor === "Red")
-                                                                         {
+                                                                         if (_p18._4._4.ctor === "RBNode_elm_builtin" && _p18._4._4._0.ctor === "Red") {
                                                                                break _v31_3;
                                                                             } else {
                                                                                break _v31_6;
@@ -8411,13 +7708,10 @@ Elm.Dict.make = function (_elm) {
                                                                       }
                                                                 }
                                                           }
-                                                     case "NBlack":
-                                                     if (_p18._3._3.ctor === "RBNode_elm_builtin" && _p18._3._3._0.ctor === "Red")
-                                                       {
+                                                     case "NBlack": if (_p18._3._3.ctor === "RBNode_elm_builtin" && _p18._3._3._0.ctor === "Red") {
                                                              break _v31_0;
                                                           } else {
-                                                             if (_p18._3._4.ctor === "RBNode_elm_builtin" && _p18._3._4._0.ctor === "Red")
-                                                             {
+                                                             if (_p18._3._4.ctor === "RBNode_elm_builtin" && _p18._3._4._0.ctor === "Red") {
                                                                    break _v31_1;
                                                                 } else {
                                                                    if (_p18._0.ctor === "BBlack" && _p18._4._3.ctor === "RBNode_elm_builtin" && _p18._4._3._0.ctor === "Black" && _p18._4._4.ctor === "RBNode_elm_builtin" && _p18._4._4._0.ctor === "Black")
@@ -8428,26 +7722,20 @@ Elm.Dict.make = function (_elm) {
                                                                       }
                                                                 }
                                                           }
-                                                     default:
-                                                     if (_p18._3._3.ctor === "RBNode_elm_builtin" && _p18._3._3._0.ctor === "Red")
-                                                       {
+                                                     default: if (_p18._3._3.ctor === "RBNode_elm_builtin" && _p18._3._3._0.ctor === "Red") {
                                                              break _v31_0;
                                                           } else {
-                                                             if (_p18._3._4.ctor === "RBNode_elm_builtin" && _p18._3._4._0.ctor === "Red")
-                                                             {
+                                                             if (_p18._3._4.ctor === "RBNode_elm_builtin" && _p18._3._4._0.ctor === "Red") {
                                                                    break _v31_1;
                                                                 } else {
                                                                    break _v31_6;
                                                                 }
                                                           }}
                                                 case "NBlack": switch (_p18._4._0.ctor)
-                                                  {case "Red":
-                                                     if (_p18._4._3.ctor === "RBNode_elm_builtin" && _p18._4._3._0.ctor === "Red")
-                                                       {
+                                                  {case "Red": if (_p18._4._3.ctor === "RBNode_elm_builtin" && _p18._4._3._0.ctor === "Red") {
                                                              break _v31_2;
                                                           } else {
-                                                             if (_p18._4._4.ctor === "RBNode_elm_builtin" && _p18._4._4._0.ctor === "Red")
-                                                             {
+                                                             if (_p18._4._4.ctor === "RBNode_elm_builtin" && _p18._4._4._0.ctor === "Red") {
                                                                    break _v31_3;
                                                                 } else {
                                                                    if (_p18._0.ctor === "BBlack" && _p18._3._3.ctor === "RBNode_elm_builtin" && _p18._3._3._0.ctor === "Black" && _p18._3._4.ctor === "RBNode_elm_builtin" && _p18._3._4._0.ctor === "Black")
@@ -8481,13 +7769,10 @@ Elm.Dict.make = function (_elm) {
                                                              break _v31_6;
                                                           }}
                                                 default: switch (_p18._4._0.ctor)
-                                                  {case "Red":
-                                                     if (_p18._4._3.ctor === "RBNode_elm_builtin" && _p18._4._3._0.ctor === "Red")
-                                                       {
+                                                  {case "Red": if (_p18._4._3.ctor === "RBNode_elm_builtin" && _p18._4._3._0.ctor === "Red") {
                                                              break _v31_2;
                                                           } else {
-                                                             if (_p18._4._4.ctor === "RBNode_elm_builtin" && _p18._4._4._0.ctor === "Red")
-                                                             {
+                                                             if (_p18._4._4.ctor === "RBNode_elm_builtin" && _p18._4._4._0.ctor === "Red") {
                                                                    break _v31_3;
                                                                 } else {
                                                                    break _v31_6;
@@ -8503,13 +7788,10 @@ Elm.Dict.make = function (_elm) {
                                                      default: break _v31_6;}}
                                           } else {
                                              switch (_p18._3._0.ctor)
-                                             {case "Red":
-                                                if (_p18._3._3.ctor === "RBNode_elm_builtin" && _p18._3._3._0.ctor === "Red")
-                                                  {
+                                             {case "Red": if (_p18._3._3.ctor === "RBNode_elm_builtin" && _p18._3._3._0.ctor === "Red") {
                                                         break _v31_0;
                                                      } else {
-                                                        if (_p18._3._4.ctor === "RBNode_elm_builtin" && _p18._3._4._0.ctor === "Red")
-                                                        {
+                                                        if (_p18._3._4.ctor === "RBNode_elm_builtin" && _p18._3._4._0.ctor === "Red") {
                                                               break _v31_1;
                                                            } else {
                                                               break _v31_6;
@@ -8527,13 +7809,10 @@ Elm.Dict.make = function (_elm) {
                                     } else {
                                        if (_p18._4.ctor === "RBNode_elm_builtin") {
                                              switch (_p18._4._0.ctor)
-                                             {case "Red":
-                                                if (_p18._4._3.ctor === "RBNode_elm_builtin" && _p18._4._3._0.ctor === "Red")
-                                                  {
+                                             {case "Red": if (_p18._4._3.ctor === "RBNode_elm_builtin" && _p18._4._3._0.ctor === "Red") {
                                                         break _v31_2;
                                                      } else {
-                                                        if (_p18._4._4.ctor === "RBNode_elm_builtin" && _p18._4._4._0.ctor === "Red")
-                                                        {
+                                                        if (_p18._4._4.ctor === "RBNode_elm_builtin" && _p18._4._4._0.ctor === "Red") {
                                                               break _v31_3;
                                                            } else {
                                                               break _v31_6;
@@ -8567,61 +7846,28 @@ Elm.Dict.make = function (_elm) {
             Black,
             _p18._4._3._1,
             _p18._4._3._2,
-            A5(RBNode_elm_builtin,
-            Black,
-            _p18._1,
-            _p18._2,
-            _p18._3,
-            _p18._4._3._3),
-            A5(balance,
-            Black,
-            _p18._4._1,
-            _p18._4._2,
-            _p18._4._3._4,
-            redden(_p18._4._4)));
+            A5(RBNode_elm_builtin,Black,_p18._1,_p18._2,_p18._3,_p18._4._3._3),
+            A5(balance,Black,_p18._4._1,_p18._4._2,_p18._4._3._4,redden(_p18._4._4)));
          } while (false);
          return A5(RBNode_elm_builtin,
          Black,
          _p18._3._4._1,
          _p18._3._4._2,
-         A5(balance,
-         Black,
-         _p18._3._1,
-         _p18._3._2,
-         redden(_p18._3._3),
-         _p18._3._4._3),
-         A5(RBNode_elm_builtin,
-         Black,
-         _p18._1,
-         _p18._2,
-         _p18._3._4._4,
-         _p18._4));
+         A5(balance,Black,_p18._3._1,_p18._3._2,redden(_p18._3._3),_p18._3._4._3),
+         A5(RBNode_elm_builtin,Black,_p18._1,_p18._2,_p18._3._4._4,_p18._4));
       } while (false);
       return tree;
    };
-   var balance = F5(function (c,k,v,l,r) {
-      var tree = A5(RBNode_elm_builtin,c,k,v,l,r);
-      return blackish(tree) ? balanceHelp(tree) : tree;
-   });
+   var balance = F5(function (c,k,v,l,r) {    var tree = A5(RBNode_elm_builtin,c,k,v,l,r);return blackish(tree) ? balanceHelp(tree) : tree;});
    var bubble = F5(function (c,k,v,l,r) {
-      return isBBlack(l) || isBBlack(r) ? A5(balance,
-      moreBlack(c),
-      k,
-      v,
-      lessBlackTree(l),
-      lessBlackTree(r)) : A5(RBNode_elm_builtin,c,k,v,l,r);
+      return isBBlack(l) || isBBlack(r) ? A5(balance,moreBlack(c),k,v,lessBlackTree(l),lessBlackTree(r)) : A5(RBNode_elm_builtin,c,k,v,l,r);
    });
    var removeMax = F5(function (c,k,v,l,r) {
       var _p19 = r;
       if (_p19.ctor === "RBEmpty_elm_builtin") {
             return A3(rem,c,l,r);
          } else {
-            return A5(bubble,
-            c,
-            k,
-            v,
-            l,
-            A5(removeMax,_p19._0,_p19._1,_p19._2,_p19._3,_p19._4));
+            return A5(bubble,c,k,v,l,A5(removeMax,_p19._0,_p19._1,_p19._2,_p19._3,_p19._4));
          }
    });
    var rem = F3(function (c,l,r) {
@@ -8632,26 +7878,15 @@ Elm.Dict.make = function (_elm) {
                   switch (_p21.ctor)
                   {case "Red": return RBEmpty_elm_builtin(LBlack);
                      case "Black": return RBEmpty_elm_builtin(LBBlack);
-                     default:
-                     return $Native$Debug.crash("cannot have bblack or nblack nodes at this point");}
+                     default: return $Native$Debug.crash("cannot have bblack or nblack nodes at this point");}
                } else {
                   var _p24 = _p20._1._0;
                   var _p23 = _p20._0._0;
                   var _p22 = {ctor: "_Tuple3",_0: c,_1: _p23,_2: _p24};
-                  if (_p22.ctor === "_Tuple3" && _p22._0.ctor === "Black" && _p22._1.ctor === "LBlack" && _p22._2.ctor === "Red")
-                  {
-                        return A5(RBNode_elm_builtin,
-                        Black,
-                        _p20._1._1,
-                        _p20._1._2,
-                        _p20._1._3,
-                        _p20._1._4);
+                  if (_p22.ctor === "_Tuple3" && _p22._0.ctor === "Black" && _p22._1.ctor === "LBlack" && _p22._2.ctor === "Red") {
+                        return A5(RBNode_elm_builtin,Black,_p20._1._1,_p20._1._2,_p20._1._3,_p20._1._4);
                      } else {
-                        return A4(reportRemBug,
-                        "Black/LBlack/Red",
-                        c,
-                        $Basics.toString(_p23),
-                        $Basics.toString(_p24));
+                        return A4(reportRemBug,"Black/LBlack/Red",c,$Basics.toString(_p23),$Basics.toString(_p24));
                      }
                }
          } else {
@@ -8659,20 +7894,10 @@ Elm.Dict.make = function (_elm) {
                   var _p27 = _p20._1._0;
                   var _p26 = _p20._0._0;
                   var _p25 = {ctor: "_Tuple3",_0: c,_1: _p26,_2: _p27};
-                  if (_p25.ctor === "_Tuple3" && _p25._0.ctor === "Black" && _p25._1.ctor === "Red" && _p25._2.ctor === "LBlack")
-                  {
-                        return A5(RBNode_elm_builtin,
-                        Black,
-                        _p20._0._1,
-                        _p20._0._2,
-                        _p20._0._3,
-                        _p20._0._4);
+                  if (_p25.ctor === "_Tuple3" && _p25._0.ctor === "Black" && _p25._1.ctor === "Red" && _p25._2.ctor === "LBlack") {
+                        return A5(RBNode_elm_builtin,Black,_p20._0._1,_p20._0._2,_p20._0._3,_p20._0._4);
                      } else {
-                        return A4(reportRemBug,
-                        "Black/Red/LBlack",
-                        c,
-                        $Basics.toString(_p26),
-                        $Basics.toString(_p27));
+                        return A4(reportRemBug,"Black/Red/LBlack",c,$Basics.toString(_p26),$Basics.toString(_p27));
                      }
                } else {
                   var _p31 = _p20._0._2;
@@ -8694,9 +7919,7 @@ Elm.Dict.make = function (_elm) {
                if (_p33.ctor === "Nothing") {
                      return {ctor: "_Tuple2",_0: Same,_1: empty};
                   } else {
-                     return {ctor: "_Tuple2"
-                            ,_0: Insert
-                            ,_1: A5(RBNode_elm_builtin,Red,k,_p33._0,empty,empty)};
+                     return {ctor: "_Tuple2",_0: Insert,_1: A5(RBNode_elm_builtin,Red,k,_p33._0,empty,empty)};
                   }
             } else {
                var _p44 = _p32._2;
@@ -8708,42 +7931,26 @@ Elm.Dict.make = function (_elm) {
                switch (_p34.ctor)
                {case "EQ": var _p35 = alter($Maybe.Just(_p44));
                     if (_p35.ctor === "Nothing") {
-                          return {ctor: "_Tuple2"
-                                 ,_0: Remove
-                                 ,_1: A3(rem,_p40,_p42,_p43)};
+                          return {ctor: "_Tuple2",_0: Remove,_1: A3(rem,_p40,_p42,_p43)};
                        } else {
-                          return {ctor: "_Tuple2"
-                                 ,_0: Same
-                                 ,_1: A5(RBNode_elm_builtin,_p40,_p41,_p35._0,_p42,_p43)};
+                          return {ctor: "_Tuple2",_0: Same,_1: A5(RBNode_elm_builtin,_p40,_p41,_p35._0,_p42,_p43)};
                        }
                   case "LT": var _p36 = up(_p42);
                     var flag = _p36._0;
                     var newLeft = _p36._1;
                     var _p37 = flag;
                     switch (_p37.ctor)
-                    {case "Same": return {ctor: "_Tuple2"
-                                         ,_0: Same
-                                         ,_1: A5(RBNode_elm_builtin,_p40,_p41,_p44,newLeft,_p43)};
-                       case "Insert": return {ctor: "_Tuple2"
-                                             ,_0: Insert
-                                             ,_1: A5(balance,_p40,_p41,_p44,newLeft,_p43)};
-                       default: return {ctor: "_Tuple2"
-                                       ,_0: Remove
-                                       ,_1: A5(bubble,_p40,_p41,_p44,newLeft,_p43)};}
+                    {case "Same": return {ctor: "_Tuple2",_0: Same,_1: A5(RBNode_elm_builtin,_p40,_p41,_p44,newLeft,_p43)};
+                       case "Insert": return {ctor: "_Tuple2",_0: Insert,_1: A5(balance,_p40,_p41,_p44,newLeft,_p43)};
+                       default: return {ctor: "_Tuple2",_0: Remove,_1: A5(bubble,_p40,_p41,_p44,newLeft,_p43)};}
                   default: var _p38 = up(_p43);
                     var flag = _p38._0;
                     var newRight = _p38._1;
                     var _p39 = flag;
                     switch (_p39.ctor)
-                    {case "Same": return {ctor: "_Tuple2"
-                                         ,_0: Same
-                                         ,_1: A5(RBNode_elm_builtin,_p40,_p41,_p44,_p42,newRight)};
-                       case "Insert": return {ctor: "_Tuple2"
-                                             ,_0: Insert
-                                             ,_1: A5(balance,_p40,_p41,_p44,_p42,newRight)};
-                       default: return {ctor: "_Tuple2"
-                                       ,_0: Remove
-                                       ,_1: A5(bubble,_p40,_p41,_p44,_p42,newRight)};}}
+                    {case "Same": return {ctor: "_Tuple2",_0: Same,_1: A5(RBNode_elm_builtin,_p40,_p41,_p44,_p42,newRight)};
+                       case "Insert": return {ctor: "_Tuple2",_0: Insert,_1: A5(balance,_p40,_p41,_p44,_p42,newRight)};
+                       default: return {ctor: "_Tuple2",_0: Remove,_1: A5(bubble,_p40,_p41,_p44,_p42,newRight)};}}
             }
       };
       var _p45 = up(dict);
@@ -8755,63 +7962,28 @@ Elm.Dict.make = function (_elm) {
          case "Insert": return ensureBlackRoot(updatedDict);
          default: return blacken(updatedDict);}
    });
-   var insert = F3(function (key,value,dict) {
-      return A3(update,
-      key,
-      $Basics.always($Maybe.Just(value)),
-      dict);
-   });
-   var singleton = F2(function (key,value) {
-      return A3(insert,key,value,empty);
-   });
-   var union = F2(function (t1,t2) {
-      return A3(foldl,insert,t2,t1);
-   });
+   var insert = F3(function (key,value,dict) {    return A3(update,key,$Basics.always($Maybe.Just(value)),dict);});
+   var singleton = F2(function (key,value) {    return A3(insert,key,value,empty);});
+   var union = F2(function (t1,t2) {    return A3(foldl,insert,t2,t1);});
    var fromList = function (assocs) {
-      return A3($List.foldl,
-      F2(function (_p47,dict) {
-         var _p48 = _p47;
-         return A3(insert,_p48._0,_p48._1,dict);
-      }),
-      empty,
-      assocs);
+      return A3($List.foldl,F2(function (_p47,dict) {    var _p48 = _p47;return A3(insert,_p48._0,_p48._1,dict);}),empty,assocs);
    };
    var filter = F2(function (predicate,dictionary) {
-      var add = F3(function (key,value,dict) {
-         return A2(predicate,key,value) ? A3(insert,
-         key,
-         value,
-         dict) : dict;
-      });
+      var add = F3(function (key,value,dict) {    return A2(predicate,key,value) ? A3(insert,key,value,dict) : dict;});
       return A3(foldl,add,empty,dictionary);
    });
-   var intersect = F2(function (t1,t2) {
-      return A2(filter,
-      F2(function (k,_p49) {    return A2(member,k,t2);}),
-      t1);
-   });
+   var intersect = F2(function (t1,t2) {    return A2(filter,F2(function (k,_p49) {    return A2(member,k,t2);}),t1);});
    var partition = F2(function (predicate,dict) {
       var add = F3(function (key,value,_p50) {
          var _p51 = _p50;
          var _p53 = _p51._1;
          var _p52 = _p51._0;
-         return A2(predicate,key,value) ? {ctor: "_Tuple2"
-                                          ,_0: A3(insert,key,value,_p52)
-                                          ,_1: _p53} : {ctor: "_Tuple2"
-                                                       ,_0: _p52
-                                                       ,_1: A3(insert,key,value,_p53)};
+         return A2(predicate,key,value) ? {ctor: "_Tuple2",_0: A3(insert,key,value,_p52),_1: _p53} : {ctor: "_Tuple2",_0: _p52,_1: A3(insert,key,value,_p53)};
       });
       return A3(foldl,add,{ctor: "_Tuple2",_0: empty,_1: empty},dict);
    });
-   var remove = F2(function (key,dict) {
-      return A3(update,key,$Basics.always($Maybe.Nothing),dict);
-   });
-   var diff = F2(function (t1,t2) {
-      return A3(foldl,
-      F3(function (k,v,t) {    return A2(remove,k,t);}),
-      t1,
-      t2);
-   });
+   var remove = F2(function (key,dict) {    return A3(update,key,$Basics.always($Maybe.Nothing),dict);});
+   var diff = F2(function (t1,t2) {    return A3(foldl,F3(function (k,v,t) {    return A2(remove,k,t);}),t1,t2);});
    return _elm.Dict.values = {_op: _op
                              ,empty: empty
                              ,singleton: singleton
@@ -8842,9 +8014,7 @@ Elm.Json.Encode.make = function (_elm) {
    _elm.Json = _elm.Json || {};
    _elm.Json.Encode = _elm.Json.Encode || {};
    if (_elm.Json.Encode.values) return _elm.Json.Encode.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Array = Elm.Array.make(_elm),
-   $Native$Json = Elm.Native.Json.make(_elm);
+   var _U = Elm.Native.Utils.make(_elm),$Array = Elm.Array.make(_elm),$Native$Json = Elm.Native.Json.make(_elm);
    var _op = {};
    var list = $Native$Json.encodeList;
    var array = $Native$Json.encodeArray;
@@ -8916,17 +8086,10 @@ Elm.Json.Decode.make = function (_elm) {
    var object2 = $Native$Json.decodeObject2;
    var object1 = $Native$Json.decodeObject1;
    _op[":="] = $Native$Json.decodeField;
-   var at = F2(function (fields,decoder) {
-      return A3($List.foldr,
-      F2(function (x,y) {    return A2(_op[":="],x,y);}),
-      decoder,
-      fields);
-   });
+   var at = F2(function (fields,decoder) {    return A3($List.foldr,F2(function (x,y) {    return A2(_op[":="],x,y);}),decoder,fields);});
    var decodeString = $Native$Json.runDecoderString;
    var map = $Native$Json.decodeObject1;
-   var dict = function (decoder) {
-      return A2(map,$Dict.fromList,keyValuePairs(decoder));
-   };
+   var dict = function (decoder) {    return A2(map,$Dict.fromList,keyValuePairs(decoder));};
    var Decoder = {ctor: "Decoder"};
    return _elm.Json.Decode.values = {_op: _op
                                     ,decodeString: decodeString
@@ -10580,19 +9743,10 @@ Elm.VirtualDom.make = function (_elm) {
    var lazy3 = $Native$VirtualDom.lazy3;
    var lazy2 = $Native$VirtualDom.lazy2;
    var lazy = $Native$VirtualDom.lazy;
-   var defaultOptions = {stopPropagation: false
-                        ,preventDefault: false};
-   var Options = F2(function (a,b) {
-      return {stopPropagation: a,preventDefault: b};
-   });
+   var defaultOptions = {stopPropagation: false,preventDefault: false};
+   var Options = F2(function (a,b) {    return {stopPropagation: a,preventDefault: b};});
    var onWithOptions = $Native$VirtualDom.on;
-   var on = F3(function (eventName,decoder,toMessage) {
-      return A4($Native$VirtualDom.on,
-      eventName,
-      defaultOptions,
-      decoder,
-      toMessage);
-   });
+   var on = F3(function (eventName,decoder,toMessage) {    return A4($Native$VirtualDom.on,eventName,defaultOptions,decoder,toMessage);});
    var attributeNS = $Native$VirtualDom.attributeNS;
    var attribute = $Native$VirtualDom.attribute;
    var property = $Native$VirtualDom.property;
@@ -10847,8 +10001,7 @@ Elm.Html.Attributes.make = function (_elm) {
    "use strict";
    _elm.Html = _elm.Html || {};
    _elm.Html.Attributes = _elm.Html.Attributes || {};
-   if (_elm.Html.Attributes.values)
-   return _elm.Html.Attributes.values;
+   if (_elm.Html.Attributes.values) return _elm.Html.Attributes.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10862,313 +10015,108 @@ Elm.Html.Attributes.make = function (_elm) {
    $VirtualDom = Elm.VirtualDom.make(_elm);
    var _op = {};
    var attribute = $VirtualDom.attribute;
-   var contextmenu = function (value) {
-      return A2(attribute,"contextmenu",value);
-   };
+   var contextmenu = function (value) {    return A2(attribute,"contextmenu",value);};
    var property = $VirtualDom.property;
-   var stringProperty = F2(function (name,string) {
-      return A2(property,name,$Json$Encode.string(string));
-   });
-   var $class = function (name) {
-      return A2(stringProperty,"className",name);
-   };
-   var id = function (name) {
-      return A2(stringProperty,"id",name);
-   };
-   var title = function (name) {
-      return A2(stringProperty,"title",name);
-   };
-   var accesskey = function ($char) {
-      return A2(stringProperty,
-      "accessKey",
-      $String.fromChar($char));
-   };
-   var dir = function (value) {
-      return A2(stringProperty,"dir",value);
-   };
-   var draggable = function (value) {
-      return A2(stringProperty,"draggable",value);
-   };
-   var dropzone = function (value) {
-      return A2(stringProperty,"dropzone",value);
-   };
-   var itemprop = function (value) {
-      return A2(stringProperty,"itemprop",value);
-   };
-   var lang = function (value) {
-      return A2(stringProperty,"lang",value);
-   };
-   var tabindex = function (n) {
-      return A2(stringProperty,"tabIndex",$Basics.toString(n));
-   };
-   var charset = function (value) {
-      return A2(stringProperty,"charset",value);
-   };
-   var content = function (value) {
-      return A2(stringProperty,"content",value);
-   };
-   var httpEquiv = function (value) {
-      return A2(stringProperty,"httpEquiv",value);
-   };
-   var language = function (value) {
-      return A2(stringProperty,"language",value);
-   };
-   var src = function (value) {
-      return A2(stringProperty,"src",value);
-   };
-   var height = function (value) {
-      return A2(stringProperty,"height",$Basics.toString(value));
-   };
-   var width = function (value) {
-      return A2(stringProperty,"width",$Basics.toString(value));
-   };
-   var alt = function (value) {
-      return A2(stringProperty,"alt",value);
-   };
-   var preload = function (value) {
-      return A2(stringProperty,"preload",value);
-   };
-   var poster = function (value) {
-      return A2(stringProperty,"poster",value);
-   };
-   var kind = function (value) {
-      return A2(stringProperty,"kind",value);
-   };
-   var srclang = function (value) {
-      return A2(stringProperty,"srclang",value);
-   };
-   var sandbox = function (value) {
-      return A2(stringProperty,"sandbox",value);
-   };
-   var srcdoc = function (value) {
-      return A2(stringProperty,"srcdoc",value);
-   };
-   var type$ = function (value) {
-      return A2(stringProperty,"type",value);
-   };
-   var value = function (value) {
-      return A2(stringProperty,"value",value);
-   };
-   var placeholder = function (value) {
-      return A2(stringProperty,"placeholder",value);
-   };
-   var accept = function (value) {
-      return A2(stringProperty,"accept",value);
-   };
-   var acceptCharset = function (value) {
-      return A2(stringProperty,"acceptCharset",value);
-   };
-   var action = function (value) {
-      return A2(stringProperty,"action",value);
-   };
-   var autocomplete = function (bool) {
-      return A2(stringProperty,"autocomplete",bool ? "on" : "off");
-   };
-   var autosave = function (value) {
-      return A2(stringProperty,"autosave",value);
-   };
-   var enctype = function (value) {
-      return A2(stringProperty,"enctype",value);
-   };
-   var formaction = function (value) {
-      return A2(stringProperty,"formAction",value);
-   };
-   var list = function (value) {
-      return A2(stringProperty,"list",value);
-   };
-   var minlength = function (n) {
-      return A2(stringProperty,"minLength",$Basics.toString(n));
-   };
-   var maxlength = function (n) {
-      return A2(stringProperty,"maxLength",$Basics.toString(n));
-   };
-   var method = function (value) {
-      return A2(stringProperty,"method",value);
-   };
-   var name = function (value) {
-      return A2(stringProperty,"name",value);
-   };
-   var pattern = function (value) {
-      return A2(stringProperty,"pattern",value);
-   };
-   var size = function (n) {
-      return A2(stringProperty,"size",$Basics.toString(n));
-   };
-   var $for = function (value) {
-      return A2(stringProperty,"htmlFor",value);
-   };
-   var form = function (value) {
-      return A2(stringProperty,"form",value);
-   };
-   var max = function (value) {
-      return A2(stringProperty,"max",value);
-   };
-   var min = function (value) {
-      return A2(stringProperty,"min",value);
-   };
-   var step = function (n) {
-      return A2(stringProperty,"step",n);
-   };
-   var cols = function (n) {
-      return A2(stringProperty,"cols",$Basics.toString(n));
-   };
-   var rows = function (n) {
-      return A2(stringProperty,"rows",$Basics.toString(n));
-   };
-   var wrap = function (value) {
-      return A2(stringProperty,"wrap",value);
-   };
-   var usemap = function (value) {
-      return A2(stringProperty,"useMap",value);
-   };
-   var shape = function (value) {
-      return A2(stringProperty,"shape",value);
-   };
-   var coords = function (value) {
-      return A2(stringProperty,"coords",value);
-   };
-   var challenge = function (value) {
-      return A2(stringProperty,"challenge",value);
-   };
-   var keytype = function (value) {
-      return A2(stringProperty,"keytype",value);
-   };
-   var align = function (value) {
-      return A2(stringProperty,"align",value);
-   };
-   var cite = function (value) {
-      return A2(stringProperty,"cite",value);
-   };
-   var href = function (value) {
-      return A2(stringProperty,"href",value);
-   };
-   var target = function (value) {
-      return A2(stringProperty,"target",value);
-   };
-   var downloadAs = function (value) {
-      return A2(stringProperty,"download",value);
-   };
-   var hreflang = function (value) {
-      return A2(stringProperty,"hreflang",value);
-   };
-   var media = function (value) {
-      return A2(stringProperty,"media",value);
-   };
-   var ping = function (value) {
-      return A2(stringProperty,"ping",value);
-   };
-   var rel = function (value) {
-      return A2(stringProperty,"rel",value);
-   };
-   var datetime = function (value) {
-      return A2(stringProperty,"datetime",value);
-   };
-   var pubdate = function (value) {
-      return A2(stringProperty,"pubdate",value);
-   };
-   var start = function (n) {
-      return A2(stringProperty,"start",$Basics.toString(n));
-   };
-   var colspan = function (n) {
-      return A2(stringProperty,"colSpan",$Basics.toString(n));
-   };
-   var headers = function (value) {
-      return A2(stringProperty,"headers",value);
-   };
-   var rowspan = function (n) {
-      return A2(stringProperty,"rowSpan",$Basics.toString(n));
-   };
-   var scope = function (value) {
-      return A2(stringProperty,"scope",value);
-   };
-   var manifest = function (value) {
-      return A2(stringProperty,"manifest",value);
-   };
-   var boolProperty = F2(function (name,bool) {
-      return A2(property,name,$Json$Encode.bool(bool));
-   });
-   var hidden = function (bool) {
-      return A2(boolProperty,"hidden",bool);
-   };
-   var contenteditable = function (bool) {
-      return A2(boolProperty,"contentEditable",bool);
-   };
-   var spellcheck = function (bool) {
-      return A2(boolProperty,"spellcheck",bool);
-   };
-   var async = function (bool) {
-      return A2(boolProperty,"async",bool);
-   };
-   var defer = function (bool) {
-      return A2(boolProperty,"defer",bool);
-   };
-   var scoped = function (bool) {
-      return A2(boolProperty,"scoped",bool);
-   };
-   var autoplay = function (bool) {
-      return A2(boolProperty,"autoplay",bool);
-   };
-   var controls = function (bool) {
-      return A2(boolProperty,"controls",bool);
-   };
-   var loop = function (bool) {
-      return A2(boolProperty,"loop",bool);
-   };
-   var $default = function (bool) {
-      return A2(boolProperty,"default",bool);
-   };
-   var seamless = function (bool) {
-      return A2(boolProperty,"seamless",bool);
-   };
-   var checked = function (bool) {
-      return A2(boolProperty,"checked",bool);
-   };
-   var selected = function (bool) {
-      return A2(boolProperty,"selected",bool);
-   };
-   var autofocus = function (bool) {
-      return A2(boolProperty,"autofocus",bool);
-   };
-   var disabled = function (bool) {
-      return A2(boolProperty,"disabled",bool);
-   };
-   var multiple = function (bool) {
-      return A2(boolProperty,"multiple",bool);
-   };
-   var novalidate = function (bool) {
-      return A2(boolProperty,"noValidate",bool);
-   };
-   var readonly = function (bool) {
-      return A2(boolProperty,"readOnly",bool);
-   };
-   var required = function (bool) {
-      return A2(boolProperty,"required",bool);
-   };
-   var ismap = function (value) {
-      return A2(boolProperty,"isMap",value);
-   };
-   var download = function (bool) {
-      return A2(boolProperty,"download",bool);
-   };
-   var reversed = function (bool) {
-      return A2(boolProperty,"reversed",bool);
-   };
-   var classList = function (list) {
-      return $class(A2($String.join,
-      " ",
-      A2($List.map,$Basics.fst,A2($List.filter,$Basics.snd,list))));
-   };
+   var stringProperty = F2(function (name,string) {    return A2(property,name,$Json$Encode.string(string));});
+   var $class = function (name) {    return A2(stringProperty,"className",name);};
+   var id = function (name) {    return A2(stringProperty,"id",name);};
+   var title = function (name) {    return A2(stringProperty,"title",name);};
+   var accesskey = function ($char) {    return A2(stringProperty,"accessKey",$String.fromChar($char));};
+   var dir = function (value) {    return A2(stringProperty,"dir",value);};
+   var draggable = function (value) {    return A2(stringProperty,"draggable",value);};
+   var dropzone = function (value) {    return A2(stringProperty,"dropzone",value);};
+   var itemprop = function (value) {    return A2(stringProperty,"itemprop",value);};
+   var lang = function (value) {    return A2(stringProperty,"lang",value);};
+   var tabindex = function (n) {    return A2(stringProperty,"tabIndex",$Basics.toString(n));};
+   var charset = function (value) {    return A2(stringProperty,"charset",value);};
+   var content = function (value) {    return A2(stringProperty,"content",value);};
+   var httpEquiv = function (value) {    return A2(stringProperty,"httpEquiv",value);};
+   var language = function (value) {    return A2(stringProperty,"language",value);};
+   var src = function (value) {    return A2(stringProperty,"src",value);};
+   var height = function (value) {    return A2(stringProperty,"height",$Basics.toString(value));};
+   var width = function (value) {    return A2(stringProperty,"width",$Basics.toString(value));};
+   var alt = function (value) {    return A2(stringProperty,"alt",value);};
+   var preload = function (value) {    return A2(stringProperty,"preload",value);};
+   var poster = function (value) {    return A2(stringProperty,"poster",value);};
+   var kind = function (value) {    return A2(stringProperty,"kind",value);};
+   var srclang = function (value) {    return A2(stringProperty,"srclang",value);};
+   var sandbox = function (value) {    return A2(stringProperty,"sandbox",value);};
+   var srcdoc = function (value) {    return A2(stringProperty,"srcdoc",value);};
+   var type$ = function (value) {    return A2(stringProperty,"type",value);};
+   var value = function (value) {    return A2(stringProperty,"value",value);};
+   var placeholder = function (value) {    return A2(stringProperty,"placeholder",value);};
+   var accept = function (value) {    return A2(stringProperty,"accept",value);};
+   var acceptCharset = function (value) {    return A2(stringProperty,"acceptCharset",value);};
+   var action = function (value) {    return A2(stringProperty,"action",value);};
+   var autocomplete = function (bool) {    return A2(stringProperty,"autocomplete",bool ? "on" : "off");};
+   var autosave = function (value) {    return A2(stringProperty,"autosave",value);};
+   var enctype = function (value) {    return A2(stringProperty,"enctype",value);};
+   var formaction = function (value) {    return A2(stringProperty,"formAction",value);};
+   var list = function (value) {    return A2(stringProperty,"list",value);};
+   var minlength = function (n) {    return A2(stringProperty,"minLength",$Basics.toString(n));};
+   var maxlength = function (n) {    return A2(stringProperty,"maxLength",$Basics.toString(n));};
+   var method = function (value) {    return A2(stringProperty,"method",value);};
+   var name = function (value) {    return A2(stringProperty,"name",value);};
+   var pattern = function (value) {    return A2(stringProperty,"pattern",value);};
+   var size = function (n) {    return A2(stringProperty,"size",$Basics.toString(n));};
+   var $for = function (value) {    return A2(stringProperty,"htmlFor",value);};
+   var form = function (value) {    return A2(stringProperty,"form",value);};
+   var max = function (value) {    return A2(stringProperty,"max",value);};
+   var min = function (value) {    return A2(stringProperty,"min",value);};
+   var step = function (n) {    return A2(stringProperty,"step",n);};
+   var cols = function (n) {    return A2(stringProperty,"cols",$Basics.toString(n));};
+   var rows = function (n) {    return A2(stringProperty,"rows",$Basics.toString(n));};
+   var wrap = function (value) {    return A2(stringProperty,"wrap",value);};
+   var usemap = function (value) {    return A2(stringProperty,"useMap",value);};
+   var shape = function (value) {    return A2(stringProperty,"shape",value);};
+   var coords = function (value) {    return A2(stringProperty,"coords",value);};
+   var challenge = function (value) {    return A2(stringProperty,"challenge",value);};
+   var keytype = function (value) {    return A2(stringProperty,"keytype",value);};
+   var align = function (value) {    return A2(stringProperty,"align",value);};
+   var cite = function (value) {    return A2(stringProperty,"cite",value);};
+   var href = function (value) {    return A2(stringProperty,"href",value);};
+   var target = function (value) {    return A2(stringProperty,"target",value);};
+   var downloadAs = function (value) {    return A2(stringProperty,"download",value);};
+   var hreflang = function (value) {    return A2(stringProperty,"hreflang",value);};
+   var media = function (value) {    return A2(stringProperty,"media",value);};
+   var ping = function (value) {    return A2(stringProperty,"ping",value);};
+   var rel = function (value) {    return A2(stringProperty,"rel",value);};
+   var datetime = function (value) {    return A2(stringProperty,"datetime",value);};
+   var pubdate = function (value) {    return A2(stringProperty,"pubdate",value);};
+   var start = function (n) {    return A2(stringProperty,"start",$Basics.toString(n));};
+   var colspan = function (n) {    return A2(stringProperty,"colSpan",$Basics.toString(n));};
+   var headers = function (value) {    return A2(stringProperty,"headers",value);};
+   var rowspan = function (n) {    return A2(stringProperty,"rowSpan",$Basics.toString(n));};
+   var scope = function (value) {    return A2(stringProperty,"scope",value);};
+   var manifest = function (value) {    return A2(stringProperty,"manifest",value);};
+   var boolProperty = F2(function (name,bool) {    return A2(property,name,$Json$Encode.bool(bool));});
+   var hidden = function (bool) {    return A2(boolProperty,"hidden",bool);};
+   var contenteditable = function (bool) {    return A2(boolProperty,"contentEditable",bool);};
+   var spellcheck = function (bool) {    return A2(boolProperty,"spellcheck",bool);};
+   var async = function (bool) {    return A2(boolProperty,"async",bool);};
+   var defer = function (bool) {    return A2(boolProperty,"defer",bool);};
+   var scoped = function (bool) {    return A2(boolProperty,"scoped",bool);};
+   var autoplay = function (bool) {    return A2(boolProperty,"autoplay",bool);};
+   var controls = function (bool) {    return A2(boolProperty,"controls",bool);};
+   var loop = function (bool) {    return A2(boolProperty,"loop",bool);};
+   var $default = function (bool) {    return A2(boolProperty,"default",bool);};
+   var seamless = function (bool) {    return A2(boolProperty,"seamless",bool);};
+   var checked = function (bool) {    return A2(boolProperty,"checked",bool);};
+   var selected = function (bool) {    return A2(boolProperty,"selected",bool);};
+   var autofocus = function (bool) {    return A2(boolProperty,"autofocus",bool);};
+   var disabled = function (bool) {    return A2(boolProperty,"disabled",bool);};
+   var multiple = function (bool) {    return A2(boolProperty,"multiple",bool);};
+   var novalidate = function (bool) {    return A2(boolProperty,"noValidate",bool);};
+   var readonly = function (bool) {    return A2(boolProperty,"readOnly",bool);};
+   var required = function (bool) {    return A2(boolProperty,"required",bool);};
+   var ismap = function (value) {    return A2(boolProperty,"isMap",value);};
+   var download = function (bool) {    return A2(boolProperty,"download",bool);};
+   var reversed = function (bool) {    return A2(boolProperty,"reversed",bool);};
+   var classList = function (list) {    return $class(A2($String.join," ",A2($List.map,$Basics.fst,A2($List.filter,$Basics.snd,list))));};
    var style = function (props) {
       return A2(property,
       "style",
-      $Json$Encode.object(A2($List.map,
-      function (_p0) {
-         var _p1 = _p0;
-         return {ctor: "_Tuple2"
-                ,_0: _p1._0
-                ,_1: $Json$Encode.string(_p1._1)};
-      },
-      props)));
+      $Json$Encode.object(A2($List.map,function (_p0) {    var _p1 = _p0;return {ctor: "_Tuple2",_0: _p1._0,_1: $Json$Encode.string(_p1._1)};},props)));
    };
    var key = function (k) {    return A2(stringProperty,"key",k);};
    return _elm.Html.Attributes.values = {_op: _op
@@ -11280,8 +10228,7 @@ Elm.Html.Attributes.Extra.make = function (_elm) {
    _elm.Html = _elm.Html || {};
    _elm.Html.Attributes = _elm.Html.Attributes || {};
    _elm.Html.Attributes.Extra = _elm.Html.Attributes.Extra || {};
-   if (_elm.Html.Attributes.Extra.values)
-   return _elm.Html.Attributes.Extra.values;
+   if (_elm.Html.Attributes.Extra.values) return _elm.Html.Attributes.Extra.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -11293,36 +10240,14 @@ Elm.Html.Attributes.Extra.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
-   var role = function (r) {
-      return A2($Html$Attributes.attribute,"role",r);
-   };
-   var intProperty = F2(function (name,$int) {
-      return A2($Html$Attributes.property,
-      name,
-      $Json$Encode.$int($int));
-   });
-   var valueAsInt = function (value) {
-      return A2(intProperty,"valueAsNumber",value);
-   };
-   var floatProperty = F2(function (name,$float) {
-      return A2($Html$Attributes.property,
-      name,
-      $Json$Encode.$float($float));
-   });
-   var valueAsFloat = function (value) {
-      return A2(floatProperty,"valueAsNumber",value);
-   };
+   var role = function (r) {    return A2($Html$Attributes.attribute,"role",r);};
+   var intProperty = F2(function (name,$int) {    return A2($Html$Attributes.property,name,$Json$Encode.$int($int));});
+   var valueAsInt = function (value) {    return A2(intProperty,"valueAsNumber",value);};
+   var floatProperty = F2(function (name,$float) {    return A2($Html$Attributes.property,name,$Json$Encode.$float($float));});
+   var valueAsFloat = function (value) {    return A2(floatProperty,"valueAsNumber",value);};
    var volume = floatProperty("volume");
-   var boolProperty = F2(function (name,bool) {
-      return A2($Html$Attributes.property,
-      name,
-      $Json$Encode.bool(bool));
-   });
-   var stringProperty = F2(function (name,string) {
-      return A2($Html$Attributes.property,
-      name,
-      $Json$Encode.string(string));
-   });
+   var boolProperty = F2(function (name,bool) {    return A2($Html$Attributes.property,name,$Json$Encode.bool(bool));});
+   var stringProperty = F2(function (name,string) {    return A2($Html$Attributes.property,name,$Json$Encode.string(string));});
    var low = stringProperty("low");
    var high = stringProperty("high");
    var optimum = stringProperty("optimum");
@@ -11357,29 +10282,14 @@ Elm.Html.Events.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $VirtualDom = Elm.VirtualDom.make(_elm);
    var _op = {};
-   var keyCode = A2($Json$Decode._op[":="],
-   "keyCode",
-   $Json$Decode.$int);
-   var targetChecked = A2($Json$Decode.at,
-   _U.list(["target","checked"]),
-   $Json$Decode.bool);
-   var targetValue = A2($Json$Decode.at,
-   _U.list(["target","value"]),
-   $Json$Decode.string);
+   var keyCode = A2($Json$Decode._op[":="],"keyCode",$Json$Decode.$int);
+   var targetChecked = A2($Json$Decode.at,_U.list(["target","checked"]),$Json$Decode.bool);
+   var targetValue = A2($Json$Decode.at,_U.list(["target","value"]),$Json$Decode.string);
    var defaultOptions = $VirtualDom.defaultOptions;
-   var Options = F2(function (a,b) {
-      return {stopPropagation: a,preventDefault: b};
-   });
+   var Options = F2(function (a,b) {    return {stopPropagation: a,preventDefault: b};});
    var onWithOptions = $VirtualDom.onWithOptions;
    var on = $VirtualDom.on;
-   var messageOn = F3(function (name,addr,msg) {
-      return A3(on,
-      name,
-      $Json$Decode.value,
-      function (_p0) {
-         return A2($Signal.message,addr,msg);
-      });
-   });
+   var messageOn = F3(function (name,addr,msg) {    return A3(on,name,$Json$Decode.value,function (_p0) {    return A2($Signal.message,addr,msg);});});
    var onClick = messageOn("click");
    var onDoubleClick = messageOn("dblclick");
    var onMouseMove = messageOn("mousemove");
@@ -11392,14 +10302,7 @@ Elm.Html.Events.make = function (_elm) {
    var onBlur = messageOn("blur");
    var onFocus = messageOn("focus");
    var onSubmit = messageOn("submit");
-   var onKey = F3(function (name,addr,handler) {
-      return A3(on,
-      name,
-      keyCode,
-      function (code) {
-         return A2($Signal.message,addr,handler(code));
-      });
-   });
+   var onKey = F3(function (name,addr,handler) {    return A3(on,name,keyCode,function (code) {    return A2($Signal.message,addr,handler(code));});});
    var onKeyUp = onKey("keyup");
    var onKeyDown = onKey("keydown");
    var onKeyPress = onKey("keypress");
@@ -11435,8 +10338,7 @@ Elm.Html.Events.Extra.make = function (_elm) {
    _elm.Html = _elm.Html || {};
    _elm.Html.Events = _elm.Html.Events || {};
    _elm.Html.Events.Extra = _elm.Html.Events.Extra || {};
-   if (_elm.Html.Events.Extra.values)
-   return _elm.Html.Events.Extra.values;
+   if (_elm.Html.Events.Extra.values) return _elm.Html.Events.Extra.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -11449,17 +10351,12 @@ Elm.Html.Events.Extra.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
-   var targetValueIntParse = A2($Json$Decode.customDecoder,
-   $Html$Events.targetValue,
-   $String.toInt);
-   var targetValueFloatParse = A2($Json$Decode.customDecoder,
-   $Html$Events.targetValue,
-   $String.toFloat);
+   var targetValueIntParse = A2($Json$Decode.customDecoder,$Html$Events.targetValue,$String.toInt);
+   var targetValueFloatParse = A2($Json$Decode.customDecoder,$Html$Events.targetValue,$String.toFloat);
    var targetValueMaybe = A2($Json$Decode.customDecoder,
    $Html$Events.targetValue,
    function (s) {
-      return $Result.Ok(_U.eq(s,
-      "") ? $Maybe.Nothing : $Maybe.Just(s));
+      return $Result.Ok(_U.eq(s,"") ? $Maybe.Nothing : $Maybe.Just(s));
    });
    var targetValueMaybeInt = function () {
       var traverse = F2(function (f,mx) {
@@ -11470,9 +10367,7 @@ Elm.Html.Events.Extra.make = function (_elm) {
                return A2($Result.map,$Maybe.Just,f(_p0._0));
             }
       });
-      return A2($Json$Decode.customDecoder,
-      targetValueMaybe,
-      traverse($String.toInt));
+      return A2($Json$Decode.customDecoder,targetValueMaybe,traverse($String.toInt));
    }();
    var targetValueMaybeFloatParse = function () {
       var traverse = F2(function (f,mx) {
@@ -11483,9 +10378,7 @@ Elm.Html.Events.Extra.make = function (_elm) {
                return A2($Result.map,$Maybe.Just,f(_p1._0));
             }
       });
-      return A2($Json$Decode.customDecoder,
-      targetValueMaybe,
-      traverse($String.toFloat));
+      return A2($Json$Decode.customDecoder,targetValueMaybe,traverse($String.toFloat));
    }();
    var targetValueMaybeIntParse = function () {
       var traverse = F2(function (f,mx) {
@@ -11496,17 +10389,11 @@ Elm.Html.Events.Extra.make = function (_elm) {
                return A2($Result.map,$Maybe.Just,f(_p2._0));
             }
       });
-      return A2($Json$Decode.customDecoder,
-      targetValueMaybe,
-      traverse($String.toInt));
+      return A2($Json$Decode.customDecoder,targetValueMaybe,traverse($String.toInt));
    }();
-   var targetValueInt = A2($Json$Decode.at,
-   _U.list(["target","valueAsNumber"]),
-   $Json$Decode.$int);
+   var targetValueInt = A2($Json$Decode.at,_U.list(["target","valueAsNumber"]),$Json$Decode.$int);
    var targetValueFloat = A2($Json$Decode.customDecoder,
-   A2($Json$Decode.at,
-   _U.list(["target","valueAsNumber"]),
-   $Json$Decode.$float),
+   A2($Json$Decode.at,_U.list(["target","valueAsNumber"]),$Json$Decode.$float),
    function (v) {
       return $Basics.isNaN(v) ? $Result.Err("Not a number") : $Result.Ok(v);
    });
@@ -11526,12 +10413,7 @@ Elm.Html.Events.Extra.make = function (_elm) {
    },
    A2($Json$Decode._op[":="],"charCode",$Json$Decode.string));
    var onInput = F2(function (address,toAddressValue) {
-      return A3($Html$Events.on,
-      "input",
-      $Html$Events.targetValue,
-      function (str) {
-         return A2($Signal.message,address,toAddressValue(str));
-      });
+      return A3($Html$Events.on,"input",$Html$Events.targetValue,function (str) {    return A2($Signal.message,address,toAddressValue(str));});
    });
    return _elm.Html.Events.Extra.values = {_op: _op
                                           ,onInput: onInput
@@ -11554,8 +10436,7 @@ Elm.Html.Shorthand.Type.make = function (_elm) {
    _elm.Html = _elm.Html || {};
    _elm.Html.Shorthand = _elm.Html.Shorthand || {};
    _elm.Html.Shorthand.Type = _elm.Html.Shorthand.Type || {};
-   if (_elm.Html.Shorthand.Type.values)
-   return _elm.Html.Shorthand.Type.values;
+   if (_elm.Html.Shorthand.Type.values) return _elm.Html.Shorthand.Type.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -11565,123 +10446,24 @@ Elm.Html.Shorthand.Type.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
-   var MeterParam = F7(function (a,b,c,d,e,f,g) {
-      return {$class: a
-             ,value: b
-             ,min: c
-             ,max: d
-             ,low: e
-             ,high: f
-             ,optimum: g};
-   });
-   var ProgressParam = F3(function (a,b,c) {
-      return {$class: a,value: b,max: c};
-   });
-   var OutputParam = F3(function (a,b,c) {
-      return {$class: a,name: b,$for: c};
-   });
-   var OptionParam = F3(function (a,b,c) {
-      return {label: a,value: b,selected: c};
-   });
-   var SelectParam = F3(function (a,b,c) {
-      return {$class: a,name: b,update: c};
-   });
-   var ButtonParam = F2(function (a,b) {
-      return {$class: a,update: b};
-   });
-   var InputMaybeIntParam = F8(function (a,b,c,d,e,f,g,h) {
-      return {$class: a
-             ,name: b
-             ,placeholder: c
-             ,value: d
-             ,min: e
-             ,max: f
-             ,step: g
-             ,update: h};
-   });
-   var InputIntParam = F8(function (a,b,c,d,e,f,g,h) {
-      return {$class: a
-             ,name: b
-             ,placeholder: c
-             ,value: d
-             ,min: e
-             ,max: f
-             ,step: g
-             ,update: h};
-   });
-   var InputMaybeFloatParam = F8(function (a,b,c,d,e,f,g,h) {
-      return {$class: a
-             ,name: b
-             ,placeholder: c
-             ,value: d
-             ,min: e
-             ,max: f
-             ,step: g
-             ,update: h};
-   });
-   var InputFloatParam = F8(function (a,b,c,d,e,f,g,h) {
-      return {$class: a
-             ,name: b
-             ,placeholder: c
-             ,value: d
-             ,min: e
-             ,max: f
-             ,step: g
-             ,update: h};
-   });
-   var InputMaybeUrlParam = F6(function (a,b,c,d,e,f) {
-      return {$class: a
-             ,name: b
-             ,placeholder: c
-             ,value: d
-             ,autocomplete: e
-             ,update: f};
-   });
-   var InputUrlParam = F7(function (a,b,c,d,e,f,g) {
-      return {$class: a
-             ,name: b
-             ,placeholder: c
-             ,value: d
-             ,required: e
-             ,autocomplete: f
-             ,update: g};
-   });
-   var InputMaybeTextParam = F6(function (a,b,c,d,e,f) {
-      return {$class: a
-             ,name: b
-             ,placeholder: c
-             ,value: d
-             ,autocomplete: e
-             ,update: f};
-   });
-   var InputTextParam = F7(function (a,b,c,d,e,f,g) {
-      return {$class: a
-             ,name: b
-             ,placeholder: c
-             ,value: d
-             ,required: e
-             ,autocomplete: f
-             ,update: g};
-   });
-   var InputFieldParam = F8(function (a,b,c,d,e,f,g,h) {
-      return {$class: a
-             ,name: b
-             ,placeholder: c
-             ,update: d
-             ,type$: e
-             ,pattern: f
-             ,required: g
-             ,decoder: h};
-   });
-   var LabelParam = F2(function (a,b) {
-      return {$class: a,$for: b};
-   });
-   var FieldsetParam = F2(function (a,b) {
-      return {$class: a,disabled: b};
-   });
-   var FormParam = F3(function (a,b,c) {
-      return {$class: a,novalidate: b,update: c};
-   });
+   var MeterParam = F7(function (a,b,c,d,e,f,g) {    return {$class: a,value: b,min: c,max: d,low: e,high: f,optimum: g};});
+   var ProgressParam = F3(function (a,b,c) {    return {$class: a,value: b,max: c};});
+   var OutputParam = F3(function (a,b,c) {    return {$class: a,name: b,$for: c};});
+   var OptionParam = F3(function (a,b,c) {    return {label: a,value: b,selected: c};});
+   var SelectParam = F3(function (a,b,c) {    return {$class: a,name: b,update: c};});
+   var ButtonParam = F2(function (a,b) {    return {$class: a,update: b};});
+   var InputMaybeIntParam = F8(function (a,b,c,d,e,f,g,h) {    return {$class: a,name: b,placeholder: c,value: d,min: e,max: f,step: g,update: h};});
+   var InputIntParam = F8(function (a,b,c,d,e,f,g,h) {    return {$class: a,name: b,placeholder: c,value: d,min: e,max: f,step: g,update: h};});
+   var InputMaybeFloatParam = F8(function (a,b,c,d,e,f,g,h) {    return {$class: a,name: b,placeholder: c,value: d,min: e,max: f,step: g,update: h};});
+   var InputFloatParam = F8(function (a,b,c,d,e,f,g,h) {    return {$class: a,name: b,placeholder: c,value: d,min: e,max: f,step: g,update: h};});
+   var InputMaybeUrlParam = F6(function (a,b,c,d,e,f) {    return {$class: a,name: b,placeholder: c,value: d,autocomplete: e,update: f};});
+   var InputUrlParam = F7(function (a,b,c,d,e,f,g) {    return {$class: a,name: b,placeholder: c,value: d,required: e,autocomplete: f,update: g};});
+   var InputMaybeTextParam = F6(function (a,b,c,d,e,f) {    return {$class: a,name: b,placeholder: c,value: d,autocomplete: e,update: f};});
+   var InputTextParam = F7(function (a,b,c,d,e,f,g) {    return {$class: a,name: b,placeholder: c,value: d,required: e,autocomplete: f,update: g};});
+   var InputFieldParam = F8(function (a,b,c,d,e,f,g,h) {    return {$class: a,name: b,placeholder: c,update: d,type$: e,pattern: f,required: g,decoder: h};});
+   var LabelParam = F2(function (a,b) {    return {$class: a,$for: b};});
+   var FieldsetParam = F2(function (a,b) {    return {$class: a,disabled: b};});
+   var FormParam = F3(function (a,b,c) {    return {$class: a,novalidate: b,update: c};});
    var VideoParam = function (a) {
       return function (b) {
          return function (c) {
@@ -11718,70 +10500,21 @@ Elm.Html.Shorthand.Type.make = function (_elm) {
          };
       };
    };
-   var MediaParam = F8(function (a,b,c,d,e,f,g,h) {
-      return {$class: a
-             ,src: b
-             ,autoplay: c
-             ,controls: d
-             ,loop: e
-             ,preload: f
-             ,poster: g
-             ,volume: h};
-   });
-   var ObjectParam = F7(function (a,b,c,d,e,f,g) {
-      return {$class: a
-             ,name: b
-             ,data: c
-             ,type$: d
-             ,useMapName: e
-             ,height: f
-             ,width: g};
-   });
-   var EmbedParam = F7(function (a,b,c,d,e,f,g) {
-      return {$class: a
-             ,id: b
-             ,src: c
-             ,type$: d
-             ,useMapName: e
-             ,height: f
-             ,width: g};
-   });
-   var IframeParam = F7(function (a,b,c,d,e,f,g) {
-      return {$class: a
-             ,name: b
-             ,src: c
-             ,width: d
-             ,height: e
-             ,sandbox: f
-             ,seamless: g};
-   });
-   var ImgParam = F5(function (a,b,c,d,e) {
-      return {$class: a,src: b,width: c,height: d,alt: e};
-   });
-   var ModParam = F3(function (a,b,c) {
-      return {$class: a,cite: b,datetime: c};
-   });
-   var AnchorParam = F2(function (a,b) {
-      return {$class: a,href: b};
-   });
-   var ClassCiteParam = F2(function (a,b) {
-      return {$class: a,cite: b};
-   });
-   var ClassIdParam = F2(function (a,b) {
-      return {$class: a,id: b};
-   });
+   var MediaParam = F8(function (a,b,c,d,e,f,g,h) {    return {$class: a,src: b,autoplay: c,controls: d,loop: e,preload: f,poster: g,volume: h};});
+   var ObjectParam = F7(function (a,b,c,d,e,f,g) {    return {$class: a,name: b,data: c,type$: d,useMapName: e,height: f,width: g};});
+   var EmbedParam = F7(function (a,b,c,d,e,f,g) {    return {$class: a,id: b,src: c,type$: d,useMapName: e,height: f,width: g};});
+   var IframeParam = F7(function (a,b,c,d,e,f,g) {    return {$class: a,name: b,src: c,width: d,height: e,sandbox: f,seamless: g};});
+   var ImgParam = F5(function (a,b,c,d,e) {    return {$class: a,src: b,width: c,height: d,alt: e};});
+   var ModParam = F3(function (a,b,c) {    return {$class: a,cite: b,datetime: c};});
+   var AnchorParam = F2(function (a,b) {    return {$class: a,href: b};});
+   var ClassCiteParam = F2(function (a,b) {    return {$class: a,cite: b};});
+   var ClassIdParam = F2(function (a,b) {    return {$class: a,id: b};});
    var ClassParam = function (a) {    return {$class: a};};
    var SelectUpdate = function (a) {    return {onSelect: a};};
    var ButtonUpdate = function (a) {    return {onClick: a};};
-   var FieldUpdate = F3(function (a,b,c) {
-      return {onInput: a,onEnter: b,onKeyboardLost: c};
-   });
-   var FormUpdate = F2(function (a,b) {
-      return {onSubmit: a,onEnter: b};
-   });
-   var EventDecodeError = F2(function (a,b) {
-      return {event: a,reason: b};
-   });
+   var FieldUpdate = F3(function (a,b,c) {    return {onInput: a,onEnter: b,onKeyboardLost: c};});
+   var FormUpdate = F2(function (a,b) {    return {onSubmit: a,onEnter: b};});
+   var EventDecodeError = F2(function (a,b) {    return {event: a,reason: b};});
    return _elm.Html.Shorthand.Type.values = {_op: _op
                                             ,EventDecodeError: EventDecodeError
                                             ,FormUpdate: FormUpdate
@@ -11826,8 +10559,7 @@ Elm.Html.Shorthand.Event.make = function (_elm) {
    _elm.Html = _elm.Html || {};
    _elm.Html.Shorthand = _elm.Html.Shorthand || {};
    _elm.Html.Shorthand.Event = _elm.Html.Shorthand.Event || {};
-   if (_elm.Html.Shorthand.Event.values)
-   return _elm.Html.Shorthand.Event.values;
+   if (_elm.Html.Shorthand.Event.values) return _elm.Html.Shorthand.Event.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -11845,9 +10577,7 @@ Elm.Html.Shorthand.Event.make = function (_elm) {
       $Json$Decode.value,
       function (event) {
          var r = A2($Json$Decode.decodeValue,dec,event);
-         var r$ = A2($Result.formatError,
-         $Html$Shorthand$Type.EventDecodeError(event),
-         r);
+         var r$ = A2($Result.formatError,$Html$Shorthand$Type.EventDecodeError(event),r);
          var _p0 = {ctor: "_Tuple2",_0: f(r$),_1: r};
          if (_p0._0.ctor === "Nothing") {
                if (_p0._1.ctor === "Err") {
@@ -11866,16 +10596,10 @@ Elm.Html.Shorthand.Event.make = function (_elm) {
       return A3($Html$Events.on,
       "keydown",
       A2($Json$Decode.customDecoder,
-      A3($Json$Decode.object2,
-      F2(function (v0,v1) {
-         return {ctor: "_Tuple2",_0: v0,_1: v1};
-      }),
-      $Html$Events.keyCode,
-      dec),
+      A3($Json$Decode.object2,F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}),$Html$Events.keyCode,dec),
       function (_p1) {
          var _p2 = _p1;
-         return _U.eq(_p2._0,
-         13) ? $Result.Ok(_p2._1) : $Result.Err("expected key code 13");
+         return _U.eq(_p2._0,13) ? $Result.Ok(_p2._1) : $Result.Err("expected key code 13");
       }),
       f);
    });
@@ -11897,8 +10621,7 @@ Elm.Html.Shorthand.Internal.make = function (_elm) {
    _elm.Html = _elm.Html || {};
    _elm.Html.Shorthand = _elm.Html.Shorthand || {};
    _elm.Html.Shorthand.Internal = _elm.Html.Shorthand.Internal || {};
-   if (_elm.Html.Shorthand.Internal.values)
-   return _elm.Html.Shorthand.Internal.values;
+   if (_elm.Html.Shorthand.Internal.values) return _elm.Html.Shorthand.Internal.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Char = Elm.Char.make(_elm),
@@ -11915,25 +10638,18 @@ Elm.Html.Shorthand.Internal.make = function (_elm) {
    var encodeClass = function () {
       var isAlpha = function (c) {
          var cc = $Char.toCode($Char.toLower(c));
-         return _U.cmp(cc,$Char.toCode(_U.chr("a"))) > -1 && _U.cmp(cc,
-         $Char.toCode(_U.chr("z"))) < 1;
+         return _U.cmp(cc,$Char.toCode(_U.chr("a"))) > -1 && _U.cmp(cc,$Char.toCode(_U.chr("z"))) < 1;
       };
       var startWithAlpha = function (s) {
          var _p0 = $String.uncons(s);
          if (_p0.ctor === "Just") {
-               return $Basics.not(isAlpha(_p0._0._0)) ? A2($String.cons,
-               _U.chr("x"),
-               s) : s;
+               return $Basics.not(isAlpha(_p0._0._0)) ? A2($String.cons,_U.chr("x"),s) : s;
             } else {
                return s;
             }
       };
       var hu = _U.list([_U.chr("-"),_U.chr("_")]);
-      var isClassChar = function (c) {
-         return $Char.isDigit(c) || (isAlpha(c) || A2($List.member,
-         c,
-         hu));
-      };
+      var isClassChar = function (c) {    return $Char.isDigit(c) || (isAlpha(c) || A2($List.member,c,hu));};
       var smartTrimLeft = function (s) {
          var _p1 = $String.uncons(s);
          if (_p1.ctor === "Just") {
@@ -11945,53 +10661,34 @@ Elm.Html.Shorthand.Internal.make = function (_elm) {
       var smartTrimRight = function (s) {
          var _p2 = $String.uncons($String.reverse(s));
          if (_p2.ctor === "Just") {
-               return A2($List.member,
-               _p2._0._0,
-               hu) ? $String.reverse(_p2._0._1) : s;
+               return A2($List.member,_p2._0._0,hu) ? $String.reverse(_p2._0._1) : s;
             } else {
                return s;
             }
       };
-      var smartTrim = function (_p3) {
-         return smartTrimRight(smartTrimLeft(_p3));
-      };
+      var smartTrim = function (_p3) {    return smartTrimRight(smartTrimLeft(_p3));};
       return function (_p4) {
          return A2($String.join,
          " ",
-         A2($List.map,
-         function (_p5) {
-            return startWithAlpha(smartTrim(A2($String.filter,
-            isClassChar,
-            $String.toLower(_p5))));
-         },
-         $String.words(_p4)));
+         A2($List.map,function (_p5) {    return startWithAlpha(smartTrim(A2($String.filter,isClassChar,$String.toLower(_p5))));},$String.words(_p4)));
       };
    }();
-   var class$ = function (_p6) {
-      return $Html$Attributes.$class(encodeClass(_p6));
-   };
+   var class$ = function (_p6) {    return $Html$Attributes.$class(encodeClass(_p6));};
    var encodeId = function () {
       var isAlpha = function (c) {
          var cc = $Char.toCode($Char.toLower(c));
-         return _U.cmp(cc,$Char.toCode(_U.chr("a"))) > -1 && _U.cmp(cc,
-         $Char.toCode(_U.chr("z"))) < 1;
+         return _U.cmp(cc,$Char.toCode(_U.chr("a"))) > -1 && _U.cmp(cc,$Char.toCode(_U.chr("z"))) < 1;
       };
       var startWithAlpha = function (s) {
          var _p7 = $String.uncons(s);
          if (_p7.ctor === "Just") {
-               return $Basics.not(isAlpha(_p7._0._0)) ? A2($String.cons,
-               _U.chr("x"),
-               s) : s;
+               return $Basics.not(isAlpha(_p7._0._0)) ? A2($String.cons,_U.chr("x"),s) : s;
             } else {
                return s;
             }
       };
       var hu = _U.list([_U.chr("-"),_U.chr("_")]);
-      var isIdChar = function (c) {
-         return $Char.isDigit(c) || (isAlpha(c) || A2($List.member,
-         c,
-         hu));
-      };
+      var isIdChar = function (c) {    return $Char.isDigit(c) || (isAlpha(c) || A2($List.member,c,hu));};
       var smartTrimLeft = function (s) {
          var _p8 = $String.uncons(s);
          if (_p8.ctor === "Just") {
@@ -12003,36 +10700,20 @@ Elm.Html.Shorthand.Internal.make = function (_elm) {
       var smartTrimRight = function (s) {
          var _p9 = $String.uncons($String.reverse(s));
          if (_p9.ctor === "Just") {
-               return A2($List.member,
-               _p9._0._0,
-               hu) ? $String.reverse(_p9._0._1) : s;
+               return A2($List.member,_p9._0._0,hu) ? $String.reverse(_p9._0._1) : s;
             } else {
                return s;
             }
       };
-      var smartTrim = function (_p10) {
-         return smartTrimRight(smartTrimLeft(_p10));
-      };
+      var smartTrim = function (_p10) {    return smartTrimRight(smartTrimLeft(_p10));};
       return function (_p11) {
          return startWithAlpha(A2($String.join,
          "-",
-         A2($List.map,
-         function (_p12) {
-            return smartTrim(A2($String.filter,
-            isIdChar,
-            $String.toLower(_p12)));
-         },
-         $String.words(_p11))));
+         A2($List.map,function (_p12) {    return smartTrim(A2($String.filter,isIdChar,$String.toLower(_p12)));},$String.words(_p11))));
       };
    }();
-   var id$ = function (_p13) {
-      return $Html$Attributes.id(encodeId(_p13));
-   };
-   return _elm.Html.Shorthand.Internal.values = {_op: _op
-                                                ,encodeId: encodeId
-                                                ,encodeClass: encodeClass
-                                                ,id$: id$
-                                                ,class$: class$};
+   var id$ = function (_p13) {    return $Html$Attributes.id(encodeId(_p13));};
+   return _elm.Html.Shorthand.Internal.values = {_op: _op,encodeId: encodeId,encodeClass: encodeClass,id$: id$,class$: class$};
 };
 Elm.Html = Elm.Html || {};
 Elm.Html.Shorthand = Elm.Html.Shorthand || {};
@@ -12040,8 +10721,7 @@ Elm.Html.Shorthand.make = function (_elm) {
    "use strict";
    _elm.Html = _elm.Html || {};
    _elm.Html.Shorthand = _elm.Html.Shorthand || {};
-   if (_elm.Html.Shorthand.values)
-   return _elm.Html.Shorthand.values;
+   if (_elm.Html.Shorthand.values) return _elm.Html.Shorthand.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -12067,76 +10747,35 @@ Elm.Html.Shorthand.make = function (_elm) {
       _U.list([$Html$Attributes.value($Basics.toString(p.value))
               ,$Html$Attributes.min($Basics.toString($Basics.min))
               ,$Html$Attributes.max($Basics.toString(p.max))]),
-      filterJust(_U.list([A2($Maybe.map,
-                         function (_p0) {
-                            return $Html$Attributes$Extra.low($Basics.toString(_p0));
-                         },
-                         p.low)
-                         ,A2($Maybe.map,
-                         function (_p1) {
-                            return $Html$Attributes$Extra.high($Basics.toString(_p1));
-                         },
-                         p.high)
-                         ,A2($Maybe.map,
-                         function (_p2) {
-                            return $Html$Attributes$Extra.optimum($Basics.toString(_p2));
-                         },
-                         p.optimum)]))),
+      filterJust(_U.list([A2($Maybe.map,function (_p0) {    return $Html$Attributes$Extra.low($Basics.toString(_p0));},p.low)
+                         ,A2($Maybe.map,function (_p1) {    return $Html$Attributes$Extra.high($Basics.toString(_p1));},p.high)
+                         ,A2($Maybe.map,function (_p2) {    return $Html$Attributes$Extra.optimum($Basics.toString(_p2));},p.optimum)]))),
       _U.list([$Html.text(t)]));
    });
    var progress$ = F2(function (p,t) {
       return A2($Html.progress,
-      _U.list([$Html$Attributes.value($Basics.toString(p.value))
-              ,$Html$Attributes.max($Basics.toString(p.max))]),
+      _U.list([$Html$Attributes.value($Basics.toString(p.value)),$Html$Attributes.max($Basics.toString(p.max))]),
       _U.list([$Html.text(t)]));
    });
    var option$ = function (p) {
       return A2($Html.option,
-      _U.list([A2($Html$Attributes$Extra.stringProperty,
-              "label",
-              p.label)
+      _U.list([A2($Html$Attributes$Extra.stringProperty,"label",p.label)
               ,$Html$Attributes.value($Basics.toString(p.value))
               ,$Html$Attributes.selected(p.selected)]),
       _U.list([]));
    };
-   var option_ = F2(function (val,sel) {
-      return A2($Html.option,
-      _U.list([$Html$Attributes.selected(sel)]),
-      _U.list([$Html.text(val)]));
-   });
-   var buttonReset_ = function (t) {
-      return A2($Html.button,
-      _U.list([$Html$Attributes.type$("reset")]),
-      _U.list([$Html.text(t)]));
-   };
-   var buttonSubmit_ = function (t) {
-      return A2($Html.button,
-      _U.list([$Html$Attributes.type$("submit")]),
-      _U.list([$Html.text(t)]));
-   };
+   var option_ = F2(function (val,sel) {    return A2($Html.option,_U.list([$Html$Attributes.selected(sel)]),_U.list([$Html.text(val)]));});
+   var buttonReset_ = function (t) {    return A2($Html.button,_U.list([$Html$Attributes.type$("reset")]),_U.list([$Html.text(t)]));};
+   var buttonSubmit_ = function (t) {    return A2($Html.button,_U.list([$Html$Attributes.type$("submit")]),_U.list([$Html.text(t)]));};
    var buttonLink_ = F3(function (t,clickAddr,click) {
-      return A2($Html.button,
-      _U.list([$Html$Attributes.type$("button")
-              ,A2($Html$Events.onClick,clickAddr,click)]),
-      _U.list([$Html.text(t)]));
+      return A2($Html.button,_U.list([$Html$Attributes.type$("button"),A2($Html$Events.onClick,clickAddr,click)]),_U.list([$Html.text(t)]));
    });
    var button_ = F3(function (t,clickAddr,click) {
-      return A2($Html.button,
-      _U.list([$Html$Attributes.type$("button")
-              ,A2($Html$Events.onClick,clickAddr,click)]),
-      _U.list([$Html.text(t)]));
+      return A2($Html.button,_U.list([$Html$Attributes.type$("button"),A2($Html$Events.onClick,clickAddr,click)]),_U.list([$Html.text(t)]));
    });
-   var label_ = F2(function ($for,t) {
-      return A2($Html.label,
-      _U.list([$Html$Attributes.$for($for)]),
-      _U.list([$Html.text(t)]));
-   });
-   var legend_ = function (t) {
-      return A2($Html.legend,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var fieldset_ = function (disabled) {
-      return $Html.fieldset(_U.list([$Html$Attributes.disabled(disabled)]));
-   };
+   var label_ = F2(function ($for,t) {    return A2($Html.label,_U.list([$Html$Attributes.$for($for)]),_U.list([$Html.text(t)]));});
+   var legend_ = function (t) {    return A2($Html.legend,_U.list([]),_U.list([$Html.text(t)]));};
+   var fieldset_ = function (disabled) {    return $Html.fieldset(_U.list([$Html$Attributes.disabled(disabled)]));};
    var th_ = $Html.th(_U.list([]));
    var td_ = $Html.td(_U.list([]));
    var tr_ = $Html.tr(_U.list([]));
@@ -12145,28 +10784,11 @@ Elm.Html.Shorthand.make = function (_elm) {
    var tbody_ = $Html.tbody(_U.list([]));
    var caption_ = $Html.caption(_U.list([]));
    var table_ = $Html.table(_U.list([]));
-   var audio_ = function (url) {
-      return A2($Html.audio,
-      _U.list([$Html$Attributes.src(url)]),
-      _U.list([]));
-   };
-   var video_ = function (url) {
-      return A2($Html.video,
-      _U.list([$Html$Attributes.src(url)]),
-      _U.list([]));
-   };
-   var param$ = F2(function (n,v) {
-      return A2($Html.param,
-      _U.list([$Html$Attributes.name(n),$Html$Attributes.value(v)]),
-      _U.list([]));
-   });
+   var audio_ = function (url) {    return A2($Html.audio,_U.list([$Html$Attributes.src(url)]),_U.list([]));};
+   var video_ = function (url) {    return A2($Html.video,_U.list([$Html$Attributes.src(url)]),_U.list([]));};
+   var param$ = F2(function (n,v) {    return A2($Html.param,_U.list([$Html$Attributes.name(n),$Html$Attributes.value(v)]),_U.list([]));});
    var img_ = F4(function (w,h,s,a) {
-      return A2($Html.img,
-      _U.list([$Html$Attributes.width(w)
-              ,$Html$Attributes.height(h)
-              ,$Html$Attributes.src(s)
-              ,$Html$Attributes.alt(a)]),
-      _U.list([]));
+      return A2($Html.img,_U.list([$Html$Attributes.width(w),$Html$Attributes.height(h),$Html$Attributes.src(s),$Html$Attributes.alt(a)]),_U.list([]));
    });
    var del_ = $Html.del(_U.list([]));
    var ins_ = $Html.ins(_U.list([]));
@@ -12182,62 +10804,28 @@ Elm.Html.Shorthand.make = function (_elm) {
             default: return "auto";}
       }())]));
    };
-   var bdi_ = function (t) {
-      return A2($Html.bdi,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var rp_ = function (t) {
-      return A2($Html.rp,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var rt_ = function (t) {
-      return A2($Html.rt,_U.list([]),_U.list([$Html.text(t)]));
-   };
+   var bdi_ = function (t) {    return A2($Html.bdi,_U.list([]),_U.list([$Html.text(t)]));};
+   var rp_ = function (t) {    return A2($Html.rp,_U.list([]),_U.list([$Html.text(t)]));};
+   var rt_ = function (t) {    return A2($Html.rt,_U.list([]),_U.list([$Html.text(t)]));};
    var ruby_ = $Html.ruby(_U.list([]));
    var mark_ = $Html.mark(_U.list([]));
-   var u_ = function (t) {
-      return A2($Html.u,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var b_ = function (t) {
-      return A2($Html.b,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var i_ = function (t) {
-      return A2($Html.i,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var sup_ = function (t) {
-      return A2($Html.sup,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var sub_ = function (t) {
-      return A2($Html.sub,_U.list([]),_U.list([$Html.text(t)]));
-   };
+   var u_ = function (t) {    return A2($Html.u,_U.list([]),_U.list([$Html.text(t)]));};
+   var b_ = function (t) {    return A2($Html.b,_U.list([]),_U.list([$Html.text(t)]));};
+   var i_ = function (t) {    return A2($Html.i,_U.list([]),_U.list([$Html.text(t)]));};
+   var sup_ = function (t) {    return A2($Html.sup,_U.list([]),_U.list([$Html.text(t)]));};
+   var sub_ = function (t) {    return A2($Html.sub,_U.list([]),_U.list([$Html.text(t)]));};
    var kbd_ = $Html.kbd(_U.list([]));
    var samp_ = $Html.samp(_U.list([]));
-   var var_ = function (t) {
-      return A2($Html.$var,_U.list([]),_U.list([$Html.text(t)]));
-   };
+   var var_ = function (t) {    return A2($Html.$var,_U.list([]),_U.list([$Html.text(t)]));};
    var code_ = $Html.code(_U.list([]));
-   var abbr_ = function (t) {
-      return A2($Html.abbr,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var q_ = function (t) {
-      return A2($Html.q,_U.list([]),_U.list([$Html.text(t)]));
-   };
+   var abbr_ = function (t) {    return A2($Html.abbr,_U.list([]),_U.list([$Html.text(t)]));};
+   var q_ = function (t) {    return A2($Html.q,_U.list([]),_U.list([$Html.text(t)]));};
    var cite_ = $Html.cite(_U.list([]));
-   var s_ = function (t) {
-      return A2($Html.s,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var small_ = function (t) {
-      return A2($Html.small,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var strong_ = function (t) {
-      return A2($Html.strong,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var em_ = function (t) {
-      return A2($Html.em,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var a_ = F2(function (href,t) {
-      return A2($Html.a,
-      _U.list([$Html$Attributes.href(href)]),
-      _U.list([$Html.text(t)]));
-   });
+   var s_ = function (t) {    return A2($Html.s,_U.list([]),_U.list([$Html.text(t)]));};
+   var small_ = function (t) {    return A2($Html.small,_U.list([]),_U.list([$Html.text(t)]));};
+   var strong_ = function (t) {    return A2($Html.strong,_U.list([]),_U.list([$Html.text(t)]));};
+   var em_ = function (t) {    return A2($Html.em,_U.list([]),_U.list([$Html.text(t)]));};
+   var a_ = F2(function (href,t) {    return A2($Html.a,_U.list([$Html$Attributes.href(href)]),_U.list([$Html.text(t)]));});
    var div_ = $Html.div(_U.list([]));
    var figcaption_ = $Html.figcaption(_U.list([]));
    var dd_ = $Html.dd(_U.list([]));
@@ -12253,179 +10841,64 @@ Elm.Html.Shorthand.make = function (_elm) {
    var address_ = $Html.address(_U.list([]));
    var footer_ = $Html.footer(_U.list([]));
    var header_ = $Html.header(_U.list([]));
-   var h6_ = function (t) {
-      return A2($Html.h6,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var h5_ = function (t) {
-      return A2($Html.h5,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var h4_ = function (t) {
-      return A2($Html.h4,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var h3_ = function (t) {
-      return A2($Html.h3,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var h2_ = function (t) {
-      return A2($Html.h2,_U.list([]),_U.list([$Html.text(t)]));
-   };
-   var h1_ = function (t) {
-      return A2($Html.h1,_U.list([]),_U.list([$Html.text(t)]));
-   };
+   var h6_ = function (t) {    return A2($Html.h6,_U.list([]),_U.list([$Html.text(t)]));};
+   var h5_ = function (t) {    return A2($Html.h5,_U.list([]),_U.list([$Html.text(t)]));};
+   var h4_ = function (t) {    return A2($Html.h4,_U.list([]),_U.list([$Html.text(t)]));};
+   var h3_ = function (t) {    return A2($Html.h3,_U.list([]),_U.list([$Html.text(t)]));};
+   var h2_ = function (t) {    return A2($Html.h2,_U.list([]),_U.list([$Html.text(t)]));};
+   var h1_ = function (t) {    return A2($Html.h1,_U.list([]),_U.list([$Html.text(t)]));};
    var nav_ = $Html.nav(_U.list([]));
    var body_ = $Html.body(_U.list([]));
    var class$ = $Html$Shorthand$Internal.class$;
-   var body$ = function (p) {
-      return $Html.body(_U.list([class$(p.$class)]));
-   };
-   var nav$ = function (p) {
-      return $Html.nav(_U.list([class$(p.$class)]));
-   };
-   var h1$ = function (p) {
-      return $Html.h1(_U.list([class$(p.$class)]));
-   };
-   var h2$ = function (p) {
-      return $Html.h2(_U.list([class$(p.$class)]));
-   };
-   var h3$ = function (p) {
-      return $Html.h3(_U.list([class$(p.$class)]));
-   };
-   var h4$ = function (p) {
-      return $Html.h4(_U.list([class$(p.$class)]));
-   };
-   var h5$ = function (p) {
-      return $Html.h5(_U.list([class$(p.$class)]));
-   };
-   var h6$ = function (p) {
-      return $Html.h6(_U.list([class$(p.$class)]));
-   };
-   var header$ = function (p) {
-      return $Html.header(_U.list([class$(p.$class)]));
-   };
-   var footer$ = function (p) {
-      return $Html.footer(_U.list([class$(p.$class)]));
-   };
-   var address$ = function (p) {
-      return $Html.address(_U.list([class$(p.$class)]));
-   };
-   var p$ = function (param) {
-      return $Html.p(_U.list([class$(param.$class)]));
-   };
-   var pre$ = function (p) {
-      return $Html.pre(_U.list([class$(p.$class)]));
-   };
-   var blockquote$ = function (p) {
-      return $Html.blockquote(_U.list([class$(p.$class)
-                                      ,$Html$Attributes.cite(p.cite)]));
-   };
-   var ol$ = function (p) {
-      return $Html.ol(_U.list([class$(p.$class)]));
-   };
-   var ul$ = function (p) {
-      return $Html.ul(_U.list([class$(p.$class)]));
-   };
-   var li$ = function (p) {
-      return $Html.li(_U.list([class$(p.$class)]));
-   };
-   var dl$ = function (p) {
-      return $Html.dl(_U.list([class$(p.$class)]));
-   };
-   var dd$ = function (p) {
-      return $Html.dd(_U.list([class$(p.$class)]));
-   };
-   var figcaption$ = function (p) {
-      return $Html.figcaption(_U.list([class$(p.$class)]));
-   };
-   var div$ = function (p) {
-      return $Html.div(_U.list([class$(p.$class)]));
-   };
-   var a$ = function (p) {
-      return $Html.a(_U.list([class$(p.$class)
-                             ,$Html$Attributes.href(p.href)]));
-   };
-   var em$ = function (p) {
-      return $Html.em(_U.list([class$(p.$class)]));
-   };
-   var strong$ = function (p) {
-      return $Html.strong(_U.list([class$(p.$class)]));
-   };
-   var small$ = function (p) {
-      return $Html.small(_U.list([class$(p.$class)]));
-   };
-   var s$ = function (p) {
-      return $Html.s(_U.list([class$(p.$class)]));
-   };
-   var cite$ = function (p) {
-      return $Html.cite(_U.list([class$(p.$class)]));
-   };
-   var q$ = function (p) {
-      return $Html.q(_U.list([class$(p.$class)
-                             ,$Html$Attributes.cite(p.cite)]));
-   };
-   var abbr$ = function (p) {
-      return $Html.abbr(_U.list([class$(p.$class)]));
-   };
-   var code$ = function (p) {
-      return $Html.code(_U.list([class$(p.$class)]));
-   };
-   var var$ = function (p) {
-      return $Html.$var(_U.list([class$(p.$class)]));
-   };
-   var samp$ = function (p) {
-      return $Html.samp(_U.list([class$(p.$class)]));
-   };
-   var kbd$ = function (p) {
-      return $Html.kbd(_U.list([class$(p.$class)]));
-   };
-   var sub$ = function (p) {
-      return $Html.sub(_U.list([class$(p.$class)]));
-   };
-   var sup$ = function (p) {
-      return $Html.sup(_U.list([class$(p.$class)]));
-   };
-   var i$ = function (p) {
-      return $Html.i(_U.list([class$(p.$class)]));
-   };
-   var b$ = function (p) {
-      return $Html.b(_U.list([class$(p.$class)]));
-   };
-   var u$ = function (p) {
-      return $Html.u(_U.list([class$(p.$class)]));
-   };
-   var mark$ = function (p) {
-      return $Html.mark(_U.list([class$(p.$class)]));
-   };
-   var ruby$ = function (p) {
-      return $Html.ruby(_U.list([class$(p.$class)]));
-   };
-   var rt$ = function (p) {
-      return $Html.rt(_U.list([class$(p.$class)]));
-   };
-   var rp$ = function (p) {
-      return $Html.rp(_U.list([class$(p.$class)]));
-   };
-   var bdi$ = function (p) {
-      return $Html.bdi(_U.list([class$(p.$class)]));
-   };
-   var span$ = function (p) {
-      return $Html.span(_U.list([class$(p.$class)]));
-   };
-   var ins$ = function (p) {
-      return $Html.ins(_U.list([class$(p.$class)
-                               ,$Html$Attributes.cite(p.cite)
-                               ,$Html$Attributes.datetime(p.datetime)]));
-   };
-   var del$ = function (p) {
-      return $Html.del(_U.list([class$(p.$class)
-                               ,$Html$Attributes.cite(p.cite)
-                               ,$Html$Attributes.datetime(p.datetime)]));
-   };
+   var body$ = function (p) {    return $Html.body(_U.list([class$(p.$class)]));};
+   var nav$ = function (p) {    return $Html.nav(_U.list([class$(p.$class)]));};
+   var h1$ = function (p) {    return $Html.h1(_U.list([class$(p.$class)]));};
+   var h2$ = function (p) {    return $Html.h2(_U.list([class$(p.$class)]));};
+   var h3$ = function (p) {    return $Html.h3(_U.list([class$(p.$class)]));};
+   var h4$ = function (p) {    return $Html.h4(_U.list([class$(p.$class)]));};
+   var h5$ = function (p) {    return $Html.h5(_U.list([class$(p.$class)]));};
+   var h6$ = function (p) {    return $Html.h6(_U.list([class$(p.$class)]));};
+   var header$ = function (p) {    return $Html.header(_U.list([class$(p.$class)]));};
+   var footer$ = function (p) {    return $Html.footer(_U.list([class$(p.$class)]));};
+   var address$ = function (p) {    return $Html.address(_U.list([class$(p.$class)]));};
+   var p$ = function (param) {    return $Html.p(_U.list([class$(param.$class)]));};
+   var pre$ = function (p) {    return $Html.pre(_U.list([class$(p.$class)]));};
+   var blockquote$ = function (p) {    return $Html.blockquote(_U.list([class$(p.$class),$Html$Attributes.cite(p.cite)]));};
+   var ol$ = function (p) {    return $Html.ol(_U.list([class$(p.$class)]));};
+   var ul$ = function (p) {    return $Html.ul(_U.list([class$(p.$class)]));};
+   var li$ = function (p) {    return $Html.li(_U.list([class$(p.$class)]));};
+   var dl$ = function (p) {    return $Html.dl(_U.list([class$(p.$class)]));};
+   var dd$ = function (p) {    return $Html.dd(_U.list([class$(p.$class)]));};
+   var figcaption$ = function (p) {    return $Html.figcaption(_U.list([class$(p.$class)]));};
+   var div$ = function (p) {    return $Html.div(_U.list([class$(p.$class)]));};
+   var a$ = function (p) {    return $Html.a(_U.list([class$(p.$class),$Html$Attributes.href(p.href)]));};
+   var em$ = function (p) {    return $Html.em(_U.list([class$(p.$class)]));};
+   var strong$ = function (p) {    return $Html.strong(_U.list([class$(p.$class)]));};
+   var small$ = function (p) {    return $Html.small(_U.list([class$(p.$class)]));};
+   var s$ = function (p) {    return $Html.s(_U.list([class$(p.$class)]));};
+   var cite$ = function (p) {    return $Html.cite(_U.list([class$(p.$class)]));};
+   var q$ = function (p) {    return $Html.q(_U.list([class$(p.$class),$Html$Attributes.cite(p.cite)]));};
+   var abbr$ = function (p) {    return $Html.abbr(_U.list([class$(p.$class)]));};
+   var code$ = function (p) {    return $Html.code(_U.list([class$(p.$class)]));};
+   var var$ = function (p) {    return $Html.$var(_U.list([class$(p.$class)]));};
+   var samp$ = function (p) {    return $Html.samp(_U.list([class$(p.$class)]));};
+   var kbd$ = function (p) {    return $Html.kbd(_U.list([class$(p.$class)]));};
+   var sub$ = function (p) {    return $Html.sub(_U.list([class$(p.$class)]));};
+   var sup$ = function (p) {    return $Html.sup(_U.list([class$(p.$class)]));};
+   var i$ = function (p) {    return $Html.i(_U.list([class$(p.$class)]));};
+   var b$ = function (p) {    return $Html.b(_U.list([class$(p.$class)]));};
+   var u$ = function (p) {    return $Html.u(_U.list([class$(p.$class)]));};
+   var mark$ = function (p) {    return $Html.mark(_U.list([class$(p.$class)]));};
+   var ruby$ = function (p) {    return $Html.ruby(_U.list([class$(p.$class)]));};
+   var rt$ = function (p) {    return $Html.rt(_U.list([class$(p.$class)]));};
+   var rp$ = function (p) {    return $Html.rp(_U.list([class$(p.$class)]));};
+   var bdi$ = function (p) {    return $Html.bdi(_U.list([class$(p.$class)]));};
+   var span$ = function (p) {    return $Html.span(_U.list([class$(p.$class)]));};
+   var ins$ = function (p) {    return $Html.ins(_U.list([class$(p.$class),$Html$Attributes.cite(p.cite),$Html$Attributes.datetime(p.datetime)]));};
+   var del$ = function (p) {    return $Html.del(_U.list([class$(p.$class),$Html$Attributes.cite(p.cite),$Html$Attributes.datetime(p.datetime)]));};
    var img$ = function (p) {
       return A2($Html.img,
-      _U.list([class$(p.$class)
-              ,$Html$Attributes.src(p.src)
-              ,$Html$Attributes.width(p.width)
-              ,$Html$Attributes.height(p.height)
-              ,$Html$Attributes.alt(p.alt)]),
+      _U.list([class$(p.$class),$Html$Attributes.src(p.src),$Html$Attributes.width(p.width),$Html$Attributes.height(p.height),$Html$Attributes.alt(p.alt)]),
       _U.list([]));
    };
    var video$ = function (p) {
@@ -12438,50 +10911,27 @@ Elm.Html.Shorthand.make = function (_elm) {
               ,$Html$Attributes.controls(p.controls)
               ,$Html$Attributes.loop(p.loop)]),
       filterJust(_U.list([A2($Maybe.map,$Html$Attributes.src,p.src)
-                         ,A2($Maybe.map,
-                         $Html$Attributes$Extra.stringProperty("preload"),
-                         p.preload)
+                         ,A2($Maybe.map,$Html$Attributes$Extra.stringProperty("preload"),p.preload)
                          ,A2($Maybe.map,$Html$Attributes.poster,p.poster)
                          ,A2($Maybe.map,$Html$Attributes$Extra.volume,p.volume)]))));
    };
    var audio$ = function (p) {
       var filterJust = $List.filterMap($Basics.identity);
       return $Html.audio(A2($Basics._op["++"],
-      _U.list([class$(p.$class)
-              ,$Html$Attributes.autoplay(p.autoplay)
-              ,$Html$Attributes.controls(p.controls)
-              ,$Html$Attributes.loop(p.loop)]),
+      _U.list([class$(p.$class),$Html$Attributes.autoplay(p.autoplay),$Html$Attributes.controls(p.controls),$Html$Attributes.loop(p.loop)]),
       filterJust(_U.list([A2($Maybe.map,$Html$Attributes.src,p.src)
-                         ,A2($Maybe.map,
-                         $Html$Attributes$Extra.stringProperty("preload"),
-                         p.preload)
+                         ,A2($Maybe.map,$Html$Attributes$Extra.stringProperty("preload"),p.preload)
                          ,A2($Maybe.map,$Html$Attributes.poster,p.poster)
                          ,A2($Maybe.map,$Html$Attributes$Extra.volume,p.volume)]))));
    };
-   var table$ = function (p) {
-      return $Html.table(_U.list([class$(p.$class)]));
-   };
-   var caption$ = function (p) {
-      return $Html.caption(_U.list([class$(p.$class)]));
-   };
-   var tbody$ = function (p) {
-      return $Html.tbody(_U.list([class$(p.$class)]));
-   };
-   var thead$ = function (p) {
-      return $Html.thead(_U.list([class$(p.$class)]));
-   };
-   var tfoot$ = function (p) {
-      return $Html.tfoot(_U.list([class$(p.$class)]));
-   };
-   var tr$ = function (p) {
-      return $Html.tr(_U.list([class$(p.$class)]));
-   };
-   var td$ = function (p) {
-      return $Html.td(_U.list([class$(p.$class)]));
-   };
-   var th$ = function (p) {
-      return $Html.th(_U.list([class$(p.$class)]));
-   };
+   var table$ = function (p) {    return $Html.table(_U.list([class$(p.$class)]));};
+   var caption$ = function (p) {    return $Html.caption(_U.list([class$(p.$class)]));};
+   var tbody$ = function (p) {    return $Html.tbody(_U.list([class$(p.$class)]));};
+   var thead$ = function (p) {    return $Html.thead(_U.list([class$(p.$class)]));};
+   var tfoot$ = function (p) {    return $Html.tfoot(_U.list([class$(p.$class)]));};
+   var tr$ = function (p) {    return $Html.tr(_U.list([class$(p.$class)]));};
+   var td$ = function (p) {    return $Html.td(_U.list([class$(p.$class)]));};
+   var th$ = function (p) {    return $Html.th(_U.list([class$(p.$class)]));};
    var form$ = function (p) {
       var onEnter$ = function (msg) {
          return A3($Html$Events.on,
@@ -12489,8 +10939,7 @@ Elm.Html.Shorthand.make = function (_elm) {
          A2($Json$Decode.customDecoder,
          $Html$Events.keyCode,
          function (c) {
-            return _U.eq(c,
-            13) ? $Result.Ok({ctor: "_Tuple0"}) : $Result.Err("expected key code 13");
+            return _U.eq(c,13) ? $Result.Ok({ctor: "_Tuple0"}) : $Result.Err("expected key code 13");
          }),
          $Basics.always(msg));
       };
@@ -12499,76 +10948,31 @@ Elm.Html.Shorthand.make = function (_elm) {
       class$(p.$class),
       A2($List._op["::"],
       $Html$Attributes.novalidate(p.novalidate),
-      filterJust(_U.list([A2($Maybe.map,
-                         function (_p4) {
-                            return A3($Html$Events.on,
-                            "submit",
-                            $Json$Decode.value,
-                            $Basics.always(_p4));
-                         },
-                         p.update.onSubmit)
+      filterJust(_U.list([A2($Maybe.map,function (_p4) {    return A3($Html$Events.on,"submit",$Json$Decode.value,$Basics.always(_p4));},p.update.onSubmit)
                          ,A2($Maybe.map,onEnter$,p.update.onSubmit)])))));
    };
-   var fieldset$ = function (p) {
-      return $Html.fieldset(_U.list([class$(p.$class)
-                                    ,$Html$Attributes.disabled(p.disabled)]));
-   };
-   var legend$ = function (p) {
-      return $Html.legend(_U.list([class$(p.$class)]));
-   };
-   var label$ = function (p) {
-      return $Html.label(_U.list([class$(p.$class)
-                                 ,$Html$Attributes.$for(p.$for)]));
-   };
+   var fieldset$ = function (p) {    return $Html.fieldset(_U.list([class$(p.$class),$Html$Attributes.disabled(p.disabled)]));};
+   var legend$ = function (p) {    return $Html.legend(_U.list([class$(p.$class)]));};
+   var label$ = function (p) {    return $Html.label(_U.list([class$(p.$class),$Html$Attributes.$for(p.$for)]));};
    var button$ = function (p) {
       return $Html.button(_U.list([class$(p.$class)
                                   ,$Html$Attributes.type$("button")
-                                  ,A3($Html$Events.on,
-                                  "click",
-                                  $Json$Decode.value,
-                                  $Basics.always(p.update.onClick))]));
+                                  ,A3($Html$Events.on,"click",$Json$Decode.value,$Basics.always(p.update.onClick))]));
    };
    var buttonLink$ = function (p) {
-      return $Html.a(_U.list([class$(p.$class)
-                             ,$Html$Attributes.href("#")
-                             ,A3($Html$Events.on,
-                             "click",
-                             $Json$Decode.value,
-                             $Basics.always(p.update.onClick))]));
+      return $Html.a(_U.list([class$(p.$class),$Html$Attributes.href("#"),A3($Html$Events.on,"click",$Json$Decode.value,$Basics.always(p.update.onClick))]));
    };
-   var buttonSubmit$ = function (p) {
-      return $Html.button(_U.list([class$(p.$class)
-                                  ,$Html$Attributes.type$("submit")]));
-   };
-   var buttonReset$ = function (p) {
-      return $Html.button(_U.list([class$(p.$class)
-                                  ,$Html$Attributes.type$("reset")]));
-   };
+   var buttonSubmit$ = function (p) {    return $Html.button(_U.list([class$(p.$class),$Html$Attributes.type$("submit")]));};
+   var buttonReset$ = function (p) {    return $Html.button(_U.list([class$(p.$class),$Html$Attributes.type$("reset")]));};
    var id$ = $Html$Shorthand$Internal.id$;
-   var section_ = function (i) {
-      return $Html.section(_U.list([id$(i)]));
-   };
-   var section$ = function (p) {
-      return $Html.section(_U.list([class$(p.$class),id$(p.id)]));
-   };
-   var article_ = function (i) {
-      return $Html.article(_U.list([id$(i)]));
-   };
-   var article$ = function (p) {
-      return $Html.article(_U.list([class$(p.$class),id$(p.id)]));
-   };
-   var aside$ = function (p) {
-      return $Html.aside(_U.list([class$(p.$class),id$(p.id)]));
-   };
-   var dt$ = function (p) {
-      return $Html.dt(_U.list([class$(p.$class),id$(p.id)]));
-   };
-   var figure$ = function (p) {
-      return $Html.figure(_U.list([class$(p.$class),id$(p.id)]));
-   };
-   var dfn$ = function (p) {
-      return $Html.dfn(_U.list([class$(p.$class),id$(p.id)]));
-   };
+   var section_ = function (i) {    return $Html.section(_U.list([id$(i)]));};
+   var section$ = function (p) {    return $Html.section(_U.list([class$(p.$class),id$(p.id)]));};
+   var article_ = function (i) {    return $Html.article(_U.list([id$(i)]));};
+   var article$ = function (p) {    return $Html.article(_U.list([class$(p.$class),id$(p.id)]));};
+   var aside$ = function (p) {    return $Html.aside(_U.list([class$(p.$class),id$(p.id)]));};
+   var dt$ = function (p) {    return $Html.dt(_U.list([class$(p.$class),id$(p.id)]));};
+   var figure$ = function (p) {    return $Html.figure(_U.list([class$(p.$class),id$(p.id)]));};
+   var dfn$ = function (p) {    return $Html.dfn(_U.list([class$(p.$class),id$(p.id)]));};
    var embed$ = function (p) {
       return A2($Html.embed,
       _U.list([class$(p.$class)
@@ -12593,18 +10997,14 @@ Elm.Html.Shorthand.make = function (_elm) {
               ,$Html$Attributes.width(p.width)
               ,$Html$Attributes.height(p.height)
               ,$Html$Attributes.seamless(p.seamless)]),
-      filterJust(_U.list([A2($Maybe.map,
-      $Html$Attributes.sandbox,
-      p.sandbox)]))),
+      filterJust(_U.list([A2($Maybe.map,$Html$Attributes.sandbox,p.sandbox)]))),
       _U.list([]));
    };
    var object$ = function (p) {
       var filterJust = $List.filterMap($Basics.identity);
       var attrs = filterJust(_U.list([A2($Maybe.map,
       function (_p5) {
-         return $Html$Attributes.usemap(A2($String.cons,
-         _U.chr("#"),
-         encodeId(_p5)));
+         return $Html$Attributes.usemap(A2($String.cons,_U.chr("#"),encodeId(_p5)));
       },
       p.useMapName)]));
       var i$ = encodeId(p.name);
@@ -12614,48 +11014,32 @@ Elm.Html.Shorthand.make = function (_elm) {
               ,$Html$Attributes.name(i$)
               ,A2($Html$Attributes.attribute,"data",p.data)
               ,$Html$Attributes.type$(p.type$)]),
-      A2($Basics._op["++"],
-      attrs,
-      _U.list([$Html$Attributes.height(p.height)
-              ,$Html$Attributes.width(p.width)]))));
+      A2($Basics._op["++"],attrs,_U.list([$Html$Attributes.height(p.height),$Html$Attributes.width(p.width)]))));
    };
    var inputField$ = F2(function (p,attrs) {
       var i$ = encodeId(p.name);
       var filterJust = $List.filterMap($Basics.identity);
       var pattrs = A2($Basics._op["++"],
-      _U.list([$Html$Attributes.type$(p.type$)
-              ,$Html$Attributes.id(i$)
-              ,$Html$Attributes.name(i$)
-              ,$Html$Attributes.required(p.required)]),
-      filterJust(_U.list([A2($Maybe.map,
-                         class$,
-                         _U.eq(p.$class,"") ? $Maybe.Nothing : $Maybe.Just(p.$class))
+      _U.list([$Html$Attributes.type$(p.type$),$Html$Attributes.id(i$),$Html$Attributes.name(i$),$Html$Attributes.required(p.required)]),
+      filterJust(_U.list([A2($Maybe.map,class$,_U.eq(p.$class,"") ? $Maybe.Nothing : $Maybe.Just(p.$class))
                          ,A2($Maybe.map,
                          function (onEvent) {
-                            return A2($Html$Shorthand$Event.onInput,
-                            A2($Html$Shorthand$Event.messageDecoder,p.decoder,onEvent),
-                            $Basics.identity);
+                            return A2($Html$Shorthand$Event.onInput,A2($Html$Shorthand$Event.messageDecoder,p.decoder,onEvent),$Basics.identity);
                          },
                          p.update.onInput)
                          ,A2($Maybe.map,
                          function (onEvent) {
-                            return A2($Html$Shorthand$Event.onEnter,
-                            A2($Html$Shorthand$Event.messageDecoder,p.decoder,onEvent),
-                            $Basics.identity);
+                            return A2($Html$Shorthand$Event.onEnter,A2($Html$Shorthand$Event.messageDecoder,p.decoder,onEvent),$Basics.identity);
                          },
                          p.update.onEnter)
                          ,A2($Maybe.map,
                          function (onEvent) {
-                            return A2($Html$Shorthand$Event.onKeyboardLost,
-                            A2($Html$Shorthand$Event.messageDecoder,p.decoder,onEvent),
-                            $Basics.identity);
+                            return A2($Html$Shorthand$Event.onKeyboardLost,A2($Html$Shorthand$Event.messageDecoder,p.decoder,onEvent),$Basics.identity);
                          },
                          p.update.onKeyboardLost)
                          ,A2($Maybe.map,$Html$Attributes.placeholder,p.placeholder)
                          ,A2($Maybe.map,$Html$Attributes.pattern,p.pattern)])));
-      return A2($Html.input,
-      A2($Basics._op["++"],pattrs,attrs),
-      _U.list([]));
+      return A2($Html.input,A2($Basics._op["++"],pattrs,attrs),_U.list([]));
    });
    var inputText$ = function (p) {
       return A2(inputField$,
@@ -12667,8 +11051,7 @@ Elm.Html.Shorthand.make = function (_elm) {
       ,pattern: $Maybe.Nothing
       ,required: p.required
       ,decoder: $Html$Events.targetValue},
-      _U.list([$Html$Attributes.value(p.value)
-              ,$Html$Attributes.autocomplete(p.autocomplete)]));
+      _U.list([$Html$Attributes.value(p.value),$Html$Attributes.autocomplete(p.autocomplete)]));
    };
    var inputMaybeText$ = function (p) {
       return A2(inputField$,
@@ -12680,10 +11063,7 @@ Elm.Html.Shorthand.make = function (_elm) {
       ,pattern: $Maybe.Nothing
       ,required: false
       ,decoder: $Html$Events$Extra.targetValueMaybe},
-      _U.list([$Html$Attributes.value(A2($Maybe.withDefault,
-              "",
-              p.value))
-              ,$Html$Attributes.autocomplete(p.autocomplete)]));
+      _U.list([$Html$Attributes.value(A2($Maybe.withDefault,"",p.value)),$Html$Attributes.autocomplete(p.autocomplete)]));
    };
    var inputFloat$ = function (p) {
       var filterJust = $List.filterMap($Basics.identity);
@@ -12697,39 +11077,23 @@ Elm.Html.Shorthand.make = function (_elm) {
       ,required: true
       ,decoder: function () {
          var _p6 = {ctor: "_Tuple2",_0: p.min,_1: p.max};
-         if (_p6.ctor === "_Tuple2" && _p6._0.ctor === "Nothing" && _p6._1.ctor === "Nothing")
-         {
+         if (_p6.ctor === "_Tuple2" && _p6._0.ctor === "Nothing" && _p6._1.ctor === "Nothing") {
                return $Html$Events$Extra.targetValueFloat;
             } else {
                return A2($Json$Decode.customDecoder,
                $Html$Events$Extra.targetValueFloat,
                function (v) {
-                  return _U.cmp(v,
-                  A2($Maybe.withDefault,-1 / 0,p.min)) < 0 || _U.cmp(v,
-                  A2($Maybe.withDefault,
-                  1 / 0,
-                  p.max)) > 0 ? $Result.Err("out of bounds") : $Result.Ok(v);
+                  return _U.cmp(v,A2($Maybe.withDefault,-1 / 0,p.min)) < 0 || _U.cmp(v,
+                  A2($Maybe.withDefault,1 / 0,p.max)) > 0 ? $Result.Err("out of bounds") : $Result.Ok(v);
                });
             }
       }()},
       A2($List._op["::"],
       $Html$Attributes$Extra.valueAsFloat(p.value),
       A2($List._op["::"],
-      A2($Html$Attributes$Extra.stringProperty,
-      "step",
-      A2($Maybe.withDefault,
-      "any",
-      A2($Maybe.map,$Basics.toString,p.step))),
-      filterJust(_U.list([A2($Maybe.map,
-                         function (_p7) {
-                            return $Html$Attributes.min($Basics.toString(_p7));
-                         },
-                         p.min)
-                         ,A2($Maybe.map,
-                         function (_p8) {
-                            return $Html$Attributes.max($Basics.toString(_p8));
-                         },
-                         p.max)])))));
+      A2($Html$Attributes$Extra.stringProperty,"step",A2($Maybe.withDefault,"any",A2($Maybe.map,$Basics.toString,p.step))),
+      filterJust(_U.list([A2($Maybe.map,function (_p7) {    return $Html$Attributes.min($Basics.toString(_p7));},p.min)
+                         ,A2($Maybe.map,function (_p8) {    return $Html$Attributes.max($Basics.toString(_p8));},p.max)])))));
    };
    var inputMaybeFloat$ = function (p) {
       var filterJust = $List.filterMap($Basics.identity);
@@ -12743,8 +11107,7 @@ Elm.Html.Shorthand.make = function (_elm) {
       ,required: false
       ,decoder: function () {
          var _p9 = {ctor: "_Tuple2",_0: p.min,_1: p.max};
-         if (_p9.ctor === "_Tuple2" && _p9._0.ctor === "Nothing" && _p9._1.ctor === "Nothing")
-         {
+         if (_p9.ctor === "_Tuple2" && _p9._0.ctor === "Nothing" && _p9._1.ctor === "Nothing") {
                return $Html$Events$Extra.targetValueMaybeFloat;
             } else {
                return A2($Json$Decode.customDecoder,
@@ -12755,11 +11118,8 @@ Elm.Html.Shorthand.make = function (_elm) {
                         return $Result.Ok($Maybe.Nothing);
                      } else {
                         var _p11 = _p10._0;
-                        return _U.cmp(_p11,
-                        A2($Maybe.withDefault,-1 / 0,p.min)) < 0 || _U.cmp(_p11,
-                        A2($Maybe.withDefault,
-                        1 / 0,
-                        p.max)) > 0 ? $Result.Err("out of bounds") : $Result.Ok(mv);
+                        return _U.cmp(_p11,A2($Maybe.withDefault,-1 / 0,p.min)) < 0 || _U.cmp(_p11,
+                        A2($Maybe.withDefault,1 / 0,p.max)) > 0 ? $Result.Err("out of bounds") : $Result.Ok(mv);
                      }
                });
             }
@@ -12774,21 +11134,9 @@ Elm.Html.Shorthand.make = function (_elm) {
             }
       }(),
       A2($List._op["::"],
-      A2($Html$Attributes$Extra.stringProperty,
-      "step",
-      A2($Maybe.withDefault,
-      "any",
-      A2($Maybe.map,$Basics.toString,p.step))),
-      filterJust(_U.list([A2($Maybe.map,
-                         function (_p13) {
-                            return $Html$Attributes.min($Basics.toString(_p13));
-                         },
-                         p.min)
-                         ,A2($Maybe.map,
-                         function (_p14) {
-                            return $Html$Attributes.max($Basics.toString(_p14));
-                         },
-                         p.max)])))));
+      A2($Html$Attributes$Extra.stringProperty,"step",A2($Maybe.withDefault,"any",A2($Maybe.map,$Basics.toString,p.step))),
+      filterJust(_U.list([A2($Maybe.map,function (_p13) {    return $Html$Attributes.min($Basics.toString(_p13));},p.min)
+                         ,A2($Maybe.map,function (_p14) {    return $Html$Attributes.max($Basics.toString(_p14));},p.max)])))));
    };
    var inputInt$ = function (p) {
       var filterJust = $List.filterMap($Basics.identity);
@@ -12802,42 +11150,22 @@ Elm.Html.Shorthand.make = function (_elm) {
       ,required: true
       ,decoder: function () {
          var _p15 = {ctor: "_Tuple2",_0: p.min,_1: p.max};
-         if (_p15.ctor === "_Tuple2" && _p15._0.ctor === "Nothing" && _p15._1.ctor === "Nothing")
-         {
+         if (_p15.ctor === "_Tuple2" && _p15._0.ctor === "Nothing" && _p15._1.ctor === "Nothing") {
                return $Html$Events$Extra.targetValueInt;
             } else {
                return A2($Json$Decode.customDecoder,
                $Html$Events$Extra.targetValueInt,
                function (v) {
-                  return _U.cmp(v,
-                  A2($Maybe.withDefault,
-                  $Basics.floor(-1 / 0),
-                  p.min)) < 0 || _U.cmp(v,
-                  A2($Maybe.withDefault,
-                  $Basics.ceiling(1 / 0),
-                  p.max)) > 0 ? $Result.Err("out of bounds") : $Result.Ok(v);
+                  return _U.cmp(v,A2($Maybe.withDefault,$Basics.floor(-1 / 0),p.min)) < 0 || _U.cmp(v,
+                  A2($Maybe.withDefault,$Basics.ceiling(1 / 0),p.max)) > 0 ? $Result.Err("out of bounds") : $Result.Ok(v);
                });
             }
       }()},
       A2($List._op["::"],
       $Html$Attributes$Extra.valueAsInt(p.value),
-      filterJust(_U.list([A2($Maybe.map,
-                         function (_p16) {
-                            return $Html$Attributes.min($Basics.toString(_p16));
-                         },
-                         p.min)
-                         ,A2($Maybe.map,
-                         function (_p17) {
-                            return $Html$Attributes.max($Basics.toString(_p17));
-                         },
-                         p.max)
-                         ,A2($Maybe.map,
-                         function (_p18) {
-                            return A2($Html$Attributes$Extra.stringProperty,
-                            "step",
-                            $Basics.toString(_p18));
-                         },
-                         p.step)]))));
+      filterJust(_U.list([A2($Maybe.map,function (_p16) {    return $Html$Attributes.min($Basics.toString(_p16));},p.min)
+                         ,A2($Maybe.map,function (_p17) {    return $Html$Attributes.max($Basics.toString(_p17));},p.max)
+                         ,A2($Maybe.map,function (_p18) {    return A2($Html$Attributes$Extra.stringProperty,"step",$Basics.toString(_p18));},p.step)]))));
    };
    var inputMaybeInt$ = function (p) {
       var filterJust = $List.filterMap($Basics.identity);
@@ -12851,8 +11179,7 @@ Elm.Html.Shorthand.make = function (_elm) {
       ,required: false
       ,decoder: function () {
          var _p19 = {ctor: "_Tuple2",_0: p.min,_1: p.max};
-         if (_p19.ctor === "_Tuple2" && _p19._0.ctor === "Nothing" && _p19._1.ctor === "Nothing")
-         {
+         if (_p19.ctor === "_Tuple2" && _p19._0.ctor === "Nothing" && _p19._1.ctor === "Nothing") {
                return $Html$Events$Extra.targetValueMaybeInt;
             } else {
                return A2($Json$Decode.customDecoder,
@@ -12863,13 +11190,8 @@ Elm.Html.Shorthand.make = function (_elm) {
                         return $Result.Ok($Maybe.Nothing);
                      } else {
                         var _p21 = _p20._0;
-                        return _U.cmp(_p21,
-                        A2($Maybe.withDefault,
-                        $Basics.floor(-1 / 0),
-                        p.min)) < 0 || _U.cmp(_p21,
-                        A2($Maybe.withDefault,
-                        $Basics.ceiling(1 / 0),
-                        p.max)) > 0 ? $Result.Err("out of bounds") : $Result.Ok(mv);
+                        return _U.cmp(_p21,A2($Maybe.withDefault,$Basics.floor(-1 / 0),p.min)) < 0 || _U.cmp(_p21,
+                        A2($Maybe.withDefault,$Basics.ceiling(1 / 0),p.max)) > 0 ? $Result.Err("out of bounds") : $Result.Ok(mv);
                      }
                });
             }
@@ -12883,23 +11205,9 @@ Elm.Html.Shorthand.make = function (_elm) {
                return $Html$Attributes$Extra.valueAsInt(_p22._0);
             }
       }(),
-      filterJust(_U.list([A2($Maybe.map,
-                         function (_p23) {
-                            return $Html$Attributes.min($Basics.toString(_p23));
-                         },
-                         p.min)
-                         ,A2($Maybe.map,
-                         function (_p24) {
-                            return $Html$Attributes.max($Basics.toString(_p24));
-                         },
-                         p.max)
-                         ,A2($Maybe.map,
-                         function (_p25) {
-                            return A2($Html$Attributes$Extra.stringProperty,
-                            "step",
-                            $Basics.toString(_p25));
-                         },
-                         p.step)]))));
+      filterJust(_U.list([A2($Maybe.map,function (_p23) {    return $Html$Attributes.min($Basics.toString(_p23));},p.min)
+                         ,A2($Maybe.map,function (_p24) {    return $Html$Attributes.max($Basics.toString(_p24));},p.max)
+                         ,A2($Maybe.map,function (_p25) {    return A2($Html$Attributes$Extra.stringProperty,"step",$Basics.toString(_p25));},p.step)]))));
    };
    var inputUrl$ = function (p) {
       return A2(inputField$,
@@ -12911,8 +11219,7 @@ Elm.Html.Shorthand.make = function (_elm) {
       ,pattern: $Maybe.Nothing
       ,required: p.required
       ,decoder: $Html$Events.targetValue},
-      _U.list([$Html$Attributes.value(p.value)
-              ,$Html$Attributes.autocomplete(p.autocomplete)]));
+      _U.list([$Html$Attributes.value(p.value),$Html$Attributes.autocomplete(p.autocomplete)]));
    };
    var inputMaybeUrl$ = function (p) {
       return A2(inputField$,
@@ -12924,28 +11231,21 @@ Elm.Html.Shorthand.make = function (_elm) {
       ,pattern: $Maybe.Nothing
       ,required: false
       ,decoder: $Html$Events$Extra.targetValueMaybe},
-      _U.list([$Html$Attributes.value(A2($Maybe.withDefault,
-              "",
-              p.value))
-              ,$Html$Attributes.autocomplete(p.autocomplete)]));
+      _U.list([$Html$Attributes.value(A2($Maybe.withDefault,"",p.value)),$Html$Attributes.autocomplete(p.autocomplete)]));
    };
    var select$ = function (p) {
       var i$ = encodeId(p.name);
       return $Html.select(_U.list([class$(p.$class)
                                   ,$Html$Attributes.id(i$)
                                   ,$Html$Attributes.name(i$)
-                                  ,A2($Html$Shorthand$Event.onChange,
-                                  $Html$Events.targetValue,
-                                  p.update.onSelect)]));
+                                  ,A2($Html$Shorthand$Event.onChange,$Html$Events.targetValue,p.update.onSelect)]));
    };
    var output$ = function (p) {
       var i$ = encodeId(p.name);
       return $Html.output(_U.list([class$(p.$class)
                                   ,$Html$Attributes.id(i$)
                                   ,$Html$Attributes.name(i$)
-                                  ,$Html$Attributes.$for(A2($String.join,
-                                  " ",
-                                  A2($List.map,encodeId,p.$for)))]));
+                                  ,$Html$Attributes.$for(A2($String.join," ",A2($List.map,encodeId,p.$for)))]));
    };
    var fieldUpdateFallbackFocusLost = function (handler) {
       var doErr = function (r) {
@@ -12953,9 +11253,7 @@ Elm.Html.Shorthand.make = function (_elm) {
          if (_p26.ctor === "Ok") {
                return $Maybe.Nothing;
             } else {
-               var _p27 = A2($Json$Decode.decodeValue,
-               $Html$Events.targetValue,
-               _p26._0.event);
+               var _p27 = A2($Json$Decode.decodeValue,$Html$Events.targetValue,_p26._0.event);
                if (_p27.ctor === "Ok") {
                      return $Maybe.Just(handler.onFallback(_p27._0));
                   } else {
@@ -12963,43 +11261,17 @@ Elm.Html.Shorthand.make = function (_elm) {
                   }
             }
       };
-      var doOk = function (r) {
-         var _p28 = r;
-         if (_p28.ctor === "Ok") {
-               return $Maybe.Just(handler.onInput(_p28._0));
-            } else {
-               return $Maybe.Nothing;
-            }
-      };
-      return {onInput: $Maybe.Just(doOk)
-             ,onEnter: $Maybe.Just(doErr)
-             ,onKeyboardLost: $Maybe.Just(doErr)};
+      var doOk = function (r) {    var _p28 = r;if (_p28.ctor === "Ok") {    return $Maybe.Just(handler.onInput(_p28._0));} else {    return $Maybe.Nothing;}};
+      return {onInput: $Maybe.Just(doOk),onEnter: $Maybe.Just(doErr),onKeyboardLost: $Maybe.Just(doErr)};
    };
-   var fieldUpdate = {onInput: $Maybe.Nothing
-                     ,onEnter: $Maybe.Nothing
-                     ,onKeyboardLost: $Maybe.Nothing};
+   var fieldUpdate = {onInput: $Maybe.Nothing,onEnter: $Maybe.Nothing,onKeyboardLost: $Maybe.Nothing};
    var fieldUpdateContinuous = function (handler) {
-      var doOk = function (r) {
-         var _p29 = r;
-         if (_p29.ctor === "Ok") {
-               return $Maybe.Just(handler.onInput(_p29._0));
-            } else {
-               return $Maybe.Nothing;
-            }
-      };
+      var doOk = function (r) {    var _p29 = r;if (_p29.ctor === "Ok") {    return $Maybe.Just(handler.onInput(_p29._0));} else {    return $Maybe.Nothing;}};
       return _U.update(fieldUpdate,{onInput: $Maybe.Just(doOk)});
    };
    var fieldUpdateFocusLost = function (handler) {
-      var doOk = function (r) {
-         var _p30 = r;
-         if (_p30.ctor === "Ok") {
-               return $Maybe.Just(handler.onInput(_p30._0));
-            } else {
-               return $Maybe.Nothing;
-            }
-      };
-      return _U.update(fieldUpdate,
-      {onEnter: $Maybe.Just(doOk),onKeyboardLost: $Maybe.Just(doOk)});
+      var doOk = function (r) {    var _p30 = r;if (_p30.ctor === "Ok") {    return $Maybe.Just(handler.onInput(_p30._0));} else {    return $Maybe.Nothing;}};
+      return _U.update(fieldUpdate,{onEnter: $Maybe.Just(doOk),onKeyboardLost: $Maybe.Just(doOk)});
    };
    var fieldUpdateFallbackContinuous = function (handler) {
       var doOkErr = function (r) {
@@ -13007,9 +11279,7 @@ Elm.Html.Shorthand.make = function (_elm) {
          if (_p31.ctor === "Ok") {
                return $Maybe.Just(handler.onInput(_p31._0));
             } else {
-               var _p32 = A2($Json$Decode.decodeValue,
-               $Html$Events.targetValue,
-               _p31._0.event);
+               var _p32 = A2($Json$Decode.decodeValue,$Html$Events.targetValue,_p31._0.event);
                if (_p32.ctor === "Ok") {
                      return $Maybe.Just(handler.onFallback(_p32._0));
                   } else {
@@ -13205,8 +11475,7 @@ Elm.Bootstrap.Html.Internal.make = function (_elm) {
    _elm.Bootstrap = _elm.Bootstrap || {};
    _elm.Bootstrap.Html = _elm.Bootstrap.Html || {};
    _elm.Bootstrap.Html.Internal = _elm.Bootstrap.Html.Internal || {};
-   if (_elm.Bootstrap.Html.Internal.values)
-   return _elm.Bootstrap.Html.Internal.values;
+   if (_elm.Bootstrap.Html.Internal.values) return _elm.Bootstrap.Html.Internal.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -13221,20 +11490,12 @@ Elm.Bootstrap.Html.Internal.make = function (_elm) {
    $String = Elm.String.make(_elm);
    var _op = {};
    var colOffset = F3(function (gridsize,colspan,offset) {
-      var prefix = A2($Basics._op["++"],
-      "col",
-      A2($Basics._op["++"],
-      A2($String.cons,_U.chr("-"),gridsize),
-      "-"));
+      var prefix = A2($Basics._op["++"],"col",A2($Basics._op["++"],A2($String.cons,_U.chr("-"),gridsize),"-"));
       return _U.cmp(offset,0) > 0 ? A2($Basics._op["++"],
       prefix,
       A2($Basics._op["++"],
       $Basics.toString(colspan),
-      A2($Basics._op["++"],
-      A2($String.cons,_U.chr(" "),prefix),
-      A2($Basics._op["++"],
-      "offset-",
-      $Basics.toString(offset))))) : A2($Basics._op["++"],
+      A2($Basics._op["++"],A2($String.cons,_U.chr(" "),prefix),A2($Basics._op["++"],"offset-",$Basics.toString(offset))))) : A2($Basics._op["++"],
       prefix,
       $Basics.toString(colspan));
    });
@@ -13244,19 +11505,14 @@ Elm.Bootstrap.Html.Internal.make = function (_elm) {
       return A2($Html.button,
       A2($List._op["::"],
       $Html$Attributes.type$(typ),
-      A2($List._op["::"],
-      $Html$Shorthand.class$(A2($Basics._op["++"],"btn ",c)),
-      filterJust(_U.list([A2($Maybe.map,
-      $Html$Attributes.title,
-      _p1.tooltip)])))),
+      A2($List._op["::"],$Html$Shorthand.class$(A2($Basics._op["++"],"btn ",c)),filterJust(_U.list([A2($Maybe.map,$Html$Attributes.title,_p1.tooltip)])))),
       function () {
          var _p2 = {ctor: "_Tuple2",_0: _p1.icon,_1: _p1.label};
          _v1_3: do {
             if (_p2.ctor === "_Tuple2") {
                   if (_p2._0.ctor === "Just") {
                         if (_p2._1.ctor === "Just") {
-                              return _U.list([_p2._0._0
-                                             ,$Html.text(A2($String.cons,_U.chr(" "),_p2._1._0))]);
+                              return _U.list([_p2._0._0,$Html.text(A2($String.cons,_U.chr(" "),_p2._1._0))]);
                            } else {
                               return _U.list([_p2._0._0]);
                            }
@@ -13282,19 +11538,14 @@ Elm.Bootstrap.Html.Internal.make = function (_elm) {
       $Html$Attributes.type$(typ),
       A2($List._op["::"],
       $Html$Shorthand.class$(A2($Basics._op["++"],"btn ",c)),
-      A2($List._op["::"],
-      A2($Html$Events.onClick,addr,x),
-      filterJust(_U.list([A2($Maybe.map,
-      $Html$Attributes.title,
-      _p4.tooltip)]))))),
+      A2($List._op["::"],A2($Html$Events.onClick,addr,x),filterJust(_U.list([A2($Maybe.map,$Html$Attributes.title,_p4.tooltip)]))))),
       function () {
          var _p5 = {ctor: "_Tuple2",_0: _p4.icon,_1: _p4.label};
          _v3_3: do {
             if (_p5.ctor === "_Tuple2") {
                   if (_p5._0.ctor === "Just") {
                         if (_p5._1.ctor === "Just") {
-                              return _U.list([_p5._0._0
-                                             ,$Html.text(A2($String.cons,_U.chr(" "),_p5._1._0))]);
+                              return _U.list([_p5._0._0,$Html.text(A2($String.cons,_U.chr(" "),_p5._1._0))]);
                            } else {
                               return _U.list([_p5._0._0]);
                            }
@@ -13312,14 +11563,8 @@ Elm.Bootstrap.Html.Internal.make = function (_elm) {
          return _U.list([]);
       }());
    });
-   var BtnParam = F3(function (a,b,c) {
-      return {icon: a,label: b,tooltip: c};
-   });
-   return _elm.Bootstrap.Html.Internal.values = {_op: _op
-                                                ,BtnParam: BtnParam
-                                                ,btnc: btnc
-                                                ,btncNoevent: btncNoevent
-                                                ,colOffset: colOffset};
+   var BtnParam = F3(function (a,b,c) {    return {icon: a,label: b,tooltip: c};});
+   return _elm.Bootstrap.Html.Internal.values = {_op: _op,BtnParam: BtnParam,btnc: btnc,btncNoevent: btncNoevent,colOffset: colOffset};
 };
 Elm.Bootstrap = Elm.Bootstrap || {};
 Elm.Bootstrap.Html = Elm.Bootstrap.Html || {};
@@ -13327,8 +11572,7 @@ Elm.Bootstrap.Html.make = function (_elm) {
    "use strict";
    _elm.Bootstrap = _elm.Bootstrap || {};
    _elm.Bootstrap.Html = _elm.Bootstrap.Html || {};
-   if (_elm.Bootstrap.Html.values)
-   return _elm.Bootstrap.Html.values;
+   if (_elm.Bootstrap.Html.values) return _elm.Bootstrap.Html.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Bootstrap$Html$Internal = Elm.Bootstrap.Html.Internal.make(_elm),
@@ -13346,1887 +11590,665 @@ Elm.Bootstrap.Html.make = function (_elm) {
    var well_ = $Html$Shorthand.div$({$class: "well"});
    var embedResponsive4x3_ = $Html$Shorthand.div$({$class: "embed-responsive embed-responsive-4by3"});
    var embedResponsive16x9_ = $Html$Shorthand.div$({$class: "embed-responsive embed-responsive-16by9"});
-   var panelTitle_ = function (t) {
-      return A2($Html$Shorthand.h2$,
-      {$class: "panel-title"},
-      _U.list([$Html.text(t)]));
-   };
+   var panelTitle_ = function (t) {    return A2($Html$Shorthand.h2$,{$class: "panel-title"},_U.list([$Html.text(t)]));};
    var panelBody_ = $Html$Shorthand.div$({$class: "panel-body"});
    var panelHeading_ = $Html$Shorthand.div$({$class: "panel-heading"});
    var panelDefault_ = $Html$Shorthand.div$({$class: "panel panel-default"});
    var navbarHeader_ = $Html$Shorthand.div$({$class: "navbar-header"});
-   var navbar$ = function (c) {
-      return $Html$Shorthand.nav$({$class: A2($Basics._op["++"],
-      "navbar ",
-      c)});
-   };
-   var navbarDefault$ = function (c) {
-      return navbar$(A2($Basics._op["++"],"navbar-default ",c));
-   };
+   var navbar$ = function (c) {    return $Html$Shorthand.nav$({$class: A2($Basics._op["++"],"navbar ",c)});};
+   var navbarDefault$ = function (c) {    return navbar$(A2($Basics._op["++"],"navbar-default ",c));};
    var glyphiconTreeDeciduous$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-tree-deciduous ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-tree-deciduous ",c)},_U.list([]));
    };
    var glyphiconTreeDeciduous_ = glyphiconTreeDeciduous$("");
    var glyphiconTreeConifer$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-tree-conifer ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-tree-conifer ",c)},_U.list([]));
    };
    var glyphiconTreeConifer_ = glyphiconTreeConifer$("");
    var glyphiconCloudUpload$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-cloud-upload ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-cloud-upload ",c)},_U.list([]));
    };
    var glyphiconCloudUpload_ = glyphiconCloudUpload$("");
    var glyphiconCloudDownload$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-cloud-download ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-cloud-download ",c)},_U.list([]));
    };
    var glyphiconCloudDownload_ = glyphiconCloudDownload$("");
    var glyphiconRegistrationMark$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-registration-mark ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-registration-mark ",c)},_U.list([]));
    };
    var glyphiconRegistrationMark_ = glyphiconRegistrationMark$("");
    var glyphiconCopyrightMark$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-copyright-mark ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-copyright-mark ",c)},_U.list([]));
    };
    var glyphiconCopyrightMark_ = glyphiconCopyrightMark$("");
-   var glyphiconSound71$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sound-7-1 ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconSound71$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sound-7-1 ",c)},_U.list([]));};
    var glyphiconSound71_ = glyphiconSound71$("");
-   var glyphiconSound61$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sound-6-1 ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconSound61$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sound-6-1 ",c)},_U.list([]));};
    var glyphiconSound61_ = glyphiconSound61$("");
-   var glyphiconSound51$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sound-5-1 ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconSound51$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sound-5-1 ",c)},_U.list([]));};
    var glyphiconSound51_ = glyphiconSound51$("");
    var glyphiconSoundDolby$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sound-dolby ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sound-dolby ",c)},_U.list([]));
    };
    var glyphiconSoundDolby_ = glyphiconSoundDolby$("");
    var glyphiconSoundStereo$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sound-stereo ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sound-stereo ",c)},_U.list([]));
    };
    var glyphiconSoundStereo_ = glyphiconSoundStereo$("");
    var glyphiconSubtitles$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-subtitles ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-subtitles ",c)},_U.list([]));
    };
    var glyphiconSubtitles_ = glyphiconSubtitles$("");
-   var glyphiconHdVideo$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-hd-video ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconHdVideo$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-hd-video ",c)},_U.list([]));};
    var glyphiconHdVideo_ = glyphiconHdVideo$("");
-   var glyphiconSdVideo$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sd-video ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconSdVideo$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sd-video ",c)},_U.list([]));};
    var glyphiconSdVideo_ = glyphiconSdVideo$("");
-   var glyphiconStats$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-stats ",c)},
-      _U.list([]));
-   };
+   var glyphiconStats$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-stats ",c)},_U.list([]));};
    var glyphiconStats_ = glyphiconStats$("");
-   var glyphiconTower$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-tower ",c)},
-      _U.list([]));
-   };
+   var glyphiconTower$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-tower ",c)},_U.list([]));};
    var glyphiconTower_ = glyphiconTower$("");
-   var glyphiconPhoneAlt$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-phone-alt ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconPhoneAlt$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-phone-alt ",c)},_U.list([]));};
    var glyphiconPhoneAlt_ = glyphiconPhoneAlt$("");
-   var glyphiconEarphone$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-earphone ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconEarphone$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-earphone ",c)},_U.list([]));};
    var glyphiconEarphone_ = glyphiconEarphone$("");
    var glyphiconCompressed$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-compressed ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-compressed ",c)},_U.list([]));
    };
    var glyphiconCompressed_ = glyphiconCompressed$("");
-   var glyphiconHeader$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-header ",c)},
-      _U.list([]));
-   };
+   var glyphiconHeader$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-header ",c)},_U.list([]));};
    var glyphiconHeader_ = glyphiconHeader$("");
-   var glyphiconCutlery$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-cutlery ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconCutlery$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-cutlery ",c)},_U.list([]));};
    var glyphiconCutlery_ = glyphiconCutlery$("");
-   var glyphiconTransfer$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-transfer ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconTransfer$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-transfer ",c)},_U.list([]));};
    var glyphiconTransfer_ = glyphiconTransfer$("");
    var glyphiconCreditCard$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-credit-card ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-credit-card ",c)},_U.list([]));
    };
    var glyphiconCreditCard_ = glyphiconCreditCard$("");
    var glyphiconFloppyOpen$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-floppy-open ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-floppy-open ",c)},_U.list([]));
    };
    var glyphiconFloppyOpen_ = glyphiconFloppyOpen$("");
    var glyphiconFloppySave$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-floppy-save ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-floppy-save ",c)},_U.list([]));
    };
    var glyphiconFloppySave_ = glyphiconFloppySave$("");
    var glyphiconFloppyRemove$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-floppy-remove ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-floppy-remove ",c)},_U.list([]));
    };
    var glyphiconFloppyRemove_ = glyphiconFloppyRemove$("");
    var glyphiconFloppySaved$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-floppy-saved ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-floppy-saved ",c)},_U.list([]));
    };
    var glyphiconFloppySaved_ = glyphiconFloppySaved$("");
    var glyphiconFloppyDisk$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-floppy-disk ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-floppy-disk ",c)},_U.list([]));
    };
    var glyphiconFloppyDisk_ = glyphiconFloppyDisk$("");
-   var glyphiconSend$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-send ",c)},
-      _U.list([]));
-   };
+   var glyphiconSend$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-send ",c)},_U.list([]));};
    var glyphiconSend_ = glyphiconSend$("");
-   var glyphiconExport$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-export ",c)},
-      _U.list([]));
-   };
+   var glyphiconExport$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-export ",c)},_U.list([]));};
    var glyphiconExport_ = glyphiconExport$("");
-   var glyphiconImport$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-import ",c)},
-      _U.list([]));
-   };
+   var glyphiconImport$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-import ",c)},_U.list([]));};
    var glyphiconImport_ = glyphiconImport$("");
-   var glyphiconSaved$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-saved ",c)},
-      _U.list([]));
-   };
+   var glyphiconSaved$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-saved ",c)},_U.list([]));};
    var glyphiconSaved_ = glyphiconSaved$("");
-   var glyphiconOpen$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-open ",c)},
-      _U.list([]));
-   };
+   var glyphiconOpen$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-open ",c)},_U.list([]));};
    var glyphiconOpen_ = glyphiconOpen$("");
-   var glyphiconSave$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-save ",c)},
-      _U.list([]));
-   };
+   var glyphiconSave$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-save ",c)},_U.list([]));};
    var glyphiconSave_ = glyphiconSave$("");
-   var glyphiconRecord$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-record ",c)},
-      _U.list([]));
-   };
+   var glyphiconRecord$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-record ",c)},_U.list([]));};
    var glyphiconRecord_ = glyphiconRecord$("");
    var glyphiconNewWindow$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-new-window ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-new-window ",c)},_U.list([]));
    };
    var glyphiconNewWindow_ = glyphiconNewWindow$("");
-   var glyphiconLogOut$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-log-out ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconLogOut$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-log-out ",c)},_U.list([]));};
    var glyphiconLogOut_ = glyphiconLogOut$("");
-   var glyphiconFlash$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-flash ",c)},
-      _U.list([]));
-   };
+   var glyphiconFlash$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-flash ",c)},_U.list([]));};
    var glyphiconFlash_ = glyphiconFlash$("");
-   var glyphiconLogIn$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-log-in ",c)},
-      _U.list([]));
-   };
+   var glyphiconLogIn$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-log-in ",c)},_U.list([]));};
    var glyphiconLogIn_ = glyphiconLogIn$("");
    var glyphiconCollapseUp$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-collapse-up ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-collapse-up ",c)},_U.list([]));
    };
    var glyphiconCollapseUp_ = glyphiconCollapseUp$("");
    var glyphiconCollapseDown$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-collapse-down ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-collapse-down ",c)},_U.list([]));
    };
    var glyphiconCollapseDown_ = glyphiconCollapseDown$("");
-   var glyphiconExpand$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-expand ",c)},
-      _U.list([]));
-   };
+   var glyphiconExpand$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-expand ",c)},_U.list([]));};
    var glyphiconExpand_ = glyphiconExpand$("");
    var glyphiconUnchecked$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-unchecked ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-unchecked ",c)},_U.list([]));
    };
    var glyphiconUnchecked_ = glyphiconUnchecked$("");
    var glyphiconSortByAttributesAlt$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sort-by-attributes-alt ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sort-by-attributes-alt ",c)},_U.list([]));
    };
    var glyphiconSortByAttributesAlt_ = glyphiconSortByAttributesAlt$("");
    var glyphiconSortByAttributes$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sort-by-attributes ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sort-by-attributes ",c)},_U.list([]));
    };
    var glyphiconSortByAttributes_ = glyphiconSortByAttributes$("");
    var glyphiconSortByOrderAlt$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sort-by-order-alt ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sort-by-order-alt ",c)},_U.list([]));
    };
    var glyphiconSortByOrderAlt_ = glyphiconSortByOrderAlt$("");
    var glyphiconSortByOrder$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sort-by-order ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sort-by-order ",c)},_U.list([]));
    };
    var glyphiconSortByOrder_ = glyphiconSortByOrder$("");
    var glyphiconSortByAlphabetAlt$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sort-by-alphabet-alt ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sort-by-alphabet-alt ",c)},_U.list([]));
    };
    var glyphiconSortByAlphabetAlt_ = glyphiconSortByAlphabetAlt$("");
    var glyphiconSortByAlphabet$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-sort-by-alphabet ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sort-by-alphabet ",c)},_U.list([]));
    };
    var glyphiconSortByAlphabet_ = glyphiconSortByAlphabet$("");
-   var glyphiconSort$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-sort ",c)},
-      _U.list([]));
-   };
+   var glyphiconSort$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-sort ",c)},_U.list([]));};
    var glyphiconSort_ = glyphiconSort$("");
-   var glyphiconGbp$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-gbp ",c)},
-      _U.list([]));
-   };
+   var glyphiconGbp$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-gbp ",c)},_U.list([]));};
    var glyphiconGbp_ = glyphiconGbp$("");
-   var glyphiconUsd$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-usd ",c)},
-      _U.list([]));
-   };
+   var glyphiconUsd$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-usd ",c)},_U.list([]));};
    var glyphiconUsd_ = glyphiconUsd$("");
-   var glyphiconPushpin$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-pushpin ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconPushpin$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-pushpin ",c)},_U.list([]));};
    var glyphiconPushpin_ = glyphiconPushpin$("");
-   var glyphiconPhone$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-phone ",c)},
-      _U.list([]));
-   };
+   var glyphiconPhone$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-phone ",c)},_U.list([]));};
    var glyphiconPhone_ = glyphiconPhone$("");
-   var glyphiconLink$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-link ",c)},
-      _U.list([]));
-   };
+   var glyphiconLink$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-link ",c)},_U.list([]));};
    var glyphiconLink_ = glyphiconLink$("");
    var glyphiconHeartEmpty$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-heart-empty ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-heart-empty ",c)},_U.list([]));
    };
    var glyphiconHeartEmpty_ = glyphiconHeartEmpty$("");
    var glyphiconPaperclip$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-paperclip ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-paperclip ",c)},_U.list([]));
    };
    var glyphiconPaperclip_ = glyphiconPaperclip$("");
    var glyphiconDashboard$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-dashboard ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-dashboard ",c)},_U.list([]));
    };
    var glyphiconDashboard_ = glyphiconDashboard$("");
    var glyphiconFullscreen$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-fullscreen ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-fullscreen ",c)},_U.list([]));
    };
    var glyphiconFullscreen_ = glyphiconFullscreen$("");
    var glyphiconBriefcase$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-briefcase ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-briefcase ",c)},_U.list([]));
    };
    var glyphiconBriefcase_ = glyphiconBriefcase$("");
-   var glyphiconFilter$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-filter ",c)},
-      _U.list([]));
-   };
+   var glyphiconFilter$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-filter ",c)},_U.list([]));};
    var glyphiconFilter_ = glyphiconFilter$("");
-   var glyphiconTasks$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-tasks ",c)},
-      _U.list([]));
-   };
+   var glyphiconTasks$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-tasks ",c)},_U.list([]));};
    var glyphiconTasks_ = glyphiconTasks$("");
-   var glyphiconWrench$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-wrench ",c)},
-      _U.list([]));
-   };
+   var glyphiconWrench$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-wrench ",c)},_U.list([]));};
    var glyphiconWrench_ = glyphiconWrench$("");
-   var glyphiconGlobe$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-globe ",c)},
-      _U.list([]));
-   };
+   var glyphiconGlobe$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-globe ",c)},_U.list([]));};
    var glyphiconGlobe_ = glyphiconGlobe$("");
    var glyphiconCircleArrowDown$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-circle-arrow-down ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-circle-arrow-down ",c)},_U.list([]));
    };
    var glyphiconCircleArrowDown_ = glyphiconCircleArrowDown$("");
    var glyphiconCircleArrowUp$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-circle-arrow-up ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-circle-arrow-up ",c)},_U.list([]));
    };
    var glyphiconCircleArrowUp_ = glyphiconCircleArrowUp$("");
    var glyphiconCircleArrowLeft$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-circle-arrow-left ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-circle-arrow-left ",c)},_U.list([]));
    };
    var glyphiconCircleArrowLeft_ = glyphiconCircleArrowLeft$("");
    var glyphiconCircleArrowRight$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-circle-arrow-right ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-circle-arrow-right ",c)},_U.list([]));
    };
    var glyphiconCircleArrowRight_ = glyphiconCircleArrowRight$("");
-   var glyphiconHandDown$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-hand-down ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconHandDown$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-hand-down ",c)},_U.list([]));};
    var glyphiconHandDown_ = glyphiconHandDown$("");
-   var glyphiconHandUp$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-hand-up ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconHandUp$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-hand-up ",c)},_U.list([]));};
    var glyphiconHandUp_ = glyphiconHandUp$("");
-   var glyphiconHandLeft$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-hand-left ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconHandLeft$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-hand-left ",c)},_U.list([]));};
    var glyphiconHandLeft_ = glyphiconHandLeft$("");
    var glyphiconHandRight$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-hand-right ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-hand-right ",c)},_U.list([]));
    };
    var glyphiconHandRight_ = glyphiconHandRight$("");
    var glyphiconThumbsDown$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-thumbs-down ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-thumbs-down ",c)},_U.list([]));
    };
    var glyphiconThumbsDown_ = glyphiconThumbsDown$("");
-   var glyphiconThumbsUp$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-thumbs-up ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconThumbsUp$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-thumbs-up ",c)},_U.list([]));};
    var glyphiconThumbsUp_ = glyphiconThumbsUp$("");
    var glyphiconCertificate$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-certificate ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-certificate ",c)},_U.list([]));
    };
    var glyphiconCertificate_ = glyphiconCertificate$("");
-   var glyphiconBell$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-bell ",c)},
-      _U.list([]));
-   };
+   var glyphiconBell$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-bell ",c)},_U.list([]));};
    var glyphiconBell_ = glyphiconBell$("");
-   var glyphiconBullhorn$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-bullhorn ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconBullhorn$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-bullhorn ",c)},_U.list([]));};
    var glyphiconBullhorn_ = glyphiconBullhorn$("");
-   var glyphiconHdd$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-hdd ",c)},
-      _U.list([]));
-   };
+   var glyphiconHdd$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-hdd ",c)},_U.list([]));};
    var glyphiconHdd_ = glyphiconHdd$("");
    var glyphiconResizeHorizontal$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-resize-horizontal ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-resize-horizontal ",c)},_U.list([]));
    };
    var glyphiconResizeHorizontal_ = glyphiconResizeHorizontal$("");
    var glyphiconResizeVertical$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-resize-vertical ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-resize-vertical ",c)},_U.list([]));
    };
    var glyphiconResizeVertical_ = glyphiconResizeVertical$("");
    var glyphiconFolderOpen$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-folder-open ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-folder-open ",c)},_U.list([]));
    };
    var glyphiconFolderOpen_ = glyphiconFolderOpen$("");
    var glyphiconFolderClose$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-folder-close ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-folder-close ",c)},_U.list([]));
    };
    var glyphiconFolderClose_ = glyphiconFolderClose$("");
    var glyphiconShoppingCart$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-shopping-cart ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-shopping-cart ",c)},_U.list([]));
    };
    var glyphiconShoppingCart_ = glyphiconShoppingCart$("");
-   var glyphiconRetweet$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-retweet ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconRetweet$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-retweet ",c)},_U.list([]));};
    var glyphiconRetweet_ = glyphiconRetweet$("");
    var glyphiconChevronDown$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-chevron-down ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-chevron-down ",c)},_U.list([]));
    };
    var glyphiconChevronDown_ = glyphiconChevronDown$("");
    var glyphiconChevronUp$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-chevron-up ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-chevron-up ",c)},_U.list([]));
    };
    var glyphiconChevronUp_ = glyphiconChevronUp$("");
-   var glyphiconMagnet$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-magnet ",c)},
-      _U.list([]));
-   };
+   var glyphiconMagnet$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-magnet ",c)},_U.list([]));};
    var glyphiconMagnet_ = glyphiconMagnet$("");
-   var glyphiconComment$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-comment ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconComment$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-comment ",c)},_U.list([]));};
    var glyphiconComment_ = glyphiconComment$("");
-   var glyphiconRandom$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-random ",c)},
-      _U.list([]));
-   };
+   var glyphiconRandom$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-random ",c)},_U.list([]));};
    var glyphiconRandom_ = glyphiconRandom$("");
-   var glyphiconCalendar$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-calendar ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconCalendar$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-calendar ",c)},_U.list([]));};
    var glyphiconCalendar_ = glyphiconCalendar$("");
-   var glyphiconPlane$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-plane ",c)},
-      _U.list([]));
-   };
+   var glyphiconPlane$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-plane ",c)},_U.list([]));};
    var glyphiconPlane_ = glyphiconPlane$("");
    var glyphiconWarningSign$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-warning-sign ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-warning-sign ",c)},_U.list([]));
    };
    var glyphiconWarningSign_ = glyphiconWarningSign$("");
-   var glyphiconEyeClose$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-eye-close ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconEyeClose$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-eye-close ",c)},_U.list([]));};
    var glyphiconEyeClose_ = glyphiconEyeClose$("");
-   var glyphiconEyeOpen$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-eye-open ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconEyeOpen$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-eye-open ",c)},_U.list([]));};
    var glyphiconEyeOpen_ = glyphiconEyeOpen$("");
-   var glyphiconFire$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-fire ",c)},
-      _U.list([]));
-   };
+   var glyphiconFire$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-fire ",c)},_U.list([]));};
    var glyphiconFire_ = glyphiconFire$("");
-   var glyphiconLeaf$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-leaf ",c)},
-      _U.list([]));
-   };
+   var glyphiconLeaf$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-leaf ",c)},_U.list([]));};
    var glyphiconLeaf_ = glyphiconLeaf$("");
-   var glyphiconGift$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-gift ",c)},
-      _U.list([]));
-   };
+   var glyphiconGift$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-gift ",c)},_U.list([]));};
    var glyphiconGift_ = glyphiconGift$("");
    var glyphiconExclamationSign$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-exclamation-sign ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-exclamation-sign ",c)},_U.list([]));
    };
    var glyphiconExclamationSign_ = glyphiconExclamationSign$("");
    var glyphiconResizeSmall$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-resize-small ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-resize-small ",c)},_U.list([]));
    };
    var glyphiconResizeSmall_ = glyphiconResizeSmall$("");
    var glyphiconResizeFull$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-resize-full ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-resize-full ",c)},_U.list([]));
    };
    var glyphiconResizeFull_ = glyphiconResizeFull$("");
-   var glyphiconShareAlt$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-share-alt ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconShareAlt$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-share-alt ",c)},_U.list([]));};
    var glyphiconShareAlt_ = glyphiconShareAlt$("");
    var glyphiconArrowDown$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-arrow-down ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-arrow-down ",c)},_U.list([]));
    };
    var glyphiconArrowDown_ = glyphiconArrowDown$("");
-   var glyphiconArrowUp$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-arrow-up ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconArrowUp$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-arrow-up ",c)},_U.list([]));};
    var glyphiconArrowUp_ = glyphiconArrowUp$("");
    var glyphiconArrowRight$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-arrow-right ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-arrow-right ",c)},_U.list([]));
    };
    var glyphiconArrowRight_ = glyphiconArrowRight$("");
    var glyphiconArrowLeft$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-arrow-left ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-arrow-left ",c)},_U.list([]));
    };
    var glyphiconArrowLeft_ = glyphiconArrowLeft$("");
    var glyphiconBanCircle$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-ban-circle ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-ban-circle ",c)},_U.list([]));
    };
    var glyphiconBanCircle_ = glyphiconBanCircle$("");
-   var glyphiconOkCircle$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-ok-circle ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconOkCircle$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-ok-circle ",c)},_U.list([]));};
    var glyphiconOkCircle_ = glyphiconOkCircle$("");
    var glyphiconRemoveCircle$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-remove-circle ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-remove-circle ",c)},_U.list([]));
    };
    var glyphiconRemoveCircle_ = glyphiconRemoveCircle$("");
    var glyphiconScreenshot$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-screenshot ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-screenshot ",c)},_U.list([]));
    };
    var glyphiconScreenshot_ = glyphiconScreenshot$("");
-   var glyphiconInfoSign$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-info-sign ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconInfoSign$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-info-sign ",c)},_U.list([]));};
    var glyphiconInfoSign_ = glyphiconInfoSign$("");
    var glyphiconQuestionSign$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-question-sign ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-question-sign ",c)},_U.list([]));
    };
    var glyphiconQuestionSign_ = glyphiconQuestionSign$("");
-   var glyphiconOkSign$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-ok-sign ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconOkSign$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-ok-sign ",c)},_U.list([]));};
    var glyphiconOkSign_ = glyphiconOkSign$("");
    var glyphiconRemoveSign$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-remove-sign ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-remove-sign ",c)},_U.list([]));
    };
    var glyphiconRemoveSign_ = glyphiconRemoveSign$("");
    var glyphiconMinusSign$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-minus-sign ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-minus-sign ",c)},_U.list([]));
    };
    var glyphiconMinusSign_ = glyphiconMinusSign$("");
-   var glyphiconPlusSign$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-plus-sign ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconPlusSign$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-plus-sign ",c)},_U.list([]));};
    var glyphiconPlusSign_ = glyphiconPlusSign$("");
    var glyphiconChevronRight$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-chevron-right ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-chevron-right ",c)},_U.list([]));
    };
    var glyphiconChevronRight_ = glyphiconChevronRight$("");
    var glyphiconChevronLeft$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-chevron-left ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-chevron-left ",c)},_U.list([]));
    };
    var glyphiconChevronLeft_ = glyphiconChevronLeft$("");
-   var glyphiconEject$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-eject ",c)},
-      _U.list([]));
-   };
+   var glyphiconEject$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-eject ",c)},_U.list([]));};
    var glyphiconEject_ = glyphiconEject$("");
    var glyphiconStepForward$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-step-forward ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-step-forward ",c)},_U.list([]));
    };
    var glyphiconStepForward_ = glyphiconStepForward$("");
    var glyphiconFastForward$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-fast-forward ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-fast-forward ",c)},_U.list([]));
    };
    var glyphiconFastForward_ = glyphiconFastForward$("");
-   var glyphiconForward$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-forward ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconForward$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-forward ",c)},_U.list([]));};
    var glyphiconForward_ = glyphiconForward$("");
-   var glyphiconStop$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-stop ",c)},
-      _U.list([]));
-   };
+   var glyphiconStop$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-stop ",c)},_U.list([]));};
    var glyphiconStop_ = glyphiconStop$("");
-   var glyphiconPause$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-pause ",c)},
-      _U.list([]));
-   };
+   var glyphiconPause$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-pause ",c)},_U.list([]));};
    var glyphiconPause_ = glyphiconPause$("");
-   var glyphiconPlay$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-play ",c)},
-      _U.list([]));
-   };
+   var glyphiconPlay$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-play ",c)},_U.list([]));};
    var glyphiconPlay_ = glyphiconPlay$("");
-   var glyphiconBackward$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-backward ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconBackward$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-backward ",c)},_U.list([]));};
    var glyphiconBackward_ = glyphiconBackward$("");
    var glyphiconFastBackward$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-fast-backward ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-fast-backward ",c)},_U.list([]));
    };
    var glyphiconFastBackward_ = glyphiconFastBackward$("");
    var glyphiconStepBackward$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-step-backward ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-step-backward ",c)},_U.list([]));
    };
    var glyphiconStepBackward_ = glyphiconStepBackward$("");
-   var glyphiconMove$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-move ",c)},
-      _U.list([]));
-   };
+   var glyphiconMove$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-move ",c)},_U.list([]));};
    var glyphiconMove_ = glyphiconMove$("");
-   var glyphiconCheck$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-check ",c)},
-      _U.list([]));
-   };
+   var glyphiconCheck$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-check ",c)},_U.list([]));};
    var glyphiconCheck_ = glyphiconCheck$("");
-   var glyphiconShare$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-share ",c)},
-      _U.list([]));
-   };
+   var glyphiconShare$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-share ",c)},_U.list([]));};
    var glyphiconShare_ = glyphiconShare$("");
-   var glyphiconEdit$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-edit ",c)},
-      _U.list([]));
-   };
+   var glyphiconEdit$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-edit ",c)},_U.list([]));};
    var glyphiconEdit_ = glyphiconEdit$("");
-   var glyphiconTint$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-tint ",c)},
-      _U.list([]));
-   };
+   var glyphiconTint$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-tint ",c)},_U.list([]));};
    var glyphiconTint_ = glyphiconTint$("");
-   var glyphiconAdjust$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-adjust ",c)},
-      _U.list([]));
-   };
+   var glyphiconAdjust$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-adjust ",c)},_U.list([]));};
    var glyphiconAdjust_ = glyphiconAdjust$("");
    var glyphiconMapMarker$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-map-marker ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-map-marker ",c)},_U.list([]));
    };
    var glyphiconMapMarker_ = glyphiconMapMarker$("");
-   var glyphiconPicture$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-picture ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconPicture$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-picture ",c)},_U.list([]));};
    var glyphiconPicture_ = glyphiconPicture$("");
    var glyphiconFacetimeVideo$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-facetime-video ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-facetime-video ",c)},_U.list([]));
    };
    var glyphiconFacetimeVideo_ = glyphiconFacetimeVideo$("");
    var glyphiconIndentRight$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-indent-right ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-indent-right ",c)},_U.list([]));
    };
    var glyphiconIndentRight_ = glyphiconIndentRight$("");
    var glyphiconIndentLeft$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-indent-left ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-indent-left ",c)},_U.list([]));
    };
    var glyphiconIndentLeft_ = glyphiconIndentLeft$("");
-   var glyphiconList$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-list ",c)},
-      _U.list([]));
-   };
+   var glyphiconList$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-list ",c)},_U.list([]));};
    var glyphiconList_ = glyphiconList$("");
    var glyphiconAlignJustify$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-align-justify ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-align-justify ",c)},_U.list([]));
    };
    var glyphiconAlignJustify_ = glyphiconAlignJustify$("");
    var glyphiconAlignRight$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-align-right ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-align-right ",c)},_U.list([]));
    };
    var glyphiconAlignRight_ = glyphiconAlignRight$("");
    var glyphiconAlignCenter$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-align-center ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-align-center ",c)},_U.list([]));
    };
    var glyphiconAlignCenter_ = glyphiconAlignCenter$("");
    var glyphiconAlignLeft$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-align-left ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-align-left ",c)},_U.list([]));
    };
    var glyphiconAlignLeft_ = glyphiconAlignLeft$("");
    var glyphiconTextWidth$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-text-width ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-text-width ",c)},_U.list([]));
    };
    var glyphiconTextWidth_ = glyphiconTextWidth$("");
    var glyphiconTextHeight$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-text-height ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-text-height ",c)},_U.list([]));
    };
    var glyphiconTextHeight_ = glyphiconTextHeight$("");
-   var glyphiconItalic$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-italic ",c)},
-      _U.list([]));
-   };
+   var glyphiconItalic$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-italic ",c)},_U.list([]));};
    var glyphiconItalic_ = glyphiconItalic$("");
-   var glyphiconBold$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-bold ",c)},
-      _U.list([]));
-   };
+   var glyphiconBold$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-bold ",c)},_U.list([]));};
    var glyphiconBold_ = glyphiconBold$("");
-   var glyphiconFont$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-font ",c)},
-      _U.list([]));
-   };
+   var glyphiconFont$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-font ",c)},_U.list([]));};
    var glyphiconFont_ = glyphiconFont$("");
-   var glyphiconCamera$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-camera ",c)},
-      _U.list([]));
-   };
+   var glyphiconCamera$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-camera ",c)},_U.list([]));};
    var glyphiconCamera_ = glyphiconCamera$("");
-   var glyphiconPrint$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-print ",c)},
-      _U.list([]));
-   };
+   var glyphiconPrint$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-print ",c)},_U.list([]));};
    var glyphiconPrint_ = glyphiconPrint$("");
-   var glyphiconBookmark$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-bookmark ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconBookmark$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-bookmark ",c)},_U.list([]));};
    var glyphiconBookmark_ = glyphiconBookmark$("");
-   var glyphiconBook$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-book ",c)},
-      _U.list([]));
-   };
+   var glyphiconBook$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-book ",c)},_U.list([]));};
    var glyphiconBook_ = glyphiconBook$("");
-   var glyphiconTags$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-tags ",c)},
-      _U.list([]));
-   };
+   var glyphiconTags$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-tags ",c)},_U.list([]));};
    var glyphiconTags_ = glyphiconTags$("");
-   var glyphiconTag$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-tag ",c)},
-      _U.list([]));
-   };
+   var glyphiconTag$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-tag ",c)},_U.list([]));};
    var glyphiconTag_ = glyphiconTag$("");
-   var glyphiconBarcode$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-barcode ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconBarcode$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-barcode ",c)},_U.list([]));};
    var glyphiconBarcode_ = glyphiconBarcode$("");
-   var glyphiconQrcode$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-qrcode ",c)},
-      _U.list([]));
-   };
+   var glyphiconQrcode$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-qrcode ",c)},_U.list([]));};
    var glyphiconQrcode_ = glyphiconQrcode$("");
-   var glyphiconVolumeUp$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-volume-up ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconVolumeUp$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-volume-up ",c)},_U.list([]));};
    var glyphiconVolumeUp_ = glyphiconVolumeUp$("");
    var glyphiconVolumeDown$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-volume-down ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-volume-down ",c)},_U.list([]));
    };
    var glyphiconVolumeDown_ = glyphiconVolumeDown$("");
    var glyphiconVolumeOff$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-volume-off ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-volume-off ",c)},_U.list([]));
    };
    var glyphiconVolumeOff_ = glyphiconVolumeOff$("");
    var glyphiconHeadphones$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-headphones ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-headphones ",c)},_U.list([]));
    };
    var glyphiconHeadphones_ = glyphiconHeadphones$("");
-   var glyphiconFlag$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-flag ",c)},
-      _U.list([]));
-   };
+   var glyphiconFlag$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-flag ",c)},_U.list([]));};
    var glyphiconFlag_ = glyphiconFlag$("");
-   var glyphiconLock$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-lock ",c)},
-      _U.list([]));
-   };
+   var glyphiconLock$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-lock ",c)},_U.list([]));};
    var glyphiconLock_ = glyphiconLock$("");
-   var glyphiconListAlt$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-list-alt ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconListAlt$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-list-alt ",c)},_U.list([]));};
    var glyphiconListAlt_ = glyphiconListAlt$("");
-   var glyphiconRefresh$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-refresh ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconRefresh$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-refresh ",c)},_U.list([]));};
    var glyphiconRefresh_ = glyphiconRefresh$("");
-   var glyphiconRepeat$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-repeat ",c)},
-      _U.list([]));
-   };
+   var glyphiconRepeat$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-repeat ",c)},_U.list([]));};
    var glyphiconRepeat_ = glyphiconRepeat$("");
    var glyphiconPlayCircle$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-play-circle ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-play-circle ",c)},_U.list([]));
    };
    var glyphiconPlayCircle_ = glyphiconPlayCircle$("");
-   var glyphiconInbox$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-inbox ",c)},
-      _U.list([]));
-   };
+   var glyphiconInbox$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-inbox ",c)},_U.list([]));};
    var glyphiconInbox_ = glyphiconInbox$("");
-   var glyphiconUpload$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-upload ",c)},
-      _U.list([]));
-   };
+   var glyphiconUpload$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-upload ",c)},_U.list([]));};
    var glyphiconUpload_ = glyphiconUpload$("");
-   var glyphiconDownload$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-download ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconDownload$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-download ",c)},_U.list([]));};
    var glyphiconDownload_ = glyphiconDownload$("");
    var glyphiconDownloadAlt$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-download-alt ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-download-alt ",c)},_U.list([]));
    };
    var glyphiconDownloadAlt_ = glyphiconDownloadAlt$("");
-   var glyphiconRoad$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-road ",c)},
-      _U.list([]));
-   };
+   var glyphiconRoad$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-road ",c)},_U.list([]));};
    var glyphiconRoad_ = glyphiconRoad$("");
-   var glyphiconTime$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-time ",c)},
-      _U.list([]));
-   };
+   var glyphiconTime$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-time ",c)},_U.list([]));};
    var glyphiconTime_ = glyphiconTime$("");
-   var glyphiconFile$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-file ",c)},
-      _U.list([]));
-   };
+   var glyphiconFile$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-file ",c)},_U.list([]));};
    var glyphiconFile_ = glyphiconFile$("");
-   var glyphiconHome$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-home ",c)},
-      _U.list([]));
-   };
+   var glyphiconHome$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-home ",c)},_U.list([]));};
    var glyphiconHome_ = glyphiconHome$("");
-   var glyphiconTrash$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-trash ",c)},
-      _U.list([]));
-   };
+   var glyphiconTrash$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-trash ",c)},_U.list([]));};
    var glyphiconTrash_ = glyphiconTrash$("");
-   var glyphiconCog$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-cog ",c)},
-      _U.list([]));
-   };
+   var glyphiconCog$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-cog ",c)},_U.list([]));};
    var glyphiconCog_ = glyphiconCog$("");
-   var glyphiconSignal$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-signal ",c)},
-      _U.list([]));
-   };
+   var glyphiconSignal$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-signal ",c)},_U.list([]));};
    var glyphiconSignal_ = glyphiconSignal$("");
-   var glyphiconOff$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-off ",c)},
-      _U.list([]));
-   };
+   var glyphiconOff$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-off ",c)},_U.list([]));};
    var glyphiconOff_ = glyphiconOff$("");
-   var glyphiconZoomOut$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-zoom-out ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconZoomOut$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-zoom-out ",c)},_U.list([]));};
    var glyphiconZoomOut_ = glyphiconZoomOut$("");
-   var glyphiconZoomIn$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-zoom-in ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconZoomIn$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-zoom-in ",c)},_U.list([]));};
    var glyphiconZoomIn_ = glyphiconZoomIn$("");
-   var glyphiconRemove$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-remove ",c)},
-      _U.list([]));
-   };
+   var glyphiconRemove$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-remove ",c)},_U.list([]));};
    var glyphiconRemove_ = glyphiconRemove$("");
-   var glyphiconOk$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-ok ",c)},
-      _U.list([]));
-   };
+   var glyphiconOk$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-ok ",c)},_U.list([]));};
    var glyphiconOk_ = glyphiconOk$("");
-   var glyphiconThList$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-th-list ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconThList$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-th-list ",c)},_U.list([]));};
    var glyphiconThList_ = glyphiconThList$("");
-   var glyphiconTh$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-th ",c)},
-      _U.list([]));
-   };
+   var glyphiconTh$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-th ",c)},_U.list([]));};
    var glyphiconTh_ = glyphiconTh$("");
-   var glyphiconThLarge$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-th-large ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconThLarge$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-th-large ",c)},_U.list([]));};
    var glyphiconThLarge_ = glyphiconThLarge$("");
-   var glyphiconFilm$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-film ",c)},
-      _U.list([]));
-   };
+   var glyphiconFilm$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-film ",c)},_U.list([]));};
    var glyphiconFilm_ = glyphiconFilm$("");
-   var glyphiconUser$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-user ",c)},
-      _U.list([]));
-   };
+   var glyphiconUser$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-user ",c)},_U.list([]));};
    var glyphiconUser_ = glyphiconUser$("");
    var glyphiconStarEmpty$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-star-empty ",
-      c)},
-      _U.list([]));
+      return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-star-empty ",c)},_U.list([]));
    };
    var glyphiconStarEmpty_ = glyphiconStarEmpty$("");
-   var glyphiconStar$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-star ",c)},
-      _U.list([]));
-   };
+   var glyphiconStar$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-star ",c)},_U.list([]));};
    var glyphiconStar_ = glyphiconStar$("");
-   var glyphiconHeart$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-heart ",c)},
-      _U.list([]));
-   };
+   var glyphiconHeart$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-heart ",c)},_U.list([]));};
    var glyphiconHeart_ = glyphiconHeart$("");
-   var glyphiconSearch$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-search ",c)},
-      _U.list([]));
-   };
+   var glyphiconSearch$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-search ",c)},_U.list([]));};
    var glyphiconSearch_ = glyphiconSearch$("");
-   var glyphiconMusic$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-music ",c)},
-      _U.list([]));
-   };
+   var glyphiconMusic$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-music ",c)},_U.list([]));};
    var glyphiconMusic_ = glyphiconMusic$("");
-   var glyphiconGlass$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-glass ",c)},
-      _U.list([]));
-   };
+   var glyphiconGlass$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-glass ",c)},_U.list([]));};
    var glyphiconGlass_ = glyphiconGlass$("");
-   var glyphiconPencil$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-pencil ",c)},
-      _U.list([]));
-   };
+   var glyphiconPencil$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-pencil ",c)},_U.list([]));};
    var glyphiconPencil_ = glyphiconPencil$("");
-   var glyphiconEnvelope$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-envelope ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconEnvelope$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-envelope ",c)},_U.list([]));};
    var glyphiconEnvelope_ = glyphiconEnvelope$("");
-   var glyphiconCloud$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-cloud ",c)},
-      _U.list([]));
-   };
+   var glyphiconCloud$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-cloud ",c)},_U.list([]));};
    var glyphiconCloud_ = glyphiconCloud$("");
-   var glyphiconMinus$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-minus ",c)},
-      _U.list([]));
-   };
+   var glyphiconMinus$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-minus ",c)},_U.list([]));};
    var glyphiconMinus_ = glyphiconMinus$("");
-   var glyphiconEuro$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-euro ",c)},
-      _U.list([]));
-   };
+   var glyphiconEuro$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-euro ",c)},_U.list([]));};
    var glyphiconEuro_ = glyphiconEuro$("");
-   var glyphiconPlus$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],"glyphicon glyphicon-plus ",c)},
-      _U.list([]));
-   };
+   var glyphiconPlus$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-plus ",c)},_U.list([]));};
    var glyphiconPlus_ = glyphiconPlus$("");
-   var glyphiconAsterisk$ = function (c) {
-      return A2($Html$Shorthand.span$,
-      {$class: A2($Basics._op["++"],
-      "glyphicon glyphicon-asterisk ",
-      c)},
-      _U.list([]));
-   };
+   var glyphiconAsterisk$ = function (c) {    return A2($Html$Shorthand.span$,{$class: A2($Basics._op["++"],"glyphicon glyphicon-asterisk ",c)},_U.list([]));};
    var glyphiconAsterisk_ = glyphiconAsterisk$("");
-   var skipNavigation_ = function (t) {
-      return A2($Html$Shorthand.a$,
-      {$class: "sr-only sr-only-focusable",href: "#content"},
-      _U.list([$Html.text(t)]));
-   };
-   var btnSubmitLgPrimary_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btncNoevent,
-      "btn-lg btn-primary",
-      "submit",
-      p);
-   };
-   var btnSubmitLgPrimary$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btncNoevent,
-      A2($Basics._op["++"],"btn-lg btn-primary ",c),
-      "submit",
-      p);
-   });
-   var btnSubmitSmPrimary_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btncNoevent,
-      "btn-sm btn-primary",
-      "submit",
-      p);
-   };
-   var btnSubmitSmPrimary$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btncNoevent,
-      A2($Basics._op["++"],"btn-sm btn-primary ",c),
-      "submit",
-      p);
-   });
-   var btnSubmitXsPrimary_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btncNoevent,
-      "btn-xs btn-primary ",
-      "submit",
-      p);
-   };
-   var btnSubmitXsPrimary$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btncNoevent,
-      A2($Basics._op["++"],"btn-xs btn-primary ",c),
-      "submit",
-      p);
-   });
-   var btnSubmitPrimary_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btncNoevent,
-      "btn-primary",
-      "submit",
-      p);
-   };
-   var btnSubmitPrimary$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btncNoevent,
-      A2($Basics._op["++"],"btn-primary ",c),
-      "submit",
-      p);
-   });
-   var btnLgDanger_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-lg btn-danger",
-      "button",
-      p);
-   };
-   var btnLgDanger$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-lg btn-danger ",c),
-      "button",
-      p);
-   });
-   var btnSmDanger_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-sm btn-danger",
-      "button",
-      p);
-   };
-   var btnSmDanger$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-sm btn-danger ",c),
-      "button",
-      p);
-   });
-   var btnXsDanger_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-xs btn-danger ",
-      "button",
-      p);
-   };
-   var btnXsDanger$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-xs btn-danger ",c),
-      "button",
-      p);
-   });
-   var btnDanger_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-danger",
-      "button",
-      p);
-   };
-   var btnDanger$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-danger ",c),
-      "button",
-      p);
-   });
-   var btnLgWarning_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-lg btn-warning",
-      "button",
-      p);
-   };
-   var btnLgWarning$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-lg btn-warning ",c),
-      "button",
-      p);
-   });
-   var btnSmWarning_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-sm btn-warning",
-      "button",
-      p);
-   };
-   var btnSmWarning$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-sm btn-warning ",c),
-      "button",
-      p);
-   });
-   var btnXsWarning_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-xs btn-warning ",
-      "button",
-      p);
-   };
-   var btnXsWarning$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-xs btn-warning ",c),
-      "button",
-      p);
-   });
-   var btnWarning_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-warning",
-      "button",
-      p);
-   };
-   var btnWarning$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-warning ",c),
-      "button",
-      p);
-   });
-   var btnLgInfo_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-lg btn-info",
-      "button",
-      p);
-   };
-   var btnLgInfo$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-lg btn-info ",c),
-      "button",
-      p);
-   });
-   var btnSmInfo_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-sm btn-info",
-      "button",
-      p);
-   };
-   var btnSmInfo$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-sm btn-info ",c),
-      "button",
-      p);
-   });
-   var btnXsInfo_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-xs btn-info ",
-      "button",
-      p);
-   };
-   var btnXsInfo$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-xs btn-info ",c),
-      "button",
-      p);
-   });
-   var btnInfo_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-info",
-      "button",
-      p);
-   };
-   var btnInfo$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-info ",c),
-      "button",
-      p);
-   });
-   var btnLgSuccess_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-lg btn-success",
-      "button",
-      p);
-   };
-   var btnLgSuccess$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-lg btn-success ",c),
-      "button",
-      p);
-   });
-   var btnSmSuccess_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-sm btn-success",
-      "button",
-      p);
-   };
-   var btnSmSuccess$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-sm btn-success ",c),
-      "button",
-      p);
-   });
-   var btnXsSuccess_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-xs btn-success ",
-      "button",
-      p);
-   };
-   var btnXsSuccess$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-xs btn-success ",c),
-      "button",
-      p);
-   });
+   var skipNavigation_ = function (t) {    return A2($Html$Shorthand.a$,{$class: "sr-only sr-only-focusable",href: "#content"},_U.list([$Html.text(t)]));};
+   var btnSubmitLgPrimary_ = function (p) {    return A3($Bootstrap$Html$Internal.btncNoevent,"btn-lg btn-primary","submit",p);};
+   var btnSubmitLgPrimary$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btncNoevent,A2($Basics._op["++"],"btn-lg btn-primary ",c),"submit",p);});
+   var btnSubmitSmPrimary_ = function (p) {    return A3($Bootstrap$Html$Internal.btncNoevent,"btn-sm btn-primary","submit",p);};
+   var btnSubmitSmPrimary$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btncNoevent,A2($Basics._op["++"],"btn-sm btn-primary ",c),"submit",p);});
+   var btnSubmitXsPrimary_ = function (p) {    return A3($Bootstrap$Html$Internal.btncNoevent,"btn-xs btn-primary ","submit",p);};
+   var btnSubmitXsPrimary$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btncNoevent,A2($Basics._op["++"],"btn-xs btn-primary ",c),"submit",p);});
+   var btnSubmitPrimary_ = function (p) {    return A3($Bootstrap$Html$Internal.btncNoevent,"btn-primary","submit",p);};
+   var btnSubmitPrimary$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btncNoevent,A2($Basics._op["++"],"btn-primary ",c),"submit",p);});
+   var btnLgDanger_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-lg btn-danger","button",p);};
+   var btnLgDanger$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-lg btn-danger ",c),"button",p);});
+   var btnSmDanger_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-sm btn-danger","button",p);};
+   var btnSmDanger$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-sm btn-danger ",c),"button",p);});
+   var btnXsDanger_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-xs btn-danger ","button",p);};
+   var btnXsDanger$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-xs btn-danger ",c),"button",p);});
+   var btnDanger_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-danger","button",p);};
+   var btnDanger$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-danger ",c),"button",p);});
+   var btnLgWarning_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-lg btn-warning","button",p);};
+   var btnLgWarning$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-lg btn-warning ",c),"button",p);});
+   var btnSmWarning_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-sm btn-warning","button",p);};
+   var btnSmWarning$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-sm btn-warning ",c),"button",p);});
+   var btnXsWarning_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-xs btn-warning ","button",p);};
+   var btnXsWarning$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-xs btn-warning ",c),"button",p);});
+   var btnWarning_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-warning","button",p);};
+   var btnWarning$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-warning ",c),"button",p);});
+   var btnLgInfo_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-lg btn-info","button",p);};
+   var btnLgInfo$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-lg btn-info ",c),"button",p);});
+   var btnSmInfo_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-sm btn-info","button",p);};
+   var btnSmInfo$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-sm btn-info ",c),"button",p);});
+   var btnXsInfo_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-xs btn-info ","button",p);};
+   var btnXsInfo$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-xs btn-info ",c),"button",p);});
+   var btnInfo_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-info","button",p);};
+   var btnInfo$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-info ",c),"button",p);});
+   var btnLgSuccess_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-lg btn-success","button",p);};
+   var btnLgSuccess$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-lg btn-success ",c),"button",p);});
+   var btnSmSuccess_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-sm btn-success","button",p);};
+   var btnSmSuccess$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-sm btn-success ",c),"button",p);});
+   var btnXsSuccess_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-xs btn-success ","button",p);};
+   var btnXsSuccess$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-xs btn-success ",c),"button",p);});
    var panelDefault$ = F3(function (t,btns,bs) {
-      var uncurry3 = F2(function (f,_p0) {
-         var _p1 = _p0;
-         return A3(f,_p1._0,_p1._1._0,_p1._1._1);
-      });
+      var uncurry3 = F2(function (f,_p0) {    var _p1 = _p0;return A3(f,_p1._0,_p1._1._0,_p1._1._1);});
       return panelDefault_(_U.list([panelHeading_(A2($Basics._op["++"],
-                                   A2($List.map,
-                                   uncurry3(btnXsSuccess$("pull-right")),
-                                   $List.reverse(btns)),
+                                   A2($List.map,uncurry3(btnXsSuccess$("pull-right")),$List.reverse(btns)),
                                    _U.list([panelTitle_(t)])))
                                    ,panelBody_(bs)]));
    });
-   var btnSuccess_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-success",
-      "button",
-      p);
-   };
-   var btnSuccess$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-success ",c),
-      "button",
-      p);
-   });
-   var btnLgPrimary_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-lg btn-primary",
-      "button",
-      p);
-   };
-   var btnLgPrimary$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-lg btn-primary ",c),
-      "button",
-      p);
-   });
-   var btnSmPrimary_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-sm btn-primary",
-      "button",
-      p);
-   };
-   var btnSmPrimary$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-sm btn-primary ",c),
-      "button",
-      p);
-   });
-   var btnXsPrimary_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-xs btn-primary ",
-      "button",
-      p);
-   };
-   var btnXsPrimary$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-xs btn-primary ",c),
-      "button",
-      p);
-   });
-   var btnPrimary_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-primary",
-      "button",
-      p);
-   };
-   var btnPrimary$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-primary ",c),
-      "button",
-      p);
-   });
-   var btnLgDefault_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-lg btn-default",
-      "button",
-      p);
-   };
-   var btnLgDefault$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-lg btn-default ",c),
-      "button",
-      p);
-   });
-   var btnSmDefault_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-sm btn-default",
-      "button",
-      p);
-   };
-   var btnSmDefault$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-sm btn-default ",c),
-      "button",
-      p);
-   });
-   var btnXsDefault_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-xs btn-default ",
-      "button",
-      p);
-   };
-   var btnXsDefault$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-xs btn-default  ",c),
-      "button",
-      p);
-   });
-   var btnDefault_ = function (p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      "btn-default",
-      "button",
-      p);
-   };
-   var btnDefault$ = F2(function (c,p) {
-      return A3($Bootstrap$Html$Internal.btnc,
-      A2($Basics._op["++"],"btn-default ",c),
-      "button",
-      p);
-   });
-   var btnParam = {icon: $Maybe.Nothing
-                  ,label: $Maybe.Nothing
-                  ,tooltip: $Maybe.Nothing};
+   var btnSuccess_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-success","button",p);};
+   var btnSuccess$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-success ",c),"button",p);});
+   var btnLgPrimary_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-lg btn-primary","button",p);};
+   var btnLgPrimary$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-lg btn-primary ",c),"button",p);});
+   var btnSmPrimary_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-sm btn-primary","button",p);};
+   var btnSmPrimary$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-sm btn-primary ",c),"button",p);});
+   var btnXsPrimary_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-xs btn-primary ","button",p);};
+   var btnXsPrimary$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-xs btn-primary ",c),"button",p);});
+   var btnPrimary_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-primary","button",p);};
+   var btnPrimary$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-primary ",c),"button",p);});
+   var btnLgDefault_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-lg btn-default","button",p);};
+   var btnLgDefault$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-lg btn-default ",c),"button",p);});
+   var btnSmDefault_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-sm btn-default","button",p);};
+   var btnSmDefault$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-sm btn-default ",c),"button",p);});
+   var btnXsDefault_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-xs btn-default ","button",p);};
+   var btnXsDefault$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-xs btn-default  ",c),"button",p);});
+   var btnDefault_ = function (p) {    return A3($Bootstrap$Html$Internal.btnc,"btn-default","button",p);};
+   var btnDefault$ = F2(function (c,p) {    return A3($Bootstrap$Html$Internal.btnc,A2($Basics._op["++"],"btn-default ",c),"button",p);});
+   var btnParam = {icon: $Maybe.Nothing,label: $Maybe.Nothing,tooltip: $Maybe.Nothing};
    var formGroup_ = $Html$Shorthand.div$({$class: "form-group"});
-   var tableBodyStriped$ = function (c) {
-      return $Html$Shorthand.table$({$class: A2($Basics._op["++"],
-      "table table-body-striped ",
-      c)});
-   };
+   var tableBodyStriped$ = function (c) {    return $Html$Shorthand.table$({$class: A2($Basics._op["++"],"table table-body-striped ",c)});};
    var tableBodyStriped_ = tableBodyStriped$("");
-   var tableStriped$ = function (c) {
-      return $Html$Shorthand.table$({$class: A2($Basics._op["++"],
-      "table table-striped ",
-      c)});
-   };
+   var tableStriped$ = function (c) {    return $Html$Shorthand.table$({$class: A2($Basics._op["++"],"table table-striped ",c)});};
    var tableStriped_ = tableStriped$("");
-   var colLgOffset_ = F8(function (xs,
-   xsOffset,
-   sm,
-   smOffset,
-   md,
-   mdOffset,
-   lg,
-   lgOffset) {
+   var colLgOffset_ = F8(function (xs,xsOffset,sm,smOffset,md,mdOffset,lg,lgOffset) {
       return $Html$Shorthand.div$({$class: A2($Basics._op["++"],
       A3($Bootstrap$Html$Internal.colOffset,"xs",xs,xsOffset),
       A2($Basics._op["++"],
-      A2($String.cons,
-      _U.chr(" "),
-      A3($Bootstrap$Html$Internal.colOffset,"sm",sm,smOffset)),
+      A2($String.cons,_U.chr(" "),A3($Bootstrap$Html$Internal.colOffset,"sm",sm,smOffset)),
       A2($Basics._op["++"],
-      A2($String.cons,
-      _U.chr(" "),
-      A3($Bootstrap$Html$Internal.colOffset,"md",md,mdOffset)),
-      A2($String.cons,
-      _U.chr(" "),
-      A3($Bootstrap$Html$Internal.colOffset,"lg",lg,lgOffset)))))});
+      A2($String.cons,_U.chr(" "),A3($Bootstrap$Html$Internal.colOffset,"md",md,mdOffset)),
+      A2($String.cons,_U.chr(" "),A3($Bootstrap$Html$Internal.colOffset,"lg",lg,lgOffset)))))});
    });
-   var colMdOffset_ = F6(function (xs,
-   xsOffset,
-   sm,
-   smOffset,
-   md,
-   mdOffset) {
+   var colMdOffset_ = F6(function (xs,xsOffset,sm,smOffset,md,mdOffset) {
       return $Html$Shorthand.div$({$class: A2($Basics._op["++"],
       A3($Bootstrap$Html$Internal.colOffset,"xs",xs,xsOffset),
       A2($Basics._op["++"],
-      A2($String.cons,
-      _U.chr(" "),
-      A3($Bootstrap$Html$Internal.colOffset,"sm",sm,smOffset)),
-      A2($String.cons,
-      _U.chr(" "),
-      A3($Bootstrap$Html$Internal.colOffset,"md",md,mdOffset))))});
+      A2($String.cons,_U.chr(" "),A3($Bootstrap$Html$Internal.colOffset,"sm",sm,smOffset)),
+      A2($String.cons,_U.chr(" "),A3($Bootstrap$Html$Internal.colOffset,"md",md,mdOffset))))});
    });
    var colSmOffset_ = F4(function (xs,xsOffset,sm,smOffset) {
       return $Html$Shorthand.div$({$class: A2($Basics._op["++"],
       A3($Bootstrap$Html$Internal.colOffset,"xs",xs,xsOffset),
-      A2($String.cons,
-      _U.chr(" "),
-      A3($Bootstrap$Html$Internal.colOffset,"sm",sm,smOffset)))});
+      A2($String.cons,_U.chr(" "),A3($Bootstrap$Html$Internal.colOffset,"sm",sm,smOffset)))});
    });
-   var colXsOffset_ = F2(function (xs,xsOffset) {
-      return $Html$Shorthand.div$({$class: A3($Bootstrap$Html$Internal.colOffset,
-      "xs",
-      xs,
-      xsOffset)});
-   });
+   var colXsOffset_ = F2(function (xs,xsOffset) {    return $Html$Shorthand.div$({$class: A3($Bootstrap$Html$Internal.colOffset,"xs",xs,xsOffset)});});
    var colLg_ = F4(function (xs,sm,md,lg) {
       return $Html$Shorthand.div$({$class: A2($Basics._op["++"],
       "col-xs-",
@@ -15236,35 +12258,21 @@ Elm.Bootstrap.Html.make = function (_elm) {
       " col-sm-",
       A2($Basics._op["++"],
       $Basics.toString(sm),
-      A2($Basics._op["++"],
-      " col-md-",
-      A2($Basics._op["++"],
-      $Basics.toString(md),
-      A2($Basics._op["++"]," col-lg-",$Basics.toString(lg))))))))});
+      A2($Basics._op["++"]," col-md-",A2($Basics._op["++"],$Basics.toString(md),A2($Basics._op["++"]," col-lg-",$Basics.toString(lg))))))))});
    });
    var colMd_ = F3(function (xs,sm,md) {
       return $Html$Shorthand.div$({$class: A2($Basics._op["++"],
       "col-xs-",
       A2($Basics._op["++"],
       $Basics.toString(xs),
-      A2($Basics._op["++"],
-      " col-sm-",
-      A2($Basics._op["++"],
-      $Basics.toString(sm),
-      A2($Basics._op["++"]," col-md-",$Basics.toString(md))))))});
+      A2($Basics._op["++"]," col-sm-",A2($Basics._op["++"],$Basics.toString(sm),A2($Basics._op["++"]," col-md-",$Basics.toString(md))))))});
    });
    var colSm_ = F2(function (xs,sm) {
       return $Html$Shorthand.div$({$class: A2($Basics._op["++"],
       "col-xs-",
-      A2($Basics._op["++"],
-      $Basics.toString(xs),
-      A2($Basics._op["++"]," col-sm-",$Basics.toString(sm))))});
+      A2($Basics._op["++"],$Basics.toString(xs),A2($Basics._op["++"]," col-sm-",$Basics.toString(sm))))});
    });
-   var colXs_ = function (xs) {
-      return $Html$Shorthand.div$({$class: A2($Basics._op["++"],
-      "col-xs-",
-      $Basics.toString(xs))});
-   };
+   var colXs_ = function (xs) {    return $Html$Shorthand.div$({$class: A2($Basics._op["++"],"col-xs-",$Basics.toString(xs))});};
    var row_ = $Html$Shorthand.div$({$class: "row"});
    var containerFluid_ = $Html$Shorthand.div$({$class: "container-fluid"});
    var container_ = $Html$Shorthand.div$({$class: "container"});
@@ -15763,6 +12771,7 @@ Elm.Page.make = function (_elm) {
    _elm.Page = _elm.Page || {};
    if (_elm.Page.values) return _elm.Page.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Array = Elm.Array.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Char = Elm.Char.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -15774,166 +12783,410 @@ Elm.Page.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var h$ = F2(function (n,c) {
+      return A2($Html.div,
+      _U.list([]),
+      _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("page-header")]),_U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text(n)]))]))
+              ,A2($Html.div,_U.list([$Html$Attributes.$class("row")]),_U.list([c]))]));
+   });
+   var makeThumbnails = function () {
+      var alt$ = "A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera";
+      return A2(h$,
+      "Thumbnails",
+      A2($Html.img,
+      _U.list([$Html$Attributes.$class("img-thumbnail"),A2($Html$Attributes.attribute,"data-src","holder.js/200x200"),$Html$Attributes.alt(alt$)]),
+      _U.list([])));
+   }();
+   var makeCarousel = function () {
+      var ols = A2($Html.div,
+      _U.list([$Html$Attributes.id("carousel-example-generic")
+              ,$Html$Attributes.$class("carousel slide")
+              ,A2($Html$Attributes.attribute,"data-ride","carousel")]),
+      _U.list([A2($Html.ol,
+              _U.list([$Html$Attributes.$class("carousel-indicators")]),
+              _U.list([A2($Html.li,
+                      _U.list([$Html$Attributes.$class("active")
+                              ,A2($Html$Attributes.attribute,"data-target","#carousel-example-generic")
+                              ,A2($Html$Attributes.attribute,"data-slide-to","0")]),
+                      _U.list([]))
+                      ,A2($Html.li,
+                      _U.list([A2($Html$Attributes.attribute,"data-target","#carousel-example-generic"),A2($Html$Attributes.attribute,"data-slide-to","1")]),
+                      _U.list([]))
+                      ,A2($Html.li,
+                      _U.list([A2($Html$Attributes.attribute,"data-target","#carousel-example-generic"),A2($Html$Attributes.attribute,"data-slide-to","2")]),
+                      _U.list([]))]))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.$class("carousel-inner"),A2($Html$Attributes.attribute,"role","listbox")]),
+              _U.list([A2($Html.div,
+                      _U.list([$Html$Attributes.$class("item active")]),
+                      _U.list([A2($Html.img,
+                      _U.list([A2($Html$Attributes.attribute,"data-src","holder.js/1140x500/auto/#777:#555/text:First slide")
+                              ,$Html$Attributes.alt("First slide")]),
+                      _U.list([]))]))
+                      ,A2($Html.div,
+                      _U.list([$Html$Attributes.$class("item")]),
+                      _U.list([A2($Html.img,
+                      _U.list([A2($Html$Attributes.attribute,"data-src","holder.js/1140x500/auto/#666:#444/text:Second slide")
+                              ,$Html$Attributes.alt("Second slide")]),
+                      _U.list([]))]))
+                      ,A2($Html.div,
+                      _U.list([$Html$Attributes.$class("item")]),
+                      _U.list([A2($Html.img,
+                      _U.list([A2($Html$Attributes.attribute,"data-src","holder.js/1140x500/auto/#666:#444/text:Third slide")
+                              ,$Html$Attributes.alt("Third slide")]),
+                      _U.list([]))]))]))
+              ,A2($Html.a,
+              _U.list([$Html$Attributes.$class("left carousel-control")
+                      ,$Html$Attributes.href("#carousel-example-generic")
+                      ,A2($Html$Attributes.attribute,"role","button")
+                      ,A2($Html$Attributes.attribute,"data-slide","prev")]),
+              _U.list([A2($Html.span,
+                      _U.list([$Html$Attributes.$class("glyphicon glyphicon-chevron-left"),A2($Html$Attributes.attribute,"aria-hidden","true")]),
+                      _U.list([]))
+                      ,A2($Html.span,_U.list([$Html$Attributes.$class("sr-only")]),_U.list([$Html.text("Previous")]))]))
+              ,A2($Html.a,
+              _U.list([$Html$Attributes.$class("right carousel-control")
+                      ,$Html$Attributes.href("#carousel-example-generic")
+                      ,A2($Html$Attributes.attribute,"role","button")
+                      ,A2($Html$Attributes.attribute,"data-slide","next")]),
+              _U.list([A2($Html.span,
+                      _U.list([$Html$Attributes.$class("glyphicon glyphicon-chevron-right"),A2($Html$Attributes.attribute,"aria-hidden","true")]),
+                      _U.list([]))
+                      ,A2($Html.span,_U.list([$Html$Attributes.$class("sr-only")]),_U.list([$Html.text("Next")]))]))]));
+      return A2(h$,"Carousel",ols);
+   }();
+   var makeWells = function () {
+      var blah = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.";
+      return A2(h$,"Wells",A2($Html.div,_U.list([$Html$Attributes.$class("well")]),_U.list([$Html.text(blah)])));
+   }();
+   var makePanels = function () {
+      var base = function (s) {
+         return A2($Html.div,
+         _U.list([$Html$Attributes.$class(A2($Basics._op["++"],"panel panel-",s))]),
+         _U.list([A2($Html.div,
+                 _U.list([$Html$Attributes.$class("panel-heading")]),
+                 _U.list([A2($Html.h3,_U.list([$Html$Attributes.$class("panel-title")]),_U.list([$Html.text("Panel title")]))]))
+                 ,A2($Html.div,_U.list([$Html$Attributes.$class("panel-body")]),_U.list([$Html.text("Panel content")]))]));
+      };
+      var two1 = A2($Html.div,_U.list([$Html$Attributes.$class("col-sm-4")]),A2($List.map,base,_U.list(["default","primary"])));
+      var two2 = A2($Html.div,_U.list([$Html$Attributes.$class("col-sm-4")]),A2($List.map,base,_U.list(["success","info"])));
+      var two3 = A2($Html.div,_U.list([$Html$Attributes.$class("col-sm-4")]),A2($List.map,base,_U.list(["warning","danger"])));
+      var res = A2($Html.div,_U.list([$Html$Attributes.$class("row")]),_U.list([two1,two2,two3]));
+      return A2(h$,"Panels",res);
+   }();
+   var makeListGroup$ = _U.list([A2($Html.a,
+                                _U.list([$Html$Attributes.href("#"),$Html$Attributes.$class("list-group-item active")]),
+                                _U.list([A2($Html.h4,
+                                        _U.list([$Html$Attributes.$class("list-group-item-heading")]),
+                                        _U.list([$Html.text("List group item heading")]))
+                                        ,A2($Html.p,
+                                        _U.list([$Html$Attributes.$class("list-group-item-text")]),
+                                        _U.list([$Html.text("Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")]))]))
+                                ,A2($Html.a,
+                                _U.list([$Html$Attributes.href("#"),$Html$Attributes.$class("list-group-item")]),
+                                _U.list([A2($Html.h4,
+                                        _U.list([$Html$Attributes.$class("list-group-item-heading")]),
+                                        _U.list([$Html.text("List group item heading")]))
+                                        ,A2($Html.p,
+                                        _U.list([$Html$Attributes.$class("list-group-item-text")]),
+                                        _U.list([$Html.text("Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")]))]))
+                                ,A2($Html.a,
+                                _U.list([$Html$Attributes.href("#"),$Html$Attributes.$class("list-group-item")]),
+                                _U.list([A2($Html.h4,
+                                        _U.list([$Html$Attributes.$class("list-group-item-heading")]),
+                                        _U.list([$Html.text("List group item heading")]))
+                                        ,A2($Html.p,
+                                        _U.list([$Html$Attributes.$class("list-group-item-text")]),
+                                        _U.list([$Html.text("Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")]))]))]);
+   var makeListGroups = function () {
+      var go = function (c) {
+         return A2($Html.div,_U.list([$Html$Attributes.$class("col-sm-4")]),_U.list([A2($Html.ul,_U.list([$Html$Attributes.$class("list-group")]),c)]));
+      };
+      var ais = function (g) {
+         return A2($Html.a,_U.list([$Html$Attributes.href("#"),$Html$Attributes.$class("list-group-item")]),_U.list([$Html.text(g)]));
+      };
+      var lis = function (g) {    return A2($Html.li,_U.list([$Html$Attributes.$class("list-group-item")]),_U.list([$Html.text(g)]));};
+      var gps = $Array.toList(A2($Array.initialize,8,function (x) {    return A2($Basics._op["++"],"Group ",$Basics.toString(x + 1));}));
+      var ais$ = A2($List.map,ais,A2($Maybe.withDefault,_U.list([]),$List.tail(gps)));
+      var ais$$ = A2($Html.a,
+      _U.list([$Html$Attributes.href("#"),$Html$Attributes.$class("list-group-item active")]),
+      _U.list([$Html.text(A2($Maybe.withDefault,"",$List.head(gps)))]));
+      return A2($Html.div,
+      _U.list([]),
+      _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("page-header")]),_U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("List groups")]))]))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.$class("row")]),
+              _U.list([go(A2($List.map,lis,gps)),go(A2($List._op["::"],ais$$,ais$)),go(makeListGroup$)]))]));
+   }();
+   var makeNavs = function () {
+      var c = _U.list([A2($Html.li,
+                      _U.list([A2($Html$Attributes.attribute,"role","presentation"),$Html$Attributes.$class("active")]),
+                      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Home")]))]))
+                      ,A2($Html.li,
+                      _U.list([A2($Html$Attributes.attribute,"role","presentation")]),
+                      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Profile")]))]))
+                      ,A2($Html.li,
+                      _U.list([A2($Html$Attributes.attribute,"role","presentation")]),
+                      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Messages")]))]))]);
+      return A2($Html.div,
+      _U.list([]),
+      _U.list([A2($Html.ul,_U.list([$Html$Attributes.$class("nav nav-tabs"),A2($Html$Attributes.attribute,"role","tablist")]),c)
+              ,A2($Html.ul,_U.list([$Html$Attributes.$class("nav nav-pills"),A2($Html$Attributes.attribute,"role","tablist")]),c)]));
+   }();
+   var baseDropDownAttributes = _U.list([A2($Html$Attributes.attribute,"data-toggle","dropdown")
+                                        ,A2($Html$Attributes.attribute,"role","button")
+                                        ,A2($Html$Attributes.attribute,"aria-haspopup","true")
+                                        ,A2($Html$Attributes.attribute,"aria-expanded","false")]);
+   var makeDropDown = A2($Html.div,
+   _U.list([$Html$Attributes.$class("dropdown theme-dropdown clearfix")]),
+   _U.list([A2($Html.a,
+           A2($Basics._op["++"],
+           _U.list([$Html$Attributes.id("dropdownMenu1"),$Html$Attributes.href("#"),$Html$Attributes.$class("sr-only dropdown-toggle")]),
+           baseDropDownAttributes),
+           _U.list([$Html.text("Dropdown"),A2($Html.span,_U.list([$Html$Attributes.$class("caret")]),_U.list([]))]))
+           ,A2($Html.ul,
+           _U.list([$Html$Attributes.$class("dropdown-menu"),A2($Html$Attributes.attribute,"aria-labelledby","dropdownMenu1")]),
+           _U.list([A2($Html.li,
+                   _U.list([$Html$Attributes.$class("active")]),
+                   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Action")]))]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Another action")]))]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Something else here")]))]))
+                   ,A2($Html.li,_U.list([A2($Html$Attributes.attribute,"role","seperator"),$Html$Attributes.$class("divider")]),_U.list([]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Seperated link")]))]))]))]));
+   var makeBadges = A2($Html.div,
+   _U.list([]),
+   _U.list([A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Inbox")]))
+                   ,A2($Html.span,_U.list([$Html$Attributes.$class("badge")]),_U.list([$Html.text("42")]))]))
+           ,A2($Html.ul,
+           _U.list([$Html$Attributes.$class("nav nav-pills"),A2($Html$Attributes.attribute,"role","tablist")]),
+           _U.list([A2($Html.li,
+                   _U.list([A2($Html$Attributes.attribute,"role","presentation"),$Html$Attributes.$class("active")]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.href("#")]),
+                   _U.list([$Html.text("Home"),A2($Html.span,_U.list([$Html$Attributes.$class("badge")]),_U.list([$Html.text("42")]))]))]))
+                   ,A2($Html.li,
+                   _U.list([A2($Html$Attributes.attribute,"role","presentation")]),
+                   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Profile")]))]))
+                   ,A2($Html.li,
+                   _U.list([A2($Html$Attributes.attribute,"role","presentation")]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.href("#")]),
+                   _U.list([$Html.text("Messages"),A2($Html.span,_U.list([$Html$Attributes.$class("badge")]),_U.list([$Html.text("3")]))]))]))]))]));
    var getLinkName = function (name) {
       var l = A2($String.dropLeft,1,name);
       var f = A2($String.left,1,name);
       var g = A2($String.map,$Char.toUpper,f);
       return A2($Basics._op["++"],g,l);
    };
-   var buttons = A2($Html.div,
-   _U.list([$Html$Attributes.$class("page-header")]),
-   _U.list([A2($Html.h1,
-   _U.list([]),
-   _U.list([$Html.text("Buttons")]))]));
+   var buttons = A2($Html.div,_U.list([$Html$Attributes.$class("page-header")]),_U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Buttons")]))]));
+   var row3 = _U.list(["3","Larry","Bird","@twitter"]);
+   var row2 = _U.list(["2","Jacob","Thornton","@fat"]);
+   var row1 = _U.list(["1","Mark","Otto","@mdo"]);
+   var row0 = _U.list(["#","First Name","Last Name","Username"]);
+   var makeRow = function (xs) {
+      return A2($Html.tbody,
+      _U.list([]),
+      _U.list([A2($Html.tr,_U.list([]),A2($List.map,function (x) {    return A2($Html.th,_U.list([]),_U.list([$Html.text(x)]));},xs))]));
+   };
+   var makeTables = function (tableType) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class("row")]),
+      _U.list([A2($Html.div,
+      _U.list([$Html$Attributes.$class("col-md-6")]),
+      _U.list([A2($Html.table,
+      _U.list([$Html$Attributes.$class(tableType)]),
+      _U.list([A2($Html.thead,
+              _U.list([]),
+              _U.list([A2($Html.tr,
+              _U.list([]),
+              _U.list([A2($Html.th,_U.list([]),_U.list([$Html.text("#")]))
+                      ,A2($Html.th,_U.list([]),_U.list([$Html.text("First Name")]))
+                      ,A2($Html.th,_U.list([]),_U.list([$Html.text("Last Name")]))
+                      ,A2($Html.th,_U.list([]),_U.list([$Html.text("Username")]))]))]))
+              ,makeRow(row1)
+              ,makeRow(row2)
+              ,makeRow(row3)]))]))]));
+   };
    var jumbotron = A2($Html.div,
    _U.list([$Html$Attributes.$class("jumbotron")]),
-   _U.list([A2($Html.h1,
-           _U.list([]),
-           _U.list([$Html.text("Theme Example")]))
+   _U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Theme Example")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.")]))]));
-   var navbarMain = A3($Html.node,
-   "nav",
-   _U.list([$Html$Attributes.$class("navbar navbar-inverse navbar-fixed-top")]),
-   _U.list([A2($Html.div,
-   _U.list([$Html$Attributes.$class("container")]),
-   _U.list([A2($Html.div,
-           _U.list([$Html$Attributes.$class("navbar-header")]),
-           _U.list([A2($Html.button,
-                   _U.list([$Html$Attributes.type$("button")
-                           ,$Html$Attributes.$class("navbar-toggle collapsed")
-                           ,A2($Html$Attributes.attribute,"data-toggle","collapse")
-                           ,A2($Html$Attributes.attribute,"data-target","#navbar")
-                           ,A2($Html$Attributes.attribute,"aria-expanded","false")
-                           ,A2($Html$Attributes.attribute,"aria-controls","navbar")]),
-                   _U.list([A2($Html.span,
-                           _U.list([$Html$Attributes.$class("sr-only")]),
-                           _U.list([$Html.text("Toggle navigation")]))
-                           ,A2($Html.span,
-                           _U.list([$Html$Attributes.$class("icon-bar")]),
-                           _U.list([]))
-                           ,A2($Html.span,
-                           _U.list([$Html$Attributes.$class("icon-bar")]),
-                           _U.list([]))
-                           ,A2($Html.span,
-                           _U.list([$Html$Attributes.$class("icon-bar")]),
-                           _U.list([]))]))
-                   ,A2($Html.a,
-                   _U.list([$Html$Attributes.$class("navbar-brand")
-                           ,$Html$Attributes.href("#")]),
-                   _U.list([$Html.text("Bootstrap theme")]))]))
-           ,A2($Html.div,
-           _U.list([$Html$Attributes.id("navbar")
-                   ,$Html$Attributes.$class("navbar-collapse collapse")]),
-           _U.list([A2($Html.ul,
-           _U.list([$Html$Attributes.$class("nav navbar-nav")]),
-           _U.list([A2($Html.li,
-                   _U.list([$Html$Attributes.$class("active")]),
-                   _U.list([A2($Html.a,
-                   _U.list([$Html$Attributes.href("#")]),
-                   _U.list([$Html.text("Home")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.a,
-                   _U.list([$Html$Attributes.href("#about")]),
-                   _U.list([$Html.text("About")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.a,
-                   _U.list([$Html$Attributes.href("#contact")]),
-                   _U.list([$Html.text("Contact")]))]))
-                   ,A2($Html.li,
-                   _U.list([$Html$Attributes.$class("dropdown")]),
-                   _U.list([A2($Html.a,
-                           _U.list([$Html$Attributes.$class("dropdown-toggle")
-                                   ,$Html$Attributes.href("#")
-                                   ,A2($Html$Attributes.attribute,"data-toggle","dropdown")
-                                   ,A2($Html$Attributes.attribute,"role","button")
-                                   ,A2($Html$Attributes.attribute,"aria-haspopup","true")
-                                   ,A2($Html$Attributes.attribute,"aria-expanded","false")]),
-                           _U.list([$Html.text("Dropdown ")
-                                   ,A2($Html.span,
-                                   _U.list([$Html$Attributes.$class("caret")]),
-                                   _U.list([]))]))
-                           ,A2($Html.ul,
-                           _U.list([$Html$Attributes.$class("dropdown-menu")]),
-                           _U.list([A2($Html.li,
-                                   _U.list([]),
-                                   _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href("#")]),
-                                   _U.list([$Html.text("Action")]))]))
-                                   ,A2($Html.li,
-                                   _U.list([]),
-                                   _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href("#")]),
-                                   _U.list([$Html.text("Another action")]))]))
-                                   ,A2($Html.li,
-                                   _U.list([]),
-                                   _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href("#")]),
-                                   _U.list([$Html.text("Something else here")]))]))
-                                   ,A2($Html.li,
-                                   _U.list([$Html$Attributes.$class("divider")
-                                           ,A2($Html$Attributes.attribute,"role","seperator")]),
-                                   _U.list([]))
-                                   ,A2($Html.li,
-                                   _U.list([$Html$Attributes.$class("dropdown-header")]),
-                                   _U.list([$Html.text("Nav header")]))
-                                   ,A2($Html.li,
-                                   _U.list([]),
-                                   _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href("#")]),
-                                   _U.list([$Html.text("Seperated link")]))]))
-                                   ,A2($Html.li,
-                                   _U.list([]),
-                                   _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href("#")]),
-                                   _U.list([$Html.text("One more seperated link")]))]))]))]))]))]))]))]));
-   _op["=>"] = F2(function (v0,v1) {
-      return {ctor: "_Tuple2",_0: v0,_1: v1};
-   });
+   var makeNavbar = function (cl) {
+      return A3($Html.node,
+      "nav",
+      _U.list([$Html$Attributes.$class(cl)]),
+      _U.list([A2($Html.div,
+      _U.list([$Html$Attributes.$class("container")]),
+      _U.list([A2($Html.div,
+              _U.list([$Html$Attributes.$class("navbar-header")]),
+              _U.list([A2($Html.a,_U.list([$Html$Attributes.$class("navbar-brand"),$Html$Attributes.href("#")]),_U.list([$Html.text("Bootstrap theme")]))]))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("navbar"),$Html$Attributes.$class("navbar-collapse collapse")]),
+              _U.list([A2($Html.ul,
+              _U.list([$Html$Attributes.$class("nav navbar-nav")]),
+              _U.list([A2($Html.li,
+                      _U.list([$Html$Attributes.$class("active")]),
+                      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Home")]))]))
+                      ,A2($Html.li,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("#about")]),_U.list([$Html.text("About")]))]))
+                      ,A2($Html.li,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("#contact")]),_U.list([$Html.text("Contact")]))]))
+                      ,A2($Html.li,
+                      _U.list([$Html$Attributes.$class("dropdown")]),
+                      _U.list([A2($Html.a,
+                              A2($Basics._op["++"],_U.list([$Html$Attributes.$class("dropdown-toggle"),$Html$Attributes.href("#")]),baseDropDownAttributes),
+                              _U.list([$Html.text("Dropdown "),A2($Html.span,_U.list([$Html$Attributes.$class("caret")]),_U.list([]))]))
+                              ,A2($Html.ul,
+                              _U.list([$Html$Attributes.$class("dropdown-menu")]),
+                              _U.list([A2($Html.li,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Action")]))]))
+                                      ,A2($Html.li,
+                                      _U.list([]),
+                                      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Another action")]))]))
+                                      ,A2($Html.li,
+                                      _U.list([]),
+                                      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Something else here")]))]))
+                                      ,A2($Html.li,_U.list([$Html$Attributes.$class("divider"),A2($Html$Attributes.attribute,"role","seperator")]),_U.list([]))
+                                      ,A2($Html.li,_U.list([$Html$Attributes.$class("dropdown-header")]),_U.list([$Html.text("Nav header")]))
+                                      ,A2($Html.li,
+                                      _U.list([]),
+                                      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#")]),_U.list([$Html.text("Seperated link")]))]))
+                                      ,A2($Html.li,
+                                      _U.list([]),
+                                      _U.list([A2($Html.a,
+                                      _U.list([$Html$Attributes.href("#")]),
+                                      _U.list([$Html.text("One more seperated link")]))]))]))]))]))]))]))]));
+   };
+   _op["=>"] = F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};});
+   var makeSpans = function (ls) {
+      return A2($List.map,
+      function (x) {
+         return A2($Html.span,
+         _U.list([$Html$Attributes.$class(A2($Basics._op["++"],"label label-",x)),$Html$Attributes.style(_U.list([A2(_op["=>"],"margin-left","5px")]))]),
+         _U.list([$Html.text(getLinkName(x))]));
+      },
+      ls);
+   };
+   var makeLabels = function (hs) {
+      var lbls = _U.list(["default","primary","success","info","warning","danger"]);
+      return A2($Html.div,_U.list([]),A2($List.map,function (x) {    return A2(x,_U.list([]),makeSpans(lbls));},hs));
+   };
    var makeBtns = F2(function (prop,name) {
       return A2($Html.button,
       _U.list([$Html$Attributes.type$("button")
-              ,$Html$Attributes.$class(A2($Basics._op["++"],
-              "btn ",
-              A2($Basics._op["++"],prop,A2($Basics._op["++"]," btn-",name))))
-              ,$Html$Attributes.style(_U.list([A2(_op["=>"],
-              "margin-left",
-              "5px")]))]),
+              ,$Html$Attributes.$class(A2($Basics._op["++"],"btn ",A2($Basics._op["++"],prop,A2($Basics._op["++"]," btn-",name))))
+              ,$Html$Attributes.style(_U.list([A2(_op["=>"],"margin-left","5px")]))]),
       _U.list([$Html.text(getLinkName(name))]));
    });
+   var makeAlerts = function () {
+      var typs = _U.list(["success","info","warning","danger"]);
+      var words = _U.list([A2(_op["=>"],"Well done!"," You successfully read this important alert message.")
+                          ,A2(_op["=>"],"Heads up!"," This alert needs your attention, but it\'s not super important.")
+                          ,A2(_op["=>"],"Warning!"," Best check yo self, you\'re not looking too good.")
+                          ,A2(_op["=>"],"Oh snap!"," Change a few things up and try submitting again.")]);
+      var d = F2(function (ty,_p0) {
+         var _p1 = _p0;
+         return A2($Html.div,
+         _U.list([$Html$Attributes.$class(A2($Basics._op["++"],"alert alert-",ty)),A2($Html$Attributes.attribute,"role","alert")]),
+         _U.list([A2($Html.strong,_U.list([]),_U.list([$Html.text(_p1._0)])),$Html.text(_p1._1)]));
+      });
+      return A2($Html.div,
+      _U.list([]),
+      _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("page-header")]),_U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Navbars")]))]))
+              ,A2($Html.div,_U.list([]),A3($List.map2,d,typs,words))]));
+   }();
+   var makeProgressBars = function () {
+      var p$ = _U.list(["60","40","20","80","60","80","60"]);
+      var c$ = _U.list(["success","info","warning","danger","striped"]);
+      var cls = function (p) {
+         return _U.list([A2($Html$Attributes.attribute,"role","progressbar")
+                        ,A2($Html$Attributes.attribute,"aria-valuenow",p)
+                        ,A2($Html$Attributes.attribute,"aria-valuemin","0")
+                        ,A2($Html$Attributes.attribute,"aria-valuemax","100")
+                        ,$Html$Attributes.style(_U.list([A2(_op["=>"],"width",A2($Basics._op["++"],p,"%"))]))]);
+      };
+      var sd = F3(function (c,cs,p) {
+         return A2($Html.div,
+         _U.list([$Html$Attributes.$class("progress")]),
+         _U.list([A2($Html.div,
+         $List.concat(_U.list([_U.list([$Html$Attributes.$class(A2($Basics._op["++"],"progress-bar progress-bar-",c))]),cs])),
+         _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("sr-only")]),_U.list([$Html.text(A2($Basics._op["++"],p,"% Complete"))]))]))]));
+      });
+      return A2($Html.div,
+      _U.list([]),
+      _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("page-header")]),_U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Progress bars")]))]))
+              ,A2($Html.div,_U.list([]),A4($List.map3,sd,c$,A2($List.map,cls,p$),p$))]));
+   }();
    var main = function () {
-      var buttonList = _U.list(["default"
-                               ,"primary"
-                               ,"success"
-                               ,"info"
-                               ,"warning"
-                               ,"danger"
-                               ,"link"]);
+      var buttonList = _U.list(["default","primary","success","info","warning","danger","link"]);
       var lg = A2($List.map,makeBtns("btn-lg"),buttonList);
       var de = A2($List.map,makeBtns(""),buttonList);
       var sm = A2($List.map,makeBtns("btn-sm"),buttonList);
       var xs = A2($List.map,makeBtns("btn-xs"),buttonList);
       return A2($Html.div,
       _U.list([]),
-      _U.list([navbarMain
+      _U.list([makeNavbar("navbar navbar-inverse navbar-fixed-top")
               ,A2($Html.div,
-              _U.list([$Html$Attributes.$class("container theme-showcase")
-                      ,A2($Html$Attributes.attribute,"role","main")]),
+              _U.list([$Html$Attributes.$class("container theme-showcase"),A2($Html$Attributes.attribute,"role","main")]),
               _U.list([jumbotron
                       ,buttons
                       ,A2($Html.p,_U.list([]),lg)
                       ,A2($Html.p,_U.list([]),de)
                       ,A2($Html.p,_U.list([]),sm)
-                      ,A2($Html.p,_U.list([]),xs)]))]));
+                      ,A2($Html.p,_U.list([]),xs)
+                      ,A2($Html.div,_U.list([$Html$Attributes.$class("page-header")]),_U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Tables")]))]))
+                      ,makeTables("table")
+                      ,makeTables("table table-striped")
+                      ,makeTables("table table-bordered")
+                      ,makeTables("table table-condensed")
+                      ,makeThumbnails
+                      ,A2($Html.div,_U.list([$Html$Attributes.$class("page-header")]),_U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Labels")]))]))
+                      ,makeLabels(_U.list([$Html.h1,$Html.h2,$Html.h3,$Html.h4,$Html.h5,$Html.h6]))
+                      ,A2($Html.div,_U.list([$Html$Attributes.$class("page-header")]),_U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Badges")]))]))
+                      ,makeBadges
+                      ,A2($Html.div,
+                      _U.list([$Html$Attributes.$class("page-header")]),
+                      _U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Dropdown menus")]))]))
+                      ,makeDropDown
+                      ,A2($Html.div,_U.list([$Html$Attributes.$class("page-header")]),_U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Navs")]))]))
+                      ,makeNavs
+                      ,A2($Html.div,_U.list([$Html$Attributes.$class("page-header")]),_U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Navbars")]))]))
+                      ,makeNavbar("navbar navbar-default")
+                      ,makeNavbar("navbar navbar-inverse")
+                      ,makeAlerts
+                      ,makeProgressBars
+                      ,makeListGroups
+                      ,makePanels
+                      ,makeWells
+                      ,makeCarousel]))]));
    }();
    return _elm.Page.values = {_op: _op
                              ,main: main
-                             ,navbarMain: navbarMain
+                             ,makeNavbar: makeNavbar
                              ,jumbotron: jumbotron
+                             ,makeTables: makeTables
+                             ,makeRow: makeRow
+                             ,row0: row0
+                             ,row1: row1
+                             ,row2: row2
+                             ,row3: row3
+                             ,makeLabels: makeLabels
+                             ,makeSpans: makeSpans
                              ,buttons: buttons
                              ,makeBtns: makeBtns
-                             ,getLinkName: getLinkName};
+                             ,getLinkName: getLinkName
+                             ,makeBadges: makeBadges
+                             ,makeDropDown: makeDropDown
+                             ,baseDropDownAttributes: baseDropDownAttributes
+                             ,makeNavs: makeNavs
+                             ,makeAlerts: makeAlerts
+                             ,makeProgressBars: makeProgressBars
+                             ,makeListGroups: makeListGroups
+                             ,makeListGroup$: makeListGroup$
+                             ,makePanels: makePanels
+                             ,makeWells: makeWells
+                             ,makeCarousel: makeCarousel
+                             ,makeThumbnails: makeThumbnails
+                             ,h$: h$};
 };
